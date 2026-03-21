@@ -681,25 +681,7 @@
     .final-cta-title { font-size: 32px; }
     .hero-form, .final-form { flex-direction: column; }
   }
-  /* ══════════════════════════════════
-     BEEHIIV EMBEDS
-  ══════════════════════════════════ */
-  .beehiiv-hero-embed,
-  .beehiiv-final-embed {
-    max-width: 480px;
-  }
-  .beehiiv-hero-embed iframe,
-  .beehiiv-final-embed iframe {
-    width: 100%;
-    height: 220px;
-    background: transparent;
-    border: none;
-  }
-  .beehiiv-final-embed {
-    margin: 0 auto;
-  }
 </style>
-<script async src="https://subscribe-forms.beehiiv.com/embed.js"></script>
 </head>
 <body>
 
@@ -724,9 +706,11 @@
       <div class="hero-eyebrow">Every Saturday Morning</div>
       <h1 class="hero-title">The email for people who <span class="accent">love East Idaho.</span></h1>
       <p class="hero-desc">Stories about the people who make this valley what it is. Plus weekend plans, restaurant finds, and the stuff worth knowing. One email, every Saturday. Free forever.</p>
-      <div class="beehiiv-hero-embed">
-        <iframe src="https://subscribe-forms.beehiiv.com/81033393-feed-4757-84fb-97bf9dd3283a" class="beehiiv-embed" data-test-id="beehiiv-embed" frameborder="0" scrolling="no" style="width: 100%; height: 220px; border: none; background: transparent;"></iframe>
-      </div>
+      <form class="hero-form" onsubmit="subscribeToBeehiiv(event, this)">
+        <input type="email" placeholder="you@email.com" required>
+        <button type="submit">Subscribe</button>
+      </form>
+      <div class="hero-form-message" style="display:none; margin-top: 12px; font-size: 14px; font-weight: 600;"></div>
       <div class="hero-social-proof">
         <div class="proof-avatars">
           <div class="proof-avatar" style="background: var(--coral);">MK</div>
@@ -967,9 +951,11 @@
     </div>
     <h2 class="final-cta-title">Start your Saturday with East Idaho.</h2>
     <p class="final-cta-desc">Join thousands of your neighbors who get the best of the valley in their inbox every week. Free forever. Unsubscribe anytime.</p>
-    <div class="beehiiv-final-embed">
-      <iframe src="https://subscribe-forms.beehiiv.com/81033393-feed-4757-84fb-97bf9dd3283a" class="beehiiv-embed" data-test-id="beehiiv-embed" frameborder="0" scrolling="no" style="width: 100%; height: 220px; border: none; background: transparent;"></iframe>
-    </div>
+    <form class="final-form" onsubmit="subscribeToBeehiiv(event, this)">
+      <input type="email" placeholder="you@email.com" required>
+      <button type="submit">Subscribe Free</button>
+    </form>
+    <div class="final-form-message" style="display:none; margin-top: 12px; font-size: 14px; font-weight: 600;"></div>
     <div class="final-note">No spam. No politics. Just East Idaho. Every Saturday.</div>
   </div>
 </section>
@@ -995,7 +981,49 @@
   </div>
 </footer>
 
-<script async src="https://subscribe-forms.beehiiv.com/embed.js"></script>
+<!-- Beehiiv subscription handler via Netlify Function -->
+<script>
+async function subscribeToBeehiiv(event, form) {
+  event.preventDefault();
+  
+  var email = form.querySelector('input[type="email"]').value;
+  var button = form.querySelector('button');
+  var messageEl = form.nextElementSibling;
+  var originalText = button.textContent;
+  
+  button.disabled = true;
+  button.textContent = 'Subscribing...';
+  
+  try {
+    var response = await fetch('/.netlify/functions/subscribe', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({ email: email })
+    });
+    
+    var data = await response.json();
+    
+    if (response.ok) {
+      form.style.display = 'none';
+      messageEl.style.display = 'block';
+      messageEl.style.color = '#4ade80';
+      messageEl.textContent = "You're in! Welcome to East Idaho.";
+    } else {
+      button.disabled = false;
+      button.textContent = originalText;
+      messageEl.style.display = 'block';
+      messageEl.style.color = '#fcb498';
+      messageEl.textContent = data.message || 'Something went wrong. Please try again.';
+    }
+  } catch (err) {
+    button.disabled = false;
+    button.textContent = originalText;
+    messageEl.style.display = 'block';
+    messageEl.style.color = '#fcb498';
+    messageEl.textContent = 'Something went wrong. Please try again.';
+  }
+}
+</script>
 
 </body>
 </html>
