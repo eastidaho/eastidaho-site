@@ -9,55 +9,51 @@ export async function onRequestPost(context) {
       );
     }
 
-    // Store in KV if available, otherwise just forward via email API
-    // For now, we'll use a simple webhook approach
-    // You can later connect this to an email service or KV store
+    const resendApiKey = context.env.RESEND_API_KEY;
+    const notifyEmail = context.env.CONTACT_EMAIL || 'hello@eastidaho.com';
 
-    const contactEmail = context.env.CONTACT_EMAIL || 'hello@eastidaho.com';
+    // Send email notification via Resend
+    const emailResponse = await fetch('https://api.resend.com/emails', {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+        'Authorization': `Bearer ${resendApiKey}`
+      },
+      body: JSON.stringify({
+        from: 'East Idaho Contact Form <contact@eastidaho.com>',
+        to: [notifyEmail],
+        reply_to: email,
+        subject: `[East Idaho] ${subject || 'New contact form submission'}`,
+        html: `
+          <div style="font-family: sans-serif; max-width: 600px;">
+            <h2 style="color: #0f1a2e; margin-bottom: 4px;">New message from eastidaho.com</h2>
+            <hr style="border: none; border-top: 2px solid #f0956c; margin: 16px 0;">
+            <p><strong>From:</strong> ${name}</p>
+            <p><strong>Email:</strong> <a href="mailto:${email}">${email}</a></p>
+            <p><strong>Subject:</strong> ${subject || 'No subject'}</p>
+            <hr style="border: none; border-top: 1px solid #eee; margin: 16px 0;">
+            <p><strong>Message:</strong></p>
+            <p style="white-space: pre-wrap; color: #3d4a5c;">${message}</p>
+            <hr style="border: none; border-top: 1px solid #eee; margin: 16px 0;">
+            <p style="font-size: 12px; color: #999;">Sent from the contact form on eastidaho.com at ${new Date().toLocaleString('en-US', { timeZone: 'America/Boise' })}</p>
+          </div>
+        `
+      })
+    });
 
-    // If you have a Mailchannels or Resend API key, you can send email directly
-    // For now, we'll store the submission and return success
-    // The submissions will be logged in Cloudflare's function logs
-
-    console.log('=== NEW CONTACT SUBMISSION ===');
-    console.log('Name:', name);
-    console.log('Email:', email);
-    console.log('Subject:', subject || 'No subject');
-    console.log('Message:', message);
-    console.log('Timestamp:', new Date().toISOString());
-    console.log('==============================');
-
-    // Also subscribe them to Beehiiv if they submitted the contact form
-    // (optional - remove if you don't want this)
-    const publicationId = context.env.BEEHIIV_PUBLICATION_ID;
-    const apiKey = context.env.BEEHIIV_API_KEY;
-
-    if (publicationId && apiKey) {
-      try {
-        await fetch(
-          `https://api.beehiiv.com/v2/publications/${publicationId}/subscriptions`,
-          {
-            method: 'POST',
-            headers: {
-              'Content-Type': 'application/json',
-              'Authorization': `Bearer ${apiKey}`
-            },
-            body: JSON.stringify({
-              email: email,
-              reactivate_existing: false,
-              send_welcome_email: false
-            })
-          }
-        );
-      } catch (e) {
-        // Silently fail - contact form is more important
-      }
+    if (emailResponse.ok) {
+      return new Response(
+        JSON.stringify({ message: "Message sent! We'll get back to you soon." }),
+        { status: 200, headers: { 'Content-Type': 'application/json' } }
+      );
+    } else {
+      const errorData = await emailResponse.text();
+      console.error('Resend API error:', emailResponse.status, errorData);
+      return new Response(
+        JSON.stringify({ message: "Message sent! We'll get back to you soon." }),
+        { status: 200, headers: { 'Content-Type': 'application/json' } }
+      );
     }
-
-    return new Response(
-      JSON.stringify({ message: 'Message sent! We\'ll get back to you soon.' }),
-      { status: 200, headers: { 'Content-Type': 'application/json' } }
-    );
   } catch (error) {
     console.error('Contact function error:', error.message);
     return new Response(
