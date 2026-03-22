@@ -1,0 +1,404 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Terms and Conditions — East Idaho</title>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=DM+Serif+Display&family=Outfit:wght@300;400;500;600;700&display=swap');
+
+  :root {
+    --navy: #0f1a2e;
+    --navy-mid: #1a2940;
+    --coral: #f0956c;
+    --coral-light: #fcb498;
+    --sunrise: #e8735a;
+    --cream: #faf9f7;
+    --warm-white: #f3f1ed;
+    --parchment: #ece8e1;
+    --stone: #ddd8d0;
+    --text-primary: #0f1a2e;
+    --text-body: #3d4a5c;
+    --text-muted: #7a8394;
+    --text-faint: #a8adb8;
+  }
+
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  html { scroll-behavior: smooth; }
+
+  body {
+    font-family: 'Outfit', sans-serif;
+    color: var(--text-primary);
+    background: var(--cream);
+    line-height: 1.6;
+  }
+
+  nav {
+    position: fixed;
+    top: 0; left: 0; right: 0;
+    z-index: 100;
+    padding: 0 48px;
+    height: 72px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background: rgba(15,26,46,0.97);
+    backdrop-filter: blur(12px);
+    border-bottom: 1px solid rgba(255,255,255,0.05);
+  }
+  .nav-logo {
+    height: 40px;
+    display: flex;
+    align-items: center;
+    text-decoration: none;
+  }
+  .nav-logo img {
+    height: 40px;
+    width: auto;
+  }
+  .nav-back {
+    color: rgba(255,255,255,0.6);
+    text-decoration: none;
+    font-size: 14px;
+    font-weight: 500;
+    transition: color 0.2s;
+  }
+  .nav-back:hover { color: #fff; }
+
+  .page-header {
+    background: var(--navy);
+    padding: 120px 48px 60px;
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+  }
+  .page-header::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background:
+      radial-gradient(ellipse at 15% 80%, rgba(240,149,108,0.06) 0%, transparent 55%),
+      radial-gradient(ellipse at 85% 20%, rgba(26,41,64,0.6) 0%, transparent 50%);
+  }
+  .page-header-content {
+    position: relative;
+    z-index: 1;
+  }
+  .page-header-eyebrow {
+    font-size: 11px;
+    text-transform: uppercase;
+    letter-spacing: 3px;
+    color: var(--coral);
+    font-weight: 700;
+    margin-bottom: 12px;
+  }
+  .page-header-title {
+    font-family: 'DM Serif Display', serif;
+    font-size: 44px;
+    color: #fff;
+    margin-bottom: 12px;
+  }
+  .page-header-meta {
+    font-size: 14px;
+    color: rgba(255,255,255,0.4);
+  }
+
+  .policy-content {
+    max-width: 720px;
+    margin: 0 auto;
+    padding: 60px 48px 80px;
+  }
+
+  .policy-content h2 {
+    font-family: 'DM Serif Display', serif;
+    font-size: 26px;
+    color: var(--text-primary);
+    margin-top: 48px;
+    margin-bottom: 16px;
+    padding-bottom: 8px;
+    border-bottom: 1px solid var(--stone);
+  }
+
+  .policy-content h3 {
+    font-size: 17px;
+    font-weight: 700;
+    color: var(--text-primary);
+    margin-top: 28px;
+    margin-bottom: 10px;
+  }
+
+  .policy-content p {
+    font-size: 16px;
+    color: var(--text-body);
+    line-height: 1.8;
+    margin-bottom: 16px;
+  }
+
+  .policy-content strong {
+    color: var(--text-primary);
+    font-weight: 600;
+  }
+
+  .policy-content ul {
+    margin: 12px 0 20px 24px;
+    color: var(--text-body);
+    font-size: 16px;
+    line-height: 1.8;
+  }
+  .policy-content li {
+    margin-bottom: 6px;
+  }
+
+  .policy-content a {
+    color: var(--coral);
+    text-decoration: none;
+    font-weight: 500;
+  }
+  .policy-content a:hover {
+    text-decoration: underline;
+  }
+
+  .policy-intro {
+    font-size: 17px;
+    color: var(--text-body);
+    line-height: 1.8;
+    padding: 28px 0;
+    border-bottom: 1px solid var(--stone);
+    margin-bottom: 12px;
+  }
+
+  .policy-contact-box {
+    margin-top: 20px;
+    padding: 24px;
+    background: var(--warm-white);
+    border-radius: 8px;
+    border: 1px solid var(--stone);
+  }
+  .policy-contact-box p {
+    margin-bottom: 6px;
+  }
+
+  .policy-updated {
+    margin-top: 48px;
+    padding-top: 24px;
+    border-top: 1px solid var(--stone);
+    font-size: 14px;
+    color: var(--text-faint);
+    font-style: italic;
+  }
+
+  footer {
+    background: #0a1220;
+    padding: 48px;
+    text-align: center;
+  }
+  .footer-logo { margin-bottom: 16px; }
+  .footer-logo img { height: 48px; opacity: 0.8; }
+  .footer-links {
+    display: flex; justify-content: center;
+    gap: 28px; margin-bottom: 24px; flex-wrap: wrap;
+  }
+  .footer-links a {
+    color: rgba(255,255,255,0.4); text-decoration: none;
+    font-size: 13px; font-weight: 500; transition: color 0.2s;
+  }
+  .footer-links a:hover { color: rgba(255,255,255,0.7); }
+  .footer-legal-links {
+    margin-bottom: 12px;
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+  }
+  .footer-legal-links a {
+    color: rgba(255,255,255,0.3);
+    text-decoration: none;
+    font-size: 12px;
+    transition: color 0.2s;
+  }
+  .footer-legal-links a:hover { color: rgba(255,255,255,0.5); }
+  .footer-legal {
+    font-size: 12px; color: rgba(255,255,255,0.2); line-height: 1.6;
+  }
+
+  @media (max-width: 900px) {
+    nav { padding: 0 24px; }
+    .page-header { padding: 110px 24px 48px; }
+    .page-header-title { font-size: 32px; }
+    .policy-content { padding: 40px 24px 60px; }
+    footer { padding: 36px 24px; }
+  }
+</style>
+</head>
+<body>
+
+<nav>
+  <a class="nav-logo" href="/">
+    <img src="logo-white.png" alt="East Idaho">
+  </a>
+  <a class="nav-back" href="/">← Back to Home</a>
+</nav>
+
+<div class="page-header">
+  <div class="page-header-content">
+    <div class="page-header-eyebrow">Legal</div>
+    <h1 class="page-header-title">Terms and Conditions</h1>
+    <p class="page-header-meta">Last updated March 22, 2026</p>
+  </div>
+</div>
+
+<div class="policy-content">
+
+  <p class="policy-intro">By accessing or using the website eastidaho.com, subscribing to our newsletter, listening to our podcast, or engaging with any of our digital content or services (collectively, the "Services"), you agree to be bound by these Terms and Conditions. If you do not agree with these terms, please do not use our Services. These Terms and Conditions constitute a legally binding agreement between you ("you" or "your") and East Idaho Media Co. LLC ("East Idaho," "we," "us," or "our").</p>
+
+  <h2>Our Services</h2>
+
+  <p>East Idaho operates a local media brand serving the East Idaho region. Our Services include:</p>
+
+  <ul>
+    <li>The eastidaho.com website</li>
+    <li>A weekly email newsletter distributed via Beehiiv</li>
+    <li>A podcast available on various podcast platforms</li>
+    <li>Video content on YouTube</li>
+    <li>Social media content on Instagram, TikTok, Facebook, and other platforms</li>
+    <li>The annual Best of East Idaho awards and voting program</li>
+    <li>Sponsored content and advertising partnerships</li>
+  </ul>
+
+  <h2>Newsletter Subscription</h2>
+
+  <p>By subscribing to our email newsletter, you agree to receive our weekly newsletter and occasional related communications. You may unsubscribe at any time by clicking the "Unsubscribe" link at the bottom of any email.</p>
+
+  <p>When you subscribe, you confirm that the email address you provide is accurate and belongs to you. You agree not to subscribe using a false or misleading email address or to subscribe other people without their consent.</p>
+
+  <p>We reserve the right to remove subscribers who repeatedly bounce, who were added without consent, or who engage in behavior that harms our email deliverability.</p>
+
+  <h2>Intellectual Property</h2>
+
+  <p>All content on our website, in our newsletter, podcast, videos, and social media accounts — including but not limited to text, graphics, logos, images, audio, video, and the selection and arrangement thereof — is the property of East Idaho Media Co. LLC or its content creators and is protected by United States and international copyright laws.</p>
+
+  <p>You may share links to our content and brief excerpts for personal, non-commercial purposes with proper attribution. You may not reproduce, distribute, modify, create derivative works from, publicly display, or commercially exploit our content without our prior written permission.</p>
+
+  <p>Our name, logo, and the "East Idaho" brand, including the mountain logo design and "Stories · People · Places" tagline, are trademarks of East Idaho Media Co. LLC. You may not use our trademarks without our prior written consent.</p>
+
+  <h2>Best of East Idaho Awards</h2>
+
+  <p>The Best of East Idaho awards program is a reader-voted recognition of local businesses and places. Participation in voting is subject to the following terms:</p>
+
+  <ul>
+    <li>One vote per person per category. We reserve the right to disqualify votes that appear fraudulent, automated, or duplicated.</li>
+    <li>Winning a Best of East Idaho award does not imply any endorsement, certification, or guarantee of quality by East Idaho Media Co. LLC.</li>
+    <li>We reserve the right to determine award categories, eligibility, and final results at our sole discretion.</li>
+    <li>Best of East Idaho winner badges and marks may only be used by the awarded business and may not be altered or used in a misleading way.</li>
+  </ul>
+
+  <h2>Sponsored Content and Advertising</h2>
+
+  <p>Our Services may include sponsored content, advertising, and paid partnerships with local businesses. We are committed to transparency about sponsored content.</p>
+
+  <p>Sponsored content in our newsletter and other channels will be clearly identified. However, all opinions and recommendations in sponsored content are our own unless otherwise stated.</p>
+
+  <p>The inclusion of any business, product, or service in our content — whether sponsored or editorial — does not constitute an endorsement or guarantee of that business, product, or service.</p>
+
+  <h2>User Conduct</h2>
+
+  <p>When interacting with our Services, including replying to our newsletter, submitting contact forms, participating in polls, or engaging with us on social media, you agree not to:</p>
+
+  <ul>
+    <li>Submit false, misleading, or inaccurate information</li>
+    <li>Send spam, promotional material, or unsolicited communications through our contact form</li>
+    <li>Attempt to gain unauthorized access to our systems or services</li>
+    <li>Use our Services for any illegal or unauthorized purpose</li>
+    <li>Harass, threaten, or abuse East Idaho staff or other community members</li>
+    <li>Interfere with or disrupt the operation of our Services</li>
+  </ul>
+
+  <p>We reserve the right to block, restrict, or terminate access to our Services for anyone who violates these terms.</p>
+
+  <h2>Third-Party Links and Content</h2>
+
+  <p>Our Services may contain links to third-party websites, businesses, and resources. These links are provided for your convenience and information. We do not control, endorse, or assume responsibility for the content, products, services, or practices of any third-party sites.</p>
+
+  <p>Visiting third-party websites is at your own risk, and you should review their terms and privacy policies before engaging with them.</p>
+
+  <h2>Disclaimer of Warranties</h2>
+
+  <p>Our Services are provided on an "as is" and "as available" basis without warranties of any kind, whether express or implied.</p>
+
+  <p>We do not warrant that:</p>
+
+  <ul>
+    <li>Our Services will be uninterrupted, timely, secure, or error-free</li>
+    <li>The information provided through our Services is accurate, complete, or current</li>
+    <li>Any errors or defects in our Services will be corrected</li>
+  </ul>
+
+  <p>Information provided through our Services — including restaurant recommendations, business profiles, event listings, and local information — is for general informational and entertainment purposes only. We are not responsible for errors, omissions, or changes in the information presented.</p>
+
+  <h2>Limitation of Liability</h2>
+
+  <p>To the fullest extent permitted by applicable law, East Idaho Media Co. LLC, its owners, officers, employees, and agents shall not be liable for any indirect, incidental, special, consequential, or punitive damages arising out of or related to your use of our Services.</p>
+
+  <p>This includes, without limitation, damages for loss of profits, data, goodwill, or other intangible losses, even if we have been advised of the possibility of such damages.</p>
+
+  <p>In no event shall our total liability to you exceed the amount you have paid us in the twelve (12) months preceding the event giving rise to the claim, or fifty dollars ($50), whichever is greater.</p>
+
+  <h2>Indemnification</h2>
+
+  <p>You agree to indemnify and hold harmless East Idaho Media Co. LLC, its owners, officers, employees, and agents from any claims, damages, losses, liabilities, and expenses (including reasonable attorneys' fees) arising out of or related to your violation of these Terms, your use of our Services, or your violation of any rights of another party.</p>
+
+  <h2>Governing Law and Disputes</h2>
+
+  <p>These Terms and Conditions shall be governed by and construed in accordance with the laws of the State of Idaho, without regard to its conflict of law provisions.</p>
+
+  <p>Any disputes arising from or relating to these Terms or your use of our Services shall first be attempted to be resolved through informal negotiation. If a dispute cannot be resolved informally within thirty (30) days, either party may pursue resolution through the courts located in Bonneville County, Idaho.</p>
+
+  <h2>Changes to These Terms</h2>
+
+  <p>We may update these Terms and Conditions from time to time. When we make changes, we will update the "Last Updated" date at the top of this page. Your continued use of our Services after any changes constitutes your acceptance of the updated terms.</p>
+
+  <p>For material changes, we will provide notice through our newsletter or a prominent notice on our website.</p>
+
+  <h2>Severability</h2>
+
+  <p>If any provision of these Terms is found to be unenforceable or invalid, that provision shall be limited or eliminated to the minimum extent necessary, and the remaining provisions shall remain in full force and effect.</p>
+
+  <h2>Entire Agreement</h2>
+
+  <p>These Terms and Conditions, together with our <a href="/privacy.html">Privacy Policy</a>, constitute the entire agreement between you and East Idaho Media Co. LLC regarding your use of our Services and supersede any prior agreements or understandings.</p>
+
+  <h2>Contact Us</h2>
+
+  <p>If you have any questions about these Terms and Conditions, please contact us:</p>
+
+  <div class="policy-contact-box">
+    <p><strong>East Idaho Media Co. LLC</strong></p>
+    <p>Email: <a href="mailto:hello@eastidaho.com">hello@eastidaho.com</a></p>
+    <p>Website: <a href="https://eastidaho.com">eastidaho.com</a></p>
+  </div>
+
+  <p class="policy-updated">These terms and conditions were last updated on March 22, 2026.</p>
+
+</div>
+
+<footer>
+  <div class="footer-logo">
+    <img src="logo-white.png" alt="East Idaho">
+  </div>
+  <div class="footer-links">
+    <a href="/">Home</a>
+    <a href="https://www.youtube.com/@eastidahomedia" target="_blank">YouTube</a>
+    <a href="https://www.instagram.com/east.idaho" target="_blank">Instagram</a>
+    <a href="https://www.tiktok.com/@eastidaho" target="_blank">TikTok</a>
+    <a href="https://www.facebook.com/eastidahomedia" target="_blank">Facebook</a>
+  </div>
+  <div class="footer-legal">
+    <div class="footer-legal-links">
+      <a href="/privacy.html">Privacy Policy</a>
+      <a href="/terms.html">Terms and Conditions</a>
+    </div>
+    © 2026 East Idaho Media Co. LLC. All rights reserved.
+  </div>
+</footer>
+
+</body>
+</html>
