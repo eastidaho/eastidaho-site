@@ -681,6 +681,301 @@
     .final-cta-title { font-size: 32px; }
     .hero-form, .final-form { flex-direction: column; }
   }
+
+  /* ══════════════════════════════════
+     MODALS
+  ══════════════════════════════════ */
+  .modal-overlay {
+    display: none;
+    position: fixed;
+    inset: 0;
+    z-index: 1000;
+    background: rgba(10, 18, 32, 0.85);
+    backdrop-filter: blur(6px);
+    align-items: center;
+    justify-content: center;
+    padding: 24px;
+    overflow-y: auto;
+  }
+  .modal-overlay.active { display: flex; }
+  .modal {
+    background: var(--cream);
+    border-radius: 12px;
+    max-width: 560px;
+    width: 100%;
+    padding: 40px 36px;
+    position: relative;
+    box-shadow: 0 30px 80px rgba(0,0,0,0.4);
+    max-height: 90vh;
+    overflow-y: auto;
+    animation: modalIn 0.3s ease-out;
+  }
+  .modal.wide { max-width: 800px; }
+  @keyframes modalIn {
+    from { opacity: 0; transform: translateY(20px) scale(0.97); }
+    to { opacity: 1; transform: translateY(0) scale(1); }
+  }
+  .modal-close {
+    position: absolute;
+    top: 16px;
+    right: 16px;
+    width: 36px;
+    height: 36px;
+    border-radius: 50%;
+    border: none;
+    background: var(--warm-white);
+    color: var(--text-muted);
+    font-size: 18px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: background 0.2s;
+  }
+  .modal-close:hover { background: var(--stone); }
+  .modal-eyebrow {
+    font-size: 11px;
+    text-transform: uppercase;
+    letter-spacing: 3px;
+    color: var(--coral);
+    font-weight: 700;
+    margin-bottom: 8px;
+  }
+  .modal-title {
+    font-family: 'DM Serif Display', serif;
+    font-size: 28px;
+    color: var(--text-primary);
+    line-height: 1.2;
+    margin-bottom: 16px;
+  }
+  .modal-text {
+    font-size: 15px;
+    color: var(--text-body);
+    line-height: 1.7;
+    margin-bottom: 16px;
+  }
+  .modal-form {
+    display: flex;
+    gap: 10px;
+    margin-top: 20px;
+  }
+  .modal-form input {
+    flex: 1;
+    padding: 13px 18px;
+    border: 1px solid var(--stone);
+    border-radius: 6px;
+    background: var(--warm-white);
+    color: var(--text-primary);
+    font-family: 'Outfit', sans-serif;
+    font-size: 15px;
+    outline: none;
+    transition: border-color 0.2s;
+  }
+  .modal-form input:focus { border-color: var(--coral); }
+  .modal-form button {
+    padding: 13px 24px;
+    background: var(--coral);
+    color: #fff;
+    border: none;
+    border-radius: 6px;
+    font-family: 'Outfit', sans-serif;
+    font-size: 15px;
+    font-weight: 700;
+    cursor: pointer;
+    white-space: nowrap;
+    transition: background 0.2s;
+  }
+  .modal-form button:hover { background: var(--sunrise); }
+  .modal-form-message {
+    display: none;
+    margin-top: 12px;
+    font-size: 14px;
+    font-weight: 600;
+  }
+
+  /* Business modal */
+  .biz-modal-header {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    margin-bottom: 20px;
+    padding-bottom: 20px;
+    border-bottom: 1px solid var(--stone);
+  }
+  .biz-modal-emoji { font-size: 48px; }
+  .biz-modal-category {
+    font-size: 11px;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    color: var(--coral);
+    font-weight: 700;
+  }
+  .biz-modal-name {
+    font-family: 'DM Serif Display', serif;
+    font-size: 26px;
+    color: var(--text-primary);
+    line-height: 1.2;
+  }
+  .biz-modal-detail {
+    display: flex;
+    gap: 8px;
+    align-items: center;
+    font-size: 14px;
+    color: var(--text-muted);
+    margin-bottom: 8px;
+  }
+  .biz-modal-links {
+    display: flex;
+    gap: 10px;
+    margin-top: 20px;
+    flex-wrap: wrap;
+  }
+  .biz-modal-link {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    padding: 10px 20px;
+    border-radius: 6px;
+    font-size: 13px;
+    font-weight: 700;
+    text-decoration: none;
+    transition: all 0.2s;
+  }
+  .biz-modal-link.primary {
+    background: var(--coral);
+    color: #fff;
+  }
+  .biz-modal-link.primary:hover { background: var(--sunrise); }
+  .biz-modal-link.secondary {
+    background: var(--warm-white);
+    color: var(--text-body);
+    border: 1px solid var(--stone);
+  }
+  .biz-modal-link.secondary:hover { background: var(--parchment); }
+
+  /* Sponsor deck modal */
+  .deck-section {
+    padding: 24px 0;
+    border-bottom: 1px solid var(--stone);
+  }
+  .deck-section:last-child { border-bottom: none; }
+  .deck-section-title {
+    font-family: 'DM Serif Display', serif;
+    font-size: 20px;
+    color: var(--text-primary);
+    margin-bottom: 8px;
+  }
+  .deck-stats {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 12px;
+    margin: 16px 0;
+  }
+  .deck-stat {
+    text-align: center;
+    padding: 16px 12px;
+    background: var(--warm-white);
+    border-radius: 8px;
+  }
+  .deck-stat-num {
+    font-family: 'DM Serif Display', serif;
+    font-size: 28px;
+    color: var(--coral);
+    line-height: 1;
+  }
+  .deck-stat-label {
+    font-size: 11px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    color: var(--text-muted);
+    font-weight: 600;
+    margin-top: 4px;
+  }
+  .deck-tiers {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 12px;
+    margin: 16px 0;
+  }
+  .deck-tier {
+    padding: 20px;
+    border-radius: 8px;
+    border: 1px solid var(--stone);
+    background: var(--warm-white);
+  }
+  .deck-tier.featured {
+    border-color: var(--coral);
+    background: rgba(240,149,108,0.04);
+  }
+  .deck-tier-name {
+    font-weight: 700;
+    font-size: 15px;
+    color: var(--text-primary);
+    margin-bottom: 4px;
+  }
+  .deck-tier-price {
+    font-family: 'DM Serif Display', serif;
+    font-size: 24px;
+    color: var(--coral);
+    margin-bottom: 8px;
+  }
+  .deck-tier-features {
+    font-size: 13px;
+    color: var(--text-muted);
+    line-height: 1.7;
+  }
+
+  /* Contact form */
+  .contact-field {
+    margin-bottom: 14px;
+  }
+  .contact-field label {
+    display: block;
+    font-size: 12px;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    color: var(--text-muted);
+    margin-bottom: 6px;
+  }
+  .contact-field input,
+  .contact-field textarea {
+    width: 100%;
+    padding: 12px 16px;
+    border: 1px solid var(--stone);
+    border-radius: 6px;
+    background: var(--warm-white);
+    color: var(--text-primary);
+    font-family: 'Outfit', sans-serif;
+    font-size: 15px;
+    outline: none;
+    transition: border-color 0.2s;
+  }
+  .contact-field input:focus,
+  .contact-field textarea:focus { border-color: var(--coral); }
+  .contact-field textarea { min-height: 120px; resize: vertical; }
+  .contact-submit {
+    padding: 13px 28px;
+    background: var(--coral);
+    color: #fff;
+    border: none;
+    border-radius: 6px;
+    font-family: 'Outfit', sans-serif;
+    font-size: 15px;
+    font-weight: 700;
+    cursor: pointer;
+    transition: background 0.2s;
+    width: 100%;
+    margin-top: 8px;
+  }
+  .contact-submit:hover { background: var(--sunrise); }
+
+  @media (max-width: 900px) {
+    .modal { padding: 28px 24px; }
+    .modal-form { flex-direction: column; }
+    .deck-stats { grid-template-columns: 1fr; }
+    .deck-tiers { grid-template-columns: 1fr; }
+  }
 </style>
 </head>
 <body>
@@ -695,7 +990,7 @@
     <a href="#podcast">Podcast</a>
     <a href="#best-of">Best Of</a>
     <a href="#sponsors">Sponsors</a>
-    <a class="nav-cta" href="#subscribe">Subscribe Free</a>
+    <a class="nav-cta" href="#" onclick="openModal('subscribe-modal'); return false;">Subscribe Free</a>
   </div>
 </nav>
 
@@ -843,56 +1138,56 @@
   <h2 class="section-heading">Best of East Idaho 2026</h2>
   <p class="best-of-desc">Voted on by you. Every fall, our readers choose the best restaurants, businesses, and hidden gems in the valley. Winners get bragging rights — and a badge for their window.</p>
   <div class="best-of-grid">
-    <div class="best-of-card">
+    <div class="best-of-card" onclick="openBizModal('🍔','Best Burger','Bee\'s Knees Pub','A local favorite since day one. Craft burgers, cold beer, and a vibe that feels like home. Their smash burger with house sauce is the one that won the vote — and it\'s not close.','455 River Pkwy, Idaho Falls','https://www.facebook.com/BeesKneesPubIF/')">
       <div class="best-of-emoji">🍔</div>
       <div class="best-of-category">Best Burger</div>
       <div class="best-of-winner">Bee's Knees Pub</div>
       <div class="best-of-badge">2025 Winner</div>
     </div>
-    <div class="best-of-card">
+    <div class="best-of-card" onclick="openBizModal('☕','Best Coffee','Vibe Coffee','The kind of coffee shop every town needs. Great beans, chill atmosphere, and baristas who actually care. Whether you\'re working remote or just need a good cortado, this is the spot.','Idaho Falls, ID','https://www.instagram.com/vibecoffee/')">
       <div class="best-of-emoji">☕</div>
       <div class="best-of-category">Best Coffee</div>
       <div class="best-of-winner">Vibe Coffee</div>
       <div class="best-of-badge">2025 Winner</div>
     </div>
-    <div class="best-of-card">
+    <div class="best-of-card" onclick="openBizModal('🌮','Best Mexican','Morenita\'s','Authentic, no-frills, and beloved by everyone in the valley. The green chile smothered burrito is legendary. Cash-friendly prices, huge portions, and a lunch rush that tells you everything.','Idaho Falls, ID','https://www.facebook.com/morenitasmexicanrestaurant/')">
       <div class="best-of-emoji">🌮</div>
       <div class="best-of-category">Best Mexican</div>
       <div class="best-of-winner">Morenita's</div>
       <div class="best-of-badge">2025 Winner</div>
     </div>
-    <div class="best-of-card">
+    <div class="best-of-card" onclick="openBizModal('💇','Best Barbershop','Ray\'s on Boulevard','32 years, one chair, zero ads. Ray Muñoz has been cutting hair in Idaho Falls since 1994. No website, no Yelp, no appointments — just show up, wait your turn, and leave looking sharp. $16, cash only.','Boulevard, Idaho Falls','')">
       <div class="best-of-emoji">💇</div>
       <div class="best-of-category">Best Barbershop</div>
       <div class="best-of-winner">Ray's on Boulevard</div>
       <div class="best-of-badge">2025 Winner</div>
     </div>
-    <div class="best-of-card">
+    <div class="best-of-card" onclick="openBizModal('🥩','Best Date Night','Copper Rill','Chef Jud\'s scratch kitchen on River Parkway. Seasonal menu, locally sourced ingredients, and the kind of meal that makes you forget you\'re in Idaho Falls. Reservations recommended on weekends.','415 River Pkwy, Idaho Falls','https://copperrill.com/')">
       <div class="best-of-emoji">🥩</div>
       <div class="best-of-category">Best Date Night</div>
       <div class="best-of-winner">Copper Rill</div>
       <div class="best-of-badge">2025 Winner</div>
     </div>
-    <div class="best-of-card">
+    <div class="best-of-card" onclick="openBizModal('🏋️','Best Gym','Club Apple','The gym people actually stick with. Clean, well-equipped, good hours, and a community that keeps you coming back. No gimmicks — just a solid gym that does it right.','Idaho Falls, ID','https://www.clubapplefitness.com/')">
       <div class="best-of-emoji">🏋️</div>
       <div class="best-of-category">Best Gym</div>
       <div class="best-of-winner">Club Apple</div>
       <div class="best-of-badge">2025 Winner</div>
     </div>
-    <div class="best-of-card">
+    <div class="best-of-card" onclick="openBizModal('🆕','Best New Business','Trofi','Mediterranean food inside the Shilo Inn — souvlaki, tabbouleh, Mediterranean bowls. Opened by David and Tara Rail after five years of running Redd\'s Grill. The early word is very solid.','780 Lindsay Blvd, Idaho Falls','https://www.facebook.com/trofirestaurant/')">
       <div class="best-of-emoji">🆕</div>
       <div class="best-of-category">Best New Business</div>
       <div class="best-of-winner">Trofi</div>
       <div class="best-of-badge">2025 Winner</div>
     </div>
-    <div class="best-of-card">
+    <div class="best-of-card" onclick="openBizModal('🌲','Best Hidden Gem','Cress Creek Trail','A quiet trail that most people drive past without knowing it exists. Perfect for a morning walk, an easy family hike, or just getting outside for 30 minutes. One of those places that makes you glad you live here.','East Idaho','')">
       <div class="best-of-emoji">🌲</div>
       <div class="best-of-category">Best Hidden Gem</div>
       <div class="best-of-winner">Cress Creek Trail</div>
       <div class="best-of-badge">2025 Winner</div>
     </div>
   </div>
-  <a class="btn-vote" href="#">Voting Opens September 2026 →</a>
+  <a class="btn-vote" href="#" onclick="openModal('voting-modal'); return false;">Voting Opens September 2026 →</a>
 </section>
 
 <!-- ═══════════ SPONSORS ═══════════ -->
@@ -916,7 +1211,7 @@
           <div class="stat-label">Channels</div>
         </div>
       </div>
-      <a class="btn-advertise" href="#">Get the Sponsor Deck →</a>
+      <a class="btn-advertise" href="#" onclick="openModal('sponsor-modal'); return false;">Get the Sponsor Deck →</a>
     </div>
     <div class="sponsor-logos">
       <div class="sponsor-logo-card">
@@ -966,14 +1261,14 @@
     <img src="logo-white.png" alt="East Idaho">
   </div>
   <div class="footer-links">
-    <a href="#">Newsletter</a>
-    <a href="#">Podcast</a>
+    <a href="#subscribe">Newsletter</a>
+    <a href="#podcast">Podcast</a>
     <a href="#">YouTube</a>
     <a href="#">Instagram</a>
     <a href="#">TikTok</a>
-    <a href="#">Best of East Idaho</a>
-    <a href="#">Advertise</a>
-    <a href="#">Contact</a>
+    <a href="#best-of">Best of East Idaho</a>
+    <a href="#" onclick="openModal('sponsor-modal'); return false;">Advertise</a>
+    <a href="#" onclick="openModal('contact-modal'); return false;">Contact</a>
   </div>
   <div class="footer-legal">
     © 2026 East Idaho · Stories · People · Places<br>
@@ -981,28 +1276,226 @@
   </div>
 </footer>
 
-<!-- Beehiiv subscription handler via Netlify Function -->
+<!-- ═══════════ MODALS ═══════════ -->
+
+<!-- Subscribe Modal -->
+<div class="modal-overlay" id="subscribe-modal" onclick="if(event.target===this)closeModal(this)">
+  <div class="modal">
+    <button class="modal-close" onclick="closeModal(document.getElementById('subscribe-modal'))">&times;</button>
+    <div class="modal-eyebrow">Join the Community</div>
+    <div class="modal-title">Get East Idaho in your inbox every Saturday.</div>
+    <p class="modal-text">Local stories, weekend plans, restaurant finds, and the people who make this valley what it is. One email a week. Free forever.</p>
+    <form class="modal-form" onsubmit="subscribeFromModal(event, this)">
+      <input type="email" placeholder="you@email.com" required>
+      <button type="submit">Subscribe</button>
+    </form>
+    <div class="modal-form-message"></div>
+  </div>
+</div>
+
+<!-- Business Detail Modal (populated via JS) -->
+<div class="modal-overlay" id="biz-modal" onclick="if(event.target===this)closeModal(this)">
+  <div class="modal">
+    <button class="modal-close" onclick="closeModal(document.getElementById('biz-modal'))">&times;</button>
+    <div class="biz-modal-header">
+      <div class="biz-modal-emoji" id="biz-emoji"></div>
+      <div>
+        <div class="biz-modal-category" id="biz-category"></div>
+        <div class="biz-modal-name" id="biz-name"></div>
+      </div>
+    </div>
+    <div class="best-of-badge" style="margin-bottom: 16px;">2025 Winner — Voted by East Idaho Readers</div>
+    <p class="modal-text" id="biz-desc"></p>
+    <div class="biz-modal-detail" id="biz-address"><span>📍</span> <span id="biz-address-text"></span></div>
+    <div class="biz-modal-links" id="biz-links"></div>
+  </div>
+</div>
+
+<!-- Voting Notification Modal -->
+<div class="modal-overlay" id="voting-modal" onclick="if(event.target===this)closeModal(this)">
+  <div class="modal">
+    <button class="modal-close" onclick="closeModal(document.getElementById('voting-modal'))">&times;</button>
+    <div class="modal-eyebrow">Best of East Idaho 2026</div>
+    <div class="modal-title">Voting opens September 2026.</div>
+    <p class="modal-text">Every fall, our readers vote for the best restaurants, businesses, and hidden gems in the valley. Winners get bragging rights, a badge for their window, and a feature in the newsletter.</p>
+    <p class="modal-text">Want to nominate a business or get notified when voting opens? Subscribe and you'll be the first to know.</p>
+    <form class="modal-form" onsubmit="subscribeFromModal(event, this)">
+      <input type="email" placeholder="you@email.com" required>
+      <button type="submit">Notify Me</button>
+    </form>
+    <div class="modal-form-message"></div>
+  </div>
+</div>
+
+<!-- Sponsor Deck Modal -->
+<div class="modal-overlay" id="sponsor-modal" onclick="if(event.target===this)closeModal(this)">
+  <div class="modal wide">
+    <button class="modal-close" onclick="closeModal(document.getElementById('sponsor-modal'))">&times;</button>
+    <div class="modal-eyebrow">Sponsor East Idaho</div>
+    <div class="modal-title">Your brand, woven into the valley's most-read email.</div>
+
+    <div class="deck-section">
+      <div class="deck-section-title">Our Audience</div>
+      <p class="modal-text">East Idaho reaches engaged locals across Idaho Falls, Rexburg, Rigby, Driggs, and the surrounding valley through five channels — newsletter, podcast, YouTube, Instagram, and TikTok.</p>
+      <div class="deck-stats">
+        <div class="deck-stat">
+          <div class="deck-stat-num">2,400+</div>
+          <div class="deck-stat-label">Email Subscribers</div>
+        </div>
+        <div class="deck-stat">
+          <div class="deck-stat-num">52%</div>
+          <div class="deck-stat-label">Avg. Open Rate</div>
+        </div>
+        <div class="deck-stat">
+          <div class="deck-stat-num">5</div>
+          <div class="deck-stat-label">Channels</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="deck-section">
+      <div class="deck-section-title">What Sponsors Get</div>
+      <p class="modal-text">Every sponsorship includes placement across all five channels in the same week — not a banner ad, a genuine recommendation written in our voice. Your brand reaches people through their inbox, their headphones, their feed, and their weekend plans.</p>
+    </div>
+
+    <div class="deck-section">
+      <div class="deck-section-title">Sponsorship Tiers</div>
+      <div class="deck-tiers">
+        <div class="deck-tier">
+          <div class="deck-tier-name">Weekly Sponsor</div>
+          <div class="deck-tier-price">$150/week</div>
+          <div class="deck-tier-features">
+            Featured in one newsletter issue<br>
+            30-second podcast mention<br>
+            Tagged social media post<br>
+            Logo on website
+          </div>
+        </div>
+        <div class="deck-tier featured">
+          <div class="deck-tier-name">Presenting Sponsor</div>
+          <div class="deck-tier-price">$500/mo</div>
+          <div class="deck-tier-features">
+            Featured every issue for one month<br>
+            Dedicated podcast segment<br>
+            YouTube video mention<br>
+            All social channels<br>
+            Premium website placement
+          </div>
+        </div>
+        <div class="deck-tier">
+          <div class="deck-tier-name">Best Of Title Sponsor</div>
+          <div class="deck-tier-price">$2,000/yr</div>
+          <div class="deck-tier-features">
+            Title sponsor of Best of East Idaho<br>
+            Logo on all voting & event materials<br>
+            Year-round website placement<br>
+            4 newsletter features per year
+          </div>
+        </div>
+        <div class="deck-tier">
+          <div class="deck-tier-name">Custom</div>
+          <div class="deck-tier-price">Let's talk</div>
+          <div class="deck-tier-features">
+            Event partnerships<br>
+            Multi-month packages<br>
+            Dedicated content series<br>
+            Whatever makes sense for you
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="deck-section" style="border-bottom: none; text-align: center;">
+      <div class="deck-section-title">Interested?</div>
+      <p class="modal-text">Reach out and let's find the right fit for your business.</p>
+      <a class="biz-modal-link primary" href="#" onclick="closeModal(document.getElementById('sponsor-modal')); openModal('contact-modal'); return false;">Get In Touch →</a>
+    </div>
+  </div>
+</div>
+
+<!-- Contact Modal -->
+<div class="modal-overlay" id="contact-modal" onclick="if(event.target===this)closeModal(this)">
+  <div class="modal">
+    <button class="modal-close" onclick="closeModal(document.getElementById('contact-modal'))">&times;</button>
+    <div class="modal-eyebrow">Get In Touch</div>
+    <div class="modal-title">We'd love to hear from you.</div>
+    <p class="modal-text">Whether you want to sponsor, suggest a story, nominate someone for a profile, or just say hey — drop us a line.</p>
+    <form id="contact-form" onsubmit="submitContact(event)">
+      <div class="contact-field">
+        <label>Name</label>
+        <input type="text" name="name" placeholder="Your name" required>
+      </div>
+      <div class="contact-field">
+        <label>Email</label>
+        <input type="email" name="email" placeholder="you@email.com" required>
+      </div>
+      <div class="contact-field">
+        <label>What's this about?</label>
+        <input type="text" name="subject" placeholder="Sponsorship, story idea, feedback, etc.">
+      </div>
+      <div class="contact-field">
+        <label>Message</label>
+        <textarea name="message" placeholder="Tell us what's on your mind..." required></textarea>
+      </div>
+      <button type="submit" class="contact-submit">Send Message</button>
+    </form>
+    <div class="modal-form-message" id="contact-message"></div>
+  </div>
+</div>
+
+<!-- ═══════════ SCRIPTS ═══════════ -->
 <script>
+// Modal open/close
+function openModal(id) {
+  document.getElementById(id).classList.add('active');
+  document.body.style.overflow = 'hidden';
+}
+function closeModal(el) {
+  el.classList.remove('active');
+  document.body.style.overflow = '';
+}
+document.addEventListener('keydown', function(e) {
+  if (e.key === 'Escape') {
+    document.querySelectorAll('.modal-overlay.active').forEach(function(m) { closeModal(m); });
+  }
+});
+
+// Business modal
+function openBizModal(emoji, category, name, desc, address, link) {
+  document.getElementById('biz-emoji').textContent = emoji;
+  document.getElementById('biz-category').textContent = category;
+  document.getElementById('biz-name').textContent = name;
+  document.getElementById('biz-desc').textContent = desc;
+  document.getElementById('biz-address-text').textContent = address;
+  var linksEl = document.getElementById('biz-links');
+  linksEl.innerHTML = '';
+  if (link) {
+    var a = document.createElement('a');
+    a.className = 'biz-modal-link primary';
+    a.href = link;
+    a.target = '_blank';
+    a.textContent = 'Visit Website →';
+    linksEl.appendChild(a);
+  }
+  openModal('biz-modal');
+}
+
+// Subscribe via Netlify function (used in hero, bottom CTA, and modals)
 async function subscribeToBeehiiv(event, form) {
   event.preventDefault();
-  
   var email = form.querySelector('input[type="email"]').value;
   var button = form.querySelector('button');
   var messageEl = form.nextElementSibling;
   var originalText = button.textContent;
-  
   button.disabled = true;
   button.textContent = 'Subscribing...';
-  
   try {
     var response = await fetch('/.netlify/functions/subscribe', {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify({ email: email })
     });
-    
     var data = await response.json();
-    
     if (response.ok) {
       form.style.display = 'none';
       messageEl.style.display = 'block';
@@ -1022,6 +1515,62 @@ async function subscribeToBeehiiv(event, form) {
     messageEl.style.color = '#fcb498';
     messageEl.textContent = 'Something went wrong. Please try again.';
   }
+}
+
+// Modal subscribe (same function, different context)
+async function subscribeFromModal(event, form) {
+  event.preventDefault();
+  var email = form.querySelector('input[type="email"]').value;
+  var button = form.querySelector('button');
+  var messageEl = form.parentElement.querySelector('.modal-form-message');
+  var originalText = button.textContent;
+  button.disabled = true;
+  button.textContent = 'Subscribing...';
+  try {
+    var response = await fetch('/.netlify/functions/subscribe', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({ email: email })
+    });
+    if (response.ok) {
+      form.style.display = 'none';
+      messageEl.style.display = 'block';
+      messageEl.style.color = '#4ade80';
+      messageEl.textContent = "You're in! Welcome to East Idaho.";
+    } else {
+      button.disabled = false;
+      button.textContent = originalText;
+      messageEl.style.display = 'block';
+      messageEl.style.color = '#fcb498';
+      messageEl.textContent = 'Something went wrong. Please try again.';
+    }
+  } catch (err) {
+    button.disabled = false;
+    button.textContent = originalText;
+    messageEl.style.display = 'block';
+    messageEl.style.color = '#fcb498';
+    messageEl.textContent = 'Something went wrong. Please try again.';
+  }
+}
+
+// Contact form
+function submitContact(event) {
+  event.preventDefault();
+  var form = document.getElementById('contact-form');
+  var messageEl = document.getElementById('contact-message');
+  var name = form.querySelector('[name="name"]').value;
+  var email = form.querySelector('[name="email"]').value;
+  var subject = form.querySelector('[name="subject"]').value;
+  var message = form.querySelector('[name="message"]').value;
+  // Open mailto as fallback (works without a backend)
+  var mailtoLink = 'mailto:hello@eastidaho.com'
+    + '?subject=' + encodeURIComponent(subject || 'Message from eastidaho.com')
+    + '&body=' + encodeURIComponent('From: ' + name + ' (' + email + ')\n\n' + message);
+  window.location.href = mailtoLink;
+  form.style.display = 'none';
+  messageEl.style.display = 'block';
+  messageEl.style.color = '#4ade80';
+  messageEl.textContent = 'Opening your email client... If it didn\'t open, email us at hello@eastidaho.com';
 }
 </script>
 
