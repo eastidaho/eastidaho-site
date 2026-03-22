@@ -1,5 +1,4 @@
 exports.handler = async (event) => {
-  // Only allow POST
   if (event.httpMethod !== 'POST') {
     return { statusCode: 405, body: JSON.stringify({ message: 'Method not allowed' }) };
   }
@@ -11,46 +10,53 @@ exports.handler = async (event) => {
       return { statusCode: 400, body: JSON.stringify({ message: 'Email is required' }) };
     }
 
-    // Beehiiv API endpoint
     const publicationId = process.env.BEEHIIV_PUBLICATION_ID;
     const apiKey = process.env.BEEHIIV_API_KEY;
 
-    const response = await fetch(
-      `https://api.beehiiv.com/v2/publications/${publicationId}/subscriptions`,
-      {
-        method: 'POST',
-        headers: {
-          'Content-Type': 'application/json',
-          'Authorization': `Bearer ${apiKey}`
-        },
-        body: JSON.stringify({
-          email: email,
-          reactivate_existing: true,
-          send_welcome_email: true,
-          utm_source: 'eastidaho.com',
-          utm_medium: 'website'
-        })
-      }
-    );
+    // Debug logging
+    console.log('Publication ID:', publicationId);
+    console.log('API Key length:', apiKey ? apiKey.length : 'MISSING');
+    console.log('API Key first 8 chars:', apiKey ? apiKey.substring(0, 8) : 'MISSING');
+    console.log('API Key last 4 chars:', apiKey ? apiKey.slice(-4) : 'MISSING');
+    console.log('Email:', email);
 
-    const data = await response.json();
+    const url = `https://api.beehiiv.com/v2/publications/${publicationId}/subscriptions`;
+    console.log('Request URL:', url);
 
-    if (response.ok || response.status === 201) {
+    const requestBody = {
+      email: email,
+      reactivate_existing: true,
+      send_welcome_email: true
+    };
+
+    const response = await fetch(url, {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+        'Authorization': `Bearer ${apiKey}`
+      },
+      body: JSON.stringify(requestBody)
+    });
+
+    const responseText = await response.text();
+    console.log('Response status:', response.status);
+    console.log('Response body:', responseText);
+
+    if (response.status === 200 || response.status === 201) {
       return {
         statusCode: 200,
         headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({ message: 'Successfully subscribed!', data })
+        body: JSON.stringify({ message: 'Successfully subscribed!' })
       };
     } else {
-      console.error('Beehiiv API error:', data);
       return {
         statusCode: response.status,
         headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({ message: data.message || 'Subscription failed. Please try again.' })
+        body: responseText
       };
     }
   } catch (error) {
-    console.error('Function error:', error);
+    console.error('Function error:', error.message, error.stack);
     return {
       statusCode: 500,
       headers: { 'Content-Type': 'application/json' },
