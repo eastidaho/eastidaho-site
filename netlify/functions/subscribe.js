@@ -13,21 +13,7 @@ exports.handler = async (event) => {
     const publicationId = process.env.BEEHIIV_PUBLICATION_ID;
     const apiKey = process.env.BEEHIIV_API_KEY;
 
-    // Debug logging
-    console.log('Publication ID:', publicationId);
-    console.log('API Key length:', apiKey ? apiKey.length : 'MISSING');
-    console.log('API Key first 8 chars:', apiKey ? apiKey.substring(0, 8) : 'MISSING');
-    console.log('API Key last 4 chars:', apiKey ? apiKey.slice(-4) : 'MISSING');
-    console.log('Email:', email);
-
     const url = `https://api.beehiiv.com/v2/publications/${publicationId}/subscriptions`;
-    console.log('Request URL:', url);
-
-    const requestBody = {
-      email: email,
-      reactivate_existing: true,
-      send_welcome_email: true
-    };
 
     const response = await fetch(url, {
       method: 'POST',
@@ -35,12 +21,12 @@ exports.handler = async (event) => {
         'Content-Type': 'application/json',
         'Authorization': `Bearer ${apiKey}`
       },
-      body: JSON.stringify(requestBody)
+      body: JSON.stringify({
+        email: email,
+        reactivate_existing: true,
+        send_welcome_email: true
+      })
     });
-
-    const responseText = await response.text();
-    console.log('Response status:', response.status);
-    console.log('Response body:', responseText);
 
     if (response.status === 200 || response.status === 201) {
       return {
@@ -49,14 +35,16 @@ exports.handler = async (event) => {
         body: JSON.stringify({ message: 'Successfully subscribed!' })
       };
     } else {
+      const responseText = await response.text();
+      console.error('Beehiiv API error:', response.status, responseText);
       return {
         statusCode: response.status,
         headers: { 'Content-Type': 'application/json' },
-        body: responseText
+        body: JSON.stringify({ message: 'Subscription failed. Please try again.' })
       };
     }
   } catch (error) {
-    console.error('Function error:', error.message, error.stack);
+    console.error('Function error:', error.message);
     return {
       statusCode: 500,
       headers: { 'Content-Type': 'application/json' },
