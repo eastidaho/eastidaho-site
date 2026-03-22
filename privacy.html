@@ -1,0 +1,394 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Privacy Policy — East Idaho</title>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=DM+Serif+Display&family=Outfit:wght@300;400;500;600;700&display=swap');
+
+  :root {
+    --navy: #0f1a2e;
+    --navy-mid: #1a2940;
+    --coral: #f0956c;
+    --coral-light: #fcb498;
+    --sunrise: #e8735a;
+    --cream: #faf9f7;
+    --warm-white: #f3f1ed;
+    --parchment: #ece8e1;
+    --stone: #ddd8d0;
+    --text-primary: #0f1a2e;
+    --text-body: #3d4a5c;
+    --text-muted: #7a8394;
+    --text-faint: #a8adb8;
+  }
+
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  html { scroll-behavior: smooth; }
+
+  body {
+    font-family: 'Outfit', sans-serif;
+    color: var(--text-primary);
+    background: var(--cream);
+    line-height: 1.6;
+  }
+
+  nav {
+    position: fixed;
+    top: 0; left: 0; right: 0;
+    z-index: 100;
+    padding: 0 48px;
+    height: 72px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background: rgba(15,26,46,0.97);
+    backdrop-filter: blur(12px);
+    border-bottom: 1px solid rgba(255,255,255,0.05);
+  }
+  .nav-logo {
+    height: 40px;
+    display: flex;
+    align-items: center;
+    text-decoration: none;
+  }
+  .nav-logo img {
+    height: 40px;
+    width: auto;
+  }
+  .nav-back {
+    color: rgba(255,255,255,0.6);
+    text-decoration: none;
+    font-size: 14px;
+    font-weight: 500;
+    transition: color 0.2s;
+  }
+  .nav-back:hover { color: #fff; }
+
+  .page-header {
+    background: var(--navy);
+    padding: 120px 48px 60px;
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+  }
+  .page-header::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background:
+      radial-gradient(ellipse at 15% 80%, rgba(240,149,108,0.06) 0%, transparent 55%),
+      radial-gradient(ellipse at 85% 20%, rgba(26,41,64,0.6) 0%, transparent 50%);
+  }
+  .page-header-content {
+    position: relative;
+    z-index: 1;
+  }
+  .page-header-eyebrow {
+    font-size: 11px;
+    text-transform: uppercase;
+    letter-spacing: 3px;
+    color: var(--coral);
+    font-weight: 700;
+    margin-bottom: 12px;
+  }
+  .page-header-title {
+    font-family: 'DM Serif Display', serif;
+    font-size: 44px;
+    color: #fff;
+    margin-bottom: 12px;
+  }
+  .page-header-meta {
+    font-size: 14px;
+    color: rgba(255,255,255,0.4);
+  }
+
+  .policy-content {
+    max-width: 720px;
+    margin: 0 auto;
+    padding: 60px 48px 80px;
+  }
+
+  .policy-content h2 {
+    font-family: 'DM Serif Display', serif;
+    font-size: 26px;
+    color: var(--text-primary);
+    margin-top: 48px;
+    margin-bottom: 16px;
+    padding-bottom: 8px;
+    border-bottom: 1px solid var(--stone);
+  }
+
+  .policy-content h3 {
+    font-size: 17px;
+    font-weight: 700;
+    color: var(--text-primary);
+    margin-top: 28px;
+    margin-bottom: 10px;
+  }
+
+  .policy-content p {
+    font-size: 16px;
+    color: var(--text-body);
+    line-height: 1.8;
+    margin-bottom: 16px;
+  }
+
+  .policy-content strong {
+    color: var(--text-primary);
+    font-weight: 600;
+  }
+
+  .policy-content ul {
+    margin: 12px 0 20px 24px;
+    color: var(--text-body);
+    font-size: 16px;
+    line-height: 1.8;
+  }
+  .policy-content li {
+    margin-bottom: 6px;
+  }
+
+  .policy-content a {
+    color: var(--coral);
+    text-decoration: none;
+    font-weight: 500;
+  }
+  .policy-content a:hover {
+    text-decoration: underline;
+  }
+
+  .policy-intro {
+    font-size: 17px;
+    color: var(--text-body);
+    line-height: 1.8;
+    padding: 28px 0;
+    border-bottom: 1px solid var(--stone);
+    margin-bottom: 12px;
+  }
+
+  .policy-contact-box {
+    margin-top: 20px;
+    padding: 24px;
+    background: var(--warm-white);
+    border-radius: 8px;
+    border: 1px solid var(--stone);
+  }
+  .policy-contact-box p {
+    margin-bottom: 6px;
+  }
+
+  .policy-updated {
+    margin-top: 48px;
+    padding-top: 24px;
+    border-top: 1px solid var(--stone);
+    font-size: 14px;
+    color: var(--text-faint);
+    font-style: italic;
+  }
+
+  footer {
+    background: #0a1220;
+    padding: 48px;
+    text-align: center;
+  }
+  .footer-logo { margin-bottom: 16px; }
+  .footer-logo img { height: 48px; opacity: 0.8; }
+  .footer-links {
+    display: flex; justify-content: center;
+    gap: 28px; margin-bottom: 24px; flex-wrap: wrap;
+  }
+  .footer-links a {
+    color: rgba(255,255,255,0.4); text-decoration: none;
+    font-size: 13px; font-weight: 500; transition: color 0.2s;
+  }
+  .footer-links a:hover { color: rgba(255,255,255,0.7); }
+  .footer-legal-links {
+    margin-bottom: 12px;
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+  }
+  .footer-legal-links a {
+    color: rgba(255,255,255,0.3);
+    text-decoration: none;
+    font-size: 12px;
+    transition: color 0.2s;
+  }
+  .footer-legal-links a:hover { color: rgba(255,255,255,0.5); }
+  .footer-legal {
+    font-size: 12px; color: rgba(255,255,255,0.2); line-height: 1.6;
+  }
+
+  @media (max-width: 900px) {
+    nav { padding: 0 24px; }
+    .page-header { padding: 110px 24px 48px; }
+    .page-header-title { font-size: 32px; }
+    .policy-content { padding: 40px 24px 60px; }
+    footer { padding: 36px 24px; }
+  }
+</style>
+</head>
+<body>
+
+<nav>
+  <a class="nav-logo" href="/">
+    <img src="logo-white.png" alt="East Idaho">
+  </a>
+  <a class="nav-back" href="/">← Back to Home</a>
+</nav>
+
+<div class="page-header">
+  <div class="page-header-content">
+    <div class="page-header-eyebrow">Legal</div>
+    <h1 class="page-header-title">Privacy Policy</h1>
+    <p class="page-header-meta">Last updated March 22, 2026</p>
+  </div>
+</div>
+
+<div class="policy-content">
+
+  <p class="policy-intro">East Idaho Media Co. LLC ("East Idaho," "we," "us," or "our") operates the website eastidaho.com and related digital properties including our email newsletter, podcast, YouTube channel, and social media accounts. This Privacy Policy explains how we collect, use, share, and protect your personal information when you interact with our services. We respect your privacy and are committed to being transparent about our data practices.</p>
+
+  <h2>What Information We Collect</h2>
+
+  <h3>Information You Provide Directly</h3>
+
+  <p><strong>Newsletter Subscription:</strong> When you subscribe to our email newsletter, we collect your email address. You may also voluntarily provide your name or location if you reply to our emails.</p>
+
+  <p><strong>Contact Form:</strong> When you submit our contact form, we collect your name, email address, subject, and message content.</p>
+
+  <p><strong>Voting and Surveys:</strong> When you participate in our Best of East Idaho voting or other polls and surveys, we may collect your email address and your responses.</p>
+
+  <h3>Information Collected Automatically</h3>
+
+  <p><strong>Website Analytics:</strong> We use Cloudflare's built-in analytics, which collect anonymized data about page views, visitor countries, and referral sources. Cloudflare analytics are privacy-focused and do not use cookies or track individual users across sites.</p>
+
+  <p><strong>Email Analytics:</strong> Our newsletter platform (Beehiiv) tracks whether emails are opened and which links are clicked. This data helps us understand what content resonates with our audience and improve our newsletter. This tracking uses small pixel images embedded in the email.</p>
+
+  <p><strong>Server Logs:</strong> Our hosting provider (Cloudflare) automatically collects standard server log information including IP addresses, browser type, and pages visited. This data is used for security, performance optimization, and troubleshooting.</p>
+
+  <h2>How We Use Your Information</h2>
+
+  <p>We use the information we collect for the following purposes:</p>
+
+  <ul>
+    <li>To send you our weekly newsletter and related communications you have subscribed to</li>
+    <li>To respond to your contact form submissions and inquiries</li>
+    <li>To administer the Best of East Idaho voting and awards program</li>
+    <li>To understand how our audience engages with our content so we can improve it</li>
+    <li>To maintain the security and performance of our website</li>
+    <li>To communicate important updates about our services</li>
+  </ul>
+
+  <p>We do not use your personal information for automated decision-making or profiling.</p>
+
+  <h2>How We Share Your Information</h2>
+
+  <p>We do not sell, rent, or trade your personal information to third parties. Period.</p>
+
+  <p>We do share limited information with the following service providers who help us operate our services:</p>
+
+  <p><strong>Beehiiv</strong> — Our newsletter platform. Beehiiv stores your email address and email engagement data (opens, clicks) to deliver and manage our newsletter. <a href="https://www.beehiiv.com/privacy" target="_blank">Beehiiv's privacy policy</a>.</p>
+
+  <p><strong>Cloudflare</strong> — Our website hosting and security provider. Cloudflare processes website traffic data to serve our site and protect it from threats. <a href="https://www.cloudflare.com/privacypolicy/" target="_blank">Cloudflare's privacy policy</a>.</p>
+
+  <p><strong>Resend</strong> — Our transactional email service. When you submit our contact form, Resend delivers the notification email to us. <a href="https://resend.com/legal/privacy-policy" target="_blank">Resend's privacy policy</a>.</p>
+
+  <p>These providers are only authorized to use your information as necessary to provide services to us and are contractually obligated to protect your data.</p>
+
+  <p>We may also disclose your information if required by law, regulation, legal process, or governmental request.</p>
+
+  <h2>Cookies and Tracking Technologies</h2>
+
+  <p>Our website does not use advertising cookies or third-party tracking cookies.</p>
+
+  <p>Cloudflare may use essential cookies for security purposes (such as bot detection and DDoS protection). These are strictly necessary for the operation of our website and cannot be opted out of.</p>
+
+  <p>Our newsletter emails contain small tracking pixels that allow us to see aggregate open rates and click rates. If you prefer not to be tracked in this way, you can configure your email client to block remote images.</p>
+
+  <h2>Your Rights and Choices</h2>
+
+  <h3>Unsubscribe from Our Newsletter</h3>
+
+  <p>You can unsubscribe from our newsletter at any time by clicking the "Unsubscribe" link at the bottom of any email we send. We will process your unsubscribe request promptly.</p>
+
+  <h3>Access, Correct, or Delete Your Data</h3>
+
+  <p>You have the right to:</p>
+
+  <ul>
+    <li>Request access to the personal information we hold about you</li>
+    <li>Request correction of any inaccurate information</li>
+    <li>Request deletion of your personal information</li>
+    <li>Request a copy of your data in a portable format</li>
+  </ul>
+
+  <p>To exercise any of these rights, please contact us at <a href="mailto:hello@eastidaho.com">hello@eastidaho.com</a>. We will respond to your request within 30 days.</p>
+
+  <h3>California Residents</h3>
+
+  <p>If you are a California resident, you have additional rights under the California Consumer Privacy Act (CCPA), including the right to know what personal information we collect, the right to delete it, and the right to opt out of the sale of your personal information. As stated above, we do not sell your personal information.</p>
+
+  <h3>European Residents</h3>
+
+  <p>If you are located in the European Economic Area, you have rights under the General Data Protection Regulation (GDPR). Our legal basis for processing your personal information is your consent (which you provide when subscribing to our newsletter or submitting our contact form) and our legitimate interest in operating and improving our services. You have the right to withdraw consent at any time by unsubscribing.</p>
+
+  <h2>Data Retention</h2>
+
+  <p>We retain your information for as long as your newsletter subscription is active or as needed to provide you with our services. If you unsubscribe from our newsletter, we will remove your email address from our active mailing list. Some data may be retained in backup systems for a limited period.</p>
+
+  <p>Contact form submissions are retained for as long as needed to respond to your inquiry and maintain records of our communications.</p>
+
+  <h2>Data Security</h2>
+
+  <p>We take reasonable measures to protect your personal information from unauthorized access, alteration, disclosure, or destruction. Our website is served over HTTPS, our service providers maintain industry-standard security practices, and access to your data is limited to those who need it to operate our services.</p>
+
+  <p>However, no method of transmission over the Internet or method of electronic storage is completely secure. We cannot guarantee absolute security.</p>
+
+  <h2>Children's Privacy</h2>
+
+  <p>Our services are not directed to children under the age of 13 (or 16 in the EEA). We do not knowingly collect personal information from children. If we become aware that we have collected personal information from a child, we will take steps to delete that information promptly.</p>
+
+  <h2>Changes to This Privacy Policy</h2>
+
+  <p>We may update this Privacy Policy from time to time to reflect changes in our practices or applicable laws. When we make changes, we will update the "Last Updated" date at the top of this page. We encourage you to review this policy periodically.</p>
+
+  <p>For material changes that significantly affect how we handle your personal information, we will notify you via our newsletter or a prominent notice on our website.</p>
+
+  <h2>Contact Us</h2>
+
+  <p>If you have any questions, concerns, or requests regarding this Privacy Policy or our data practices, please contact us:</p>
+
+  <div class="policy-contact-box">
+    <p><strong>East Idaho Media Co. LLC</strong></p>
+    <p>Email: <a href="mailto:hello@eastidaho.com">hello@eastidaho.com</a></p>
+    <p>Website: <a href="https://eastidaho.com">eastidaho.com</a></p>
+  </div>
+
+  <p class="policy-updated">This privacy policy was last updated on March 22, 2026.</p>
+
+</div>
+
+<footer>
+  <div class="footer-logo">
+    <img src="logo-white.png" alt="East Idaho">
+  </div>
+  <div class="footer-links">
+    <a href="/">Home</a>
+    <a href="https://www.youtube.com/@eastidahomedia" target="_blank">YouTube</a>
+    <a href="https://www.instagram.com/east.idaho" target="_blank">Instagram</a>
+    <a href="https://www.tiktok.com/@eastidaho" target="_blank">TikTok</a>
+    <a href="https://www.facebook.com/eastidahomedia" target="_blank">Facebook</a>
+  </div>
+  <div class="footer-legal">
+    <div class="footer-legal-links">
+      <a href="/privacy.html">Privacy Policy</a>
+      <a href="/terms.html">Terms and Conditions</a>
+    </div>
+    © 2026 East Idaho Media Co. LLC. All rights reserved.
+  </div>
+</footer>
+
+</body>
+</html>
