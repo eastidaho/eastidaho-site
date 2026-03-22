@@ -972,11 +972,104 @@
   }
   .contact-submit:hover { background: var(--sunrise); }
 
+  /* ══════════════════════════════════
+     HERO SPONSOR PLACEMENTS
+  ══════════════════════════════════ */
+  /* Option A: Presented by text */
+  .hero-presented-by {
+    border-top: 1px solid rgba(255,255,255,0.06);
+    padding-top: 14px;
+    margin-top: 18px;
+    font-size: 11px;
+    color: rgba(255,255,255,0.2);
+    letter-spacing: 0.5px;
+  }
+  .hero-presented-by a {
+    color: rgba(255,255,255,0.4);
+    font-weight: 600;
+    text-decoration: none;
+    transition: color 0.2s;
+  }
+  .hero-presented-by a:hover { color: rgba(255,255,255,0.6); }
+
+  /* Option B: Sponsor bar below hero */
+  .sponsor-bar {
+    background: #0a1220;
+    padding: 14px 48px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 20px;
+    flex-wrap: wrap;
+    border-bottom: 1px solid rgba(255,255,255,0.04);
+  }
+  .sponsor-bar-label {
+    font-size: 10px;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    color: rgba(255,255,255,0.2);
+  }
+  .sponsor-bar-logos {
+    display: flex;
+    gap: 16px;
+    align-items: center;
+    flex-wrap: wrap;
+  }
+  .sponsor-bar-item {
+    padding: 5px 16px;
+    border: 1px solid rgba(255,255,255,0.08);
+    border-radius: 4px;
+    font-size: 12px;
+    color: rgba(255,255,255,0.35);
+    font-weight: 600;
+    text-decoration: none;
+    transition: all 0.2s;
+  }
+  .sponsor-bar-item:hover {
+    border-color: rgba(255,255,255,0.15);
+    color: rgba(255,255,255,0.5);
+  }
+
+  /* Option C: Badge on preview card */
+  .preview-sponsor {
+    border-top: 1px solid #ddd8d0;
+    padding-top: 10px;
+    margin-top: 12px;
+    font-size: 10px;
+    color: var(--text-faint);
+    text-transform: uppercase;
+    letter-spacing: 1px;
+  }
+  .preview-sponsor a {
+    color: var(--text-body);
+    font-weight: 600;
+    text-decoration: none;
+  }
+  .preview-sponsor a:hover { color: var(--coral); }
+
+  /* ══════════════════════════════════
+     FOOTER LEGAL
+  ══════════════════════════════════ */
+  .footer-legal-links {
+    margin-bottom: 12px;
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+  }
+  .footer-legal-links a {
+    color: rgba(255,255,255,0.3);
+    text-decoration: none;
+    font-size: 12px;
+    transition: color 0.2s;
+  }
+  .footer-legal-links a:hover { color: rgba(255,255,255,0.5); }
+
   @media (max-width: 900px) {
     .modal { padding: 28px 24px; }
     .modal-form { flex-direction: column; }
     .deck-stats { grid-template-columns: 1fr; }
     .deck-tiers { grid-template-columns: 1fr; }
+    .sponsor-bar { padding: 14px 24px; }
   }
 </style>
 </head>
@@ -1017,6 +1110,10 @@
         </div>
         Join 2,400+ East Idahoans who read us every week
       </div>
+      <!-- Sponsor: Option A — Presented by text -->
+      <div class="hero-presented-by">
+        Presented by <a href="#" target="_blank">Idaho Central Credit Union</a>
+      </div>
     </div>
 
     <div class="hero-preview">
@@ -1030,9 +1127,22 @@
         <span class="preview-tag coral">Quick Hits</span>
         <span class="preview-tag blue">Poll</span>
       </div>
+      <!-- Sponsor: Option C — Badge on preview card -->
+      <div class="preview-sponsor">
+        Sponsored by <a href="#" target="_blank">Idaho Central Credit Union</a>
+      </div>
     </div>
   </div>
 </section>
+
+<!-- Sponsor: Option B — Sponsor bar below hero -->
+<div class="sponsor-bar">
+  <span class="sponsor-bar-label">Proudly supported by</span>
+  <div class="sponsor-bar-logos">
+    <a class="sponsor-bar-item" href="#" target="_blank">Idaho Central Credit Union</a>
+    <a class="sponsor-bar-item" href="#" target="_blank">Copper Rill Restaurant</a>
+  </div>
+</div>
 
 <!-- ═══════════ CHANNELS ═══════════ -->
 <div class="channels-bar">
@@ -1278,8 +1388,11 @@
     <a href="#" onclick="openModal('contact-modal'); return false;">Contact</a>
   </div>
   <div class="footer-legal">
-    © 2026 East Idaho · Stories · People · Places<br>
-    Idaho Falls, Idaho
+    <div class="footer-legal-links">
+      <a href="#">Privacy Policy</a>
+      <a href="#">Terms and Conditions</a>
+    </div>
+    © 2026 East Idaho Media Co. LLC. All rights reserved.
   </div>
 </footer>
 
