@@ -274,6 +274,7 @@
   .channel-icon.youtube { background: #dc2626; }
   .channel-icon.instagram { background: linear-gradient(135deg, #f59e0b, #ec4899, #8b5cf6); }
   .channel-icon.tiktok { background: #000; }
+  .channel-icon.facebook { background: #1877f2; }
   .channel-name { font-size: 12px; font-weight: 600; color: var(--text-body); }
 
   /* ══════════════════════════════════
@@ -1036,25 +1037,29 @@
 <div class="channels-bar">
   <div class="channels-label">Find us everywhere</div>
   <div class="channels-grid">
-    <a class="channel-item" href="#">
+    <a class="channel-item" href="#" onclick="openModal('subscribe-modal'); return false;">
       <div class="channel-icon newsletter">📧</div>
       <div class="channel-name">Newsletter</div>
     </a>
-    <a class="channel-item" href="#">
+    <a class="channel-item" href="#" onclick="return false;" style="opacity: 0.5; cursor: default;">
       <div class="channel-icon podcast">🎙</div>
-      <div class="channel-name">Podcast</div>
+      <div class="channel-name">Podcast — Coming Soon</div>
     </a>
-    <a class="channel-item" href="#">
+    <a class="channel-item" href="https://www.youtube.com/@eastidahomedia" target="_blank">
       <div class="channel-icon youtube">▶</div>
       <div class="channel-name">YouTube</div>
     </a>
-    <a class="channel-item" href="#">
+    <a class="channel-item" href="https://www.instagram.com/east.idaho" target="_blank">
       <div class="channel-icon instagram">📷</div>
       <div class="channel-name">Instagram</div>
     </a>
-    <a class="channel-item" href="#">
+    <a class="channel-item" href="https://www.tiktok.com/@eastidaho" target="_blank">
       <div class="channel-icon tiktok">♪</div>
       <div class="channel-name">TikTok</div>
+    </a>
+    <a class="channel-item" href="https://www.facebook.com/eastidahomedia" target="_blank">
+      <div class="channel-icon facebook">f</div>
+      <div class="channel-name">Facebook</div>
     </a>
   </div>
 </div>
@@ -1261,11 +1266,12 @@
     <img src="logo-white.png" alt="East Idaho">
   </div>
   <div class="footer-links">
-    <a href="#subscribe">Newsletter</a>
+    <a href="#" onclick="openModal('subscribe-modal'); return false;">Newsletter</a>
     <a href="#podcast">Podcast</a>
-    <a href="#">YouTube</a>
-    <a href="#">Instagram</a>
-    <a href="#">TikTok</a>
+    <a href="https://www.youtube.com/@eastidahomedia" target="_blank">YouTube</a>
+    <a href="https://www.instagram.com/east.idaho" target="_blank">Instagram</a>
+    <a href="https://www.tiktok.com/@eastidaho" target="_blank">TikTok</a>
+    <a href="https://www.facebook.com/eastidahomedia" target="_blank">Facebook</a>
     <a href="#best-of">Best of East Idaho</a>
     <a href="#" onclick="openModal('sponsor-modal'); return false;">Advertise</a>
     <a href="#" onclick="openModal('contact-modal'); return false;">Contact</a>
