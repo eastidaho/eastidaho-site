@@ -1480,7 +1480,7 @@ function openBizModal(emoji, category, name, desc, address, link) {
   openModal('biz-modal');
 }
 
-// Subscribe via Netlify function (used in hero, bottom CTA, and modals)
+// Subscribe via Cloudflare Pages Function (used in hero, bottom CTA, and modals)
 async function subscribeToBeehiiv(event, form) {
   event.preventDefault();
   var email = form.querySelector('input[type="email"]').value;
@@ -1490,7 +1490,7 @@ async function subscribeToBeehiiv(event, form) {
   button.disabled = true;
   button.textContent = 'Subscribing...';
   try {
-    var response = await fetch('/.netlify/functions/subscribe', {
+    var response = await fetch('/api/subscribe', {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify({ email: email })
@@ -1527,7 +1527,7 @@ async function subscribeFromModal(event, form) {
   button.disabled = true;
   button.textContent = 'Subscribing...';
   try {
-    var response = await fetch('/.netlify/functions/subscribe', {
+    var response = await fetch('/api/subscribe', {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify({ email: email })
@@ -1553,24 +1553,50 @@ async function subscribeFromModal(event, form) {
   }
 }
 
-// Contact form
-function submitContact(event) {
+// Contact form via Cloudflare Pages Function
+async function submitContact(event) {
   event.preventDefault();
   var form = document.getElementById('contact-form');
   var messageEl = document.getElementById('contact-message');
-  var name = form.querySelector('[name="name"]').value;
-  var email = form.querySelector('[name="email"]').value;
-  var subject = form.querySelector('[name="subject"]').value;
-  var message = form.querySelector('[name="message"]').value;
-  // Open mailto as fallback (works without a backend)
-  var mailtoLink = 'mailto:hello@eastidaho.com'
-    + '?subject=' + encodeURIComponent(subject || 'Message from eastidaho.com')
-    + '&body=' + encodeURIComponent('From: ' + name + ' (' + email + ')\n\n' + message);
-  window.location.href = mailtoLink;
-  form.style.display = 'none';
-  messageEl.style.display = 'block';
-  messageEl.style.color = '#4ade80';
-  messageEl.textContent = 'Opening your email client... If it didn\'t open, email us at hello@eastidaho.com';
+  var submitBtn = form.querySelector('.contact-submit');
+  var originalText = submitBtn.textContent;
+
+  submitBtn.disabled = true;
+  submitBtn.textContent = 'Sending...';
+
+  try {
+    var response = await fetch('/api/contact', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({
+        name: form.querySelector('[name="name"]').value,
+        email: form.querySelector('[name="email"]').value,
+        subject: form.querySelector('[name="subject"]').value,
+        message: form.querySelector('[name="message"]').value
+      })
+    });
+
+    var data = await response.json();
+
+    if (response.ok) {
+      form.style.display = 'none';
+      messageEl.style.display = 'block';
+      messageEl.style.color = '#4ade80';
+      messageEl.textContent = data.message || "Message sent! We'll get back to you soon.";
+    } else {
+      submitBtn.disabled = false;
+      submitBtn.textContent = originalText;
+      messageEl.style.display = 'block';
+      messageEl.style.color = '#fcb498';
+      messageEl.textContent = data.message || 'Something went wrong. Please try again.';
+    }
+  } catch (err) {
+    submitBtn.disabled = false;
+    submitBtn.textContent = originalText;
+    messageEl.style.display = 'block';
+    messageEl.style.color = '#fcb498';
+    messageEl.textContent = 'Something went wrong. Please try again.';
+  }
 }
 </script>
 
