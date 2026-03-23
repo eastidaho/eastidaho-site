@@ -1,0 +1,327 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Welcome to the Family — East Idaho</title>
+<meta name="robots" content="noindex, nofollow">
+<link rel="icon" type="image/x-icon" href="/favicon.ico">
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=Outfit:wght@300;400;500;600;700&display=swap');
+
+  :root {
+    --navy: #0f1a2e;
+    --navy-mid: #1a2940;
+    --coral: #f0956c;
+    --coral-light: #fcb498;
+    --sunrise: #e8735a;
+    --cream: #faf9f7;
+    --warm-white: #f3f1ed;
+    --stone: #ddd8d0;
+    --text-body: #3d4a5c;
+    --text-muted: #7a8394;
+  }
+
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body {
+    font-family: 'Outfit', sans-serif;
+    background: var(--navy);
+    color: #fff;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    -webkit-font-smoothing: antialiased;
+    overflow-x: hidden;
+  }
+
+  /* Background effects */
+  .bg-effects {
+    position: fixed;
+    inset: 0;
+    pointer-events: none;
+    z-index: 0;
+  }
+  .bg-effects::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background:
+      radial-gradient(ellipse at 30% 70%, rgba(240,149,108,0.08) 0%, transparent 50%),
+      radial-gradient(ellipse at 70% 30%, rgba(26,41,64,0.6) 0%, transparent 50%),
+      radial-gradient(ellipse at 50% 100%, rgba(240,149,108,0.04) 0%, transparent 40%);
+  }
+
+  /* Confetti animation */
+  .confetti-container {
+    position: fixed;
+    inset: 0;
+    pointer-events: none;
+    z-index: 1;
+    overflow: hidden;
+  }
+  .confetti {
+    position: absolute;
+    width: 8px;
+    height: 8px;
+    top: -10px;
+    opacity: 0;
+    animation: confetti-fall 4s ease-out forwards;
+  }
+  .confetti.circle { border-radius: 50%; }
+  .confetti.square { border-radius: 1px; }
+  .confetti.rect { width: 5px; height: 12px; border-radius: 1px; }
+
+  @keyframes confetti-fall {
+    0% { opacity: 1; transform: translateY(0) rotate(0deg) scale(1); }
+    20% { opacity: 1; }
+    100% { opacity: 0; transform: translateY(100vh) rotate(720deg) scale(0.5); }
+  }
+
+  /* Main content */
+  .welcome-container {
+    position: relative;
+    z-index: 2;
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 60px 32px;
+    text-align: center;
+    max-width: 640px;
+    margin: 0 auto;
+  }
+
+  .welcome-logo {
+    height: 48px;
+    margin-bottom: 40px;
+    opacity: 0;
+    animation: fade-up 0.6s ease-out 0.3s forwards;
+  }
+
+  .welcome-badge {
+    display: inline-block;
+    background: rgba(240,149,108,0.12);
+    border: 1px solid rgba(240,149,108,0.25);
+    color: var(--coral);
+    font-size: 12px;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 2.5px;
+    padding: 8px 20px;
+    border-radius: 6px;
+    margin-bottom: 24px;
+    opacity: 0;
+    animation: fade-up 0.6s ease-out 0.5s forwards;
+  }
+
+  .welcome-title {
+    font-family: 'DM Serif Display', serif;
+    font-size: 48px;
+    line-height: 1.1;
+    margin-bottom: 18px;
+    opacity: 0;
+    animation: fade-up 0.6s ease-out 0.7s forwards;
+  }
+  .welcome-title span {
+    color: var(--coral);
+  }
+
+  .welcome-subtitle {
+    font-size: 18px;
+    color: rgba(255,255,255,0.45);
+    line-height: 1.7;
+    font-weight: 300;
+    margin-bottom: 48px;
+    opacity: 0;
+    animation: fade-up 0.6s ease-out 0.9s forwards;
+  }
+
+  /* Steps */
+  .steps {
+    width: 100%;
+    text-align: left;
+    opacity: 0;
+    animation: fade-up 0.6s ease-out 1.1s forwards;
+  }
+  .steps-label {
+    font-size: 11px;
+    text-transform: uppercase;
+    letter-spacing: 3px;
+    color: var(--coral);
+    font-weight: 700;
+    margin-bottom: 20px;
+  }
+  .step {
+    display: flex;
+    gap: 16px;
+    padding: 18px 0;
+    border-top: 1px solid rgba(255,255,255,0.06);
+    align-items: flex-start;
+  }
+  .step:last-child {
+    border-bottom: 1px solid rgba(255,255,255,0.06);
+  }
+  .step-num {
+    width: 32px;
+    height: 32px;
+    border-radius: 50%;
+    background: rgba(240,149,108,0.1);
+    color: var(--coral);
+    font-weight: 700;
+    font-size: 14px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+  }
+  .step-content h4 {
+    font-size: 15px;
+    font-weight: 700;
+    color: #fff;
+    margin-bottom: 2px;
+  }
+  .step-content p {
+    font-size: 14px;
+    color: rgba(255,255,255,0.4);
+    line-height: 1.5;
+  }
+
+  /* CTA buttons */
+  .welcome-actions {
+    margin-top: 40px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 12px;
+    opacity: 0;
+    animation: fade-up 0.6s ease-out 1.3s forwards;
+  }
+  .welcome-btn {
+    display: inline-block;
+    padding: 14px 32px;
+    background: var(--coral);
+    color: #fff;
+    border-radius: 6px;
+    font-size: 15px;
+    font-weight: 700;
+    text-decoration: none;
+    transition: background 0.2s;
+    letter-spacing: 0.3px;
+  }
+  .welcome-btn:hover { background: var(--sunrise); }
+  .welcome-home {
+    font-size: 14px;
+    color: rgba(255,255,255,0.25);
+    text-decoration: none;
+    transition: color 0.2s;
+  }
+  .welcome-home:hover { color: rgba(255,255,255,0.5); }
+
+  /* Footer */
+  .welcome-footer {
+    position: relative;
+    z-index: 2;
+    text-align: center;
+    padding: 24px 32px;
+    font-size: 12px;
+    color: rgba(255,255,255,0.12);
+  }
+
+  @keyframes fade-up {
+    from { opacity: 0; transform: translateY(20px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+
+  @media (max-width: 640px) {
+    .welcome-container { padding: 40px 24px; }
+    .welcome-title { font-size: 34px; }
+  }
+</style>
+</head>
+<body>
+
+<!-- Background -->
+<div class="bg-effects"></div>
+
+<!-- Confetti (generated by JS) -->
+<div class="confetti-container" id="confetti"></div>
+
+<!-- Main Content -->
+<div class="welcome-container">
+  <img class="welcome-logo" src="/logo-white.png" alt="East Idaho">
+
+  <div class="welcome-badge">You're officially in</div>
+
+  <h1 class="welcome-title">Welcome to the <span>East Idaho</span> family.</h1>
+
+  <p class="welcome-subtitle">Your payment is confirmed and your sponsorship is active. You just became one of the first businesses to partner with the most-read local brand in the valley. That's a big deal.</p>
+
+  <div class="steps">
+    <div class="steps-label">What happens next</div>
+
+    <div class="step">
+      <div class="step-num">1</div>
+      <div class="step-content">
+        <h4>Check your inbox</h4>
+        <p>You'll get a welcome email from us within 24 hours with everything we need to get started — your logo, a short description of your business, and your preferred link.</p>
+      </div>
+    </div>
+
+    <div class="step">
+      <div class="step-num">2</div>
+      <div class="step-content">
+        <h4>We add you everywhere</h4>
+        <p>Your business will be added to the website, queued into the newsletter rotation, and scheduled for podcast and social mentions. You'll see your first placements within your first month.</p>
+      </div>
+    </div>
+
+    <div class="step">
+      <div class="step-num">3</div>
+      <div class="step-content">
+        <h4>We come to you</h4>
+        <p>We'll reach out to schedule your spotlight video — a 60-second video filmed at your business that you can use on your own socials. We handle everything.</p>
+      </div>
+    </div>
+
+    <div class="step">
+      <div class="step-num">4</div>
+      <div class="step-content">
+        <h4>Monthly reports, always</h4>
+        <p>Every month you'll get a recap showing exactly where you were featured, links to every placement, and our latest audience numbers. Full transparency, no guessing.</p>
+      </div>
+    </div>
+  </div>
+
+  <div class="welcome-actions">
+    <a class="welcome-btn" href="mailto:hello@eastidaho.com?subject=New Sponsor — Getting Started">Send Us Your Logo & Info →</a>
+    <a class="welcome-home" href="/">← Back to eastidaho.com</a>
+  </div>
+</div>
+
+<div class="welcome-footer">
+  © 2026 East Idaho Media Co. LLC. All rights reserved.
+</div>
+
+<!-- Confetti Script -->
+<script>
+(function() {
+  const container = document.getElementById('confetti');
+  const colors = ['#f0956c', '#fcb498', '#e8735a', '#fff', '#1a2940', '#f0956c'];
+  const shapes = ['circle', 'square', 'rect'];
+
+  for (let i = 0; i < 60; i++) {
+    const el = document.createElement('div');
+    const shape = shapes[Math.floor(Math.random() * shapes.length)];
+    el.className = 'confetti ' + shape;
+    el.style.left = Math.random() * 100 + '%';
+    el.style.background = colors[Math.floor(Math.random() * colors.length)];
+    el.style.animationDelay = (Math.random() * 2) + 's';
+    el.style.animationDuration = (3 + Math.random() * 3) + 's';
+    container.appendChild(el);
+  }
+})();
+</script>
+
+</body>
+</html>
