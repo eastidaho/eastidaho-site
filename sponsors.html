@@ -32,7 +32,8 @@
   .channel-dot{width:10px;height:10px;border-radius:50%;flex-shrink:0}
   .channel-pill-name{font-size:14px;font-weight:600;color:var(--text-primary)}
   .channel-pill-detail{font-size:12px;color:var(--text-muted)}
-  .tier-row{display:grid;grid-template-columns:1fr 1fr 1fr;gap:20px;margin-top:28px}
+  .tier-row{display:grid;grid-template-columns:1fr 1fr;gap:20px;margin-top:28px}
+  .tier-card-wide{margin-top:20px}
   .tier-card{border-radius:14px;padding:36px 28px;position:relative;display:flex;flex-direction:column}
   .tier-card.founding{background:var(--navy);color:#fff;border:1px solid rgba(240,149,108,.2);overflow:hidden}
   .tier-card.founding::before{content:'';position:absolute;inset:0;pointer-events:none;background:radial-gradient(ellipse at 20% 90%,rgba(240,149,108,.08) 0%,transparent 50%),radial-gradient(ellipse at 80% 10%,rgba(36,51,82,.5) 0%,transparent 50%)}
@@ -43,7 +44,10 @@
   .tier-card.founding .tier-spots{color:var(--coral);border-color:rgba(255,255,255,.08)}
   .tier-card.founding .tier-note{color:rgba(255,255,255,.3);border-color:rgba(255,255,255,.06)}
   .tier-card.community{background:#fff;border:1px solid var(--stone)}
-  .tier-card.alacarte{background:var(--warm-white);border:1px solid var(--stone)}
+  .tier-card.alacarte{background:var(--warm-white);border:1px solid var(--stone);width:100%}
+  .alacarte-wide{display:grid;grid-template-columns:1fr 1fr;gap:0 40px}
+  .alacarte-wide .alacarte-header{grid-column:1;display:flex;flex-direction:column}
+  .alacarte-wide .alacarte-body{grid-column:2}
   .tier-badge{position:absolute;top:-1px;right:28px;background:var(--coral);color:#fff;font-size:9px;font-weight:700;text-transform:uppercase;letter-spacing:1.5px;padding:6px 14px 8px;border-radius:0 0 6px 6px}
   .tier-label{font-size:10px;text-transform:uppercase;letter-spacing:2.5px;color:var(--coral);font-weight:700;margin-bottom:8px}
   .tier-name{font-family:'DM Serif Display',serif;font-size:24px;color:var(--text-primary);margin-bottom:12px;line-height:1.2}
@@ -106,7 +110,7 @@
   .contact-success{display:none;text-align:center;padding:20px;color:var(--coral);font-weight:600;font-size:15px}
   .deck-footer{background:#0a1220;padding:28px 48px;text-align:center;font-size:12px;color:rgba(255,255,255,.15)}
   .deck-footer a{color:rgba(255,255,255,.25);text-decoration:none}
-  @media(max-width:900px){.deck-header{padding:72px 24px 56px}.deck-hero-title{font-size:32px}.deck-back{top:20px;left:24px}.stats-bar{padding:28px 24px}.stats-bar-inner{grid-template-columns:repeat(2,1fr);gap:16px}.deck-body{padding:48px 24px 24px}.channels-grid{grid-template-columns:1fr}.tier-row{grid-template-columns:1fr}.why-grid{grid-template-columns:1fr}.comparison{overflow-x:auto}.deck-cta{padding:56px 24px}.contact-row{grid-template-columns:1fr}}
+  @media(max-width:900px){.deck-header{padding:72px 24px 56px}.deck-hero-title{font-size:32px}.deck-back{top:20px;left:24px}.stats-bar{padding:28px 24px}.stats-bar-inner{grid-template-columns:repeat(2,1fr);gap:16px}.deck-body{padding:48px 24px 24px}.channels-grid{grid-template-columns:1fr}.tier-row{grid-template-columns:1fr}.why-grid{grid-template-columns:1fr}.comparison{overflow-x:auto}.deck-cta{padding:56px 24px}.contact-row{grid-template-columns:1fr}.alacarte-wide{grid-template-columns:1fr}.alacarte-wide .alacarte-header,.alacarte-wide .alacarte-body{grid-column:1}}
 </style>
 </head>
 <body>
@@ -158,6 +162,7 @@
           <li>One 3–5 minute professionally produced video about your business with full distribution rights — yours to use anywhere</li>
           <li>At least one dedicated social media post per week across our channels (24+ posts over 6 months)</li>
           <li>First access to event and awards sponsorships</li>
+          <li>Free access to exclusive East Idaho events with dedicated seating</li>
           <li>"Founding Sponsor" digital badge — exclusive to this tier</li>
           <li>Official Founding Sponsor certificate to display at your business, plus a photo post announcing the partnership</li>
         </ul>
@@ -183,26 +188,34 @@
         </ul>
         <div class="tier-spots">Limited to 20 community sponsors at a time. Waitlist available when full.</div>
       </div>
-      <div class="tier-card alacarte">
-        <div class="tier-label">Tier 3</div>
-        <div class="tier-name">À La Carte</div>
-        <div class="tier-price" style="font-size:32px">Contact Us</div>
-        <div class="tier-period">Pay per placement · No commitment</div>
-        <div class="tier-desc">Not ready for a full package? Purchase individual placements. Here's what each one costs separately.</div>
-        <ul class="alacarte-list">
-          <li><span class="alacarte-item-name">Homepage hero placement (per month)</span><span class="alacarte-item-price">$400</span></li>
-          <li><span class="alacarte-item-name">Sponsor directory listing (per month)</span><span class="alacarte-item-price">$100</span></li>
-          <li><span class="alacarte-item-name">Featured newsletter spotlight (per issue)</span><span class="alacarte-item-price">$300</span></li>
-          <li><span class="alacarte-item-name">Newsletter grid listing (per issue)</span><span class="alacarte-item-price">$100</span></li>
-          <li><span class="alacarte-item-name">Podcast pre-roll mention (per episode)</span><span class="alacarte-item-price">$200</span></li>
-          <li><span class="alacarte-item-name">YouTube mention + logo (per video)</span><span class="alacarte-item-price">$200</span></li>
-          <li><span class="alacarte-item-name">Dedicated social media post</span><span class="alacarte-item-price">$75</span></li>
-          <li><span class="alacarte-item-name">3–5 min produced video</span><span class="alacarte-item-price">$2,500</span></li>
-          <li><span class="alacarte-item-name">60-sec spotlight video</span><span class="alacarte-item-price">$500</span></li>
-          <li><span class="alacarte-item-name">Founding badge + certificate</span><span class="alacarte-item-price">Exclusive</span></li>
-        </ul>
-        <div class="alacarte-total"><span class="alacarte-total-label">Monthly total (matching Founding)</span><span class="alacarte-total-price">$5,075+</span></div>
-        <div class="alacarte-savings"><div class="alacarte-savings-text">Founding Sponsors save over 70%</div><div class="alacarte-savings-sub">$1,500/mo vs $5,075+/mo à la carte</div></div>
+    </div>
+    <div class="tier-card-wide">
+      <div class="tier-card alacarte" style="padding:36px 36px">
+        <div class="alacarte-wide">
+          <div class="alacarte-header">
+            <div class="tier-label">Tier 3</div>
+            <div class="tier-name">À La Carte</div>
+            <div class="tier-price" style="font-size:32px">Contact Us</div>
+            <div class="tier-period">Pay per placement · No commitment</div>
+            <div class="tier-desc" style="border-bottom:none;padding-bottom:0">Not ready for a full package? Purchase individual placements. Here's what each one costs separately — and see how much you save by choosing a tier.</div>
+            <div class="alacarte-savings" style="margin-top:auto"><div class="alacarte-savings-text">Founding Sponsors save over 70%</div><div class="alacarte-savings-sub">$1,500/mo vs $5,075+/mo à la carte</div></div>
+          </div>
+          <div class="alacarte-body">
+            <ul class="alacarte-list">
+              <li><span class="alacarte-item-name">Homepage hero placement (per month)</span><span class="alacarte-item-price">$400</span></li>
+              <li><span class="alacarte-item-name">Sponsor directory listing (per month)</span><span class="alacarte-item-price">$100</span></li>
+              <li><span class="alacarte-item-name">Featured newsletter spotlight (per issue)</span><span class="alacarte-item-price">$300</span></li>
+              <li><span class="alacarte-item-name">Newsletter grid listing (per issue)</span><span class="alacarte-item-price">$100</span></li>
+              <li><span class="alacarte-item-name">Podcast pre-roll mention (per episode)</span><span class="alacarte-item-price">$200</span></li>
+              <li><span class="alacarte-item-name">YouTube mention + logo (per video)</span><span class="alacarte-item-price">$200</span></li>
+              <li><span class="alacarte-item-name">Dedicated social media post</span><span class="alacarte-item-price">$75</span></li>
+              <li><span class="alacarte-item-name">3–5 min produced video</span><span class="alacarte-item-price">$2,500</span></li>
+              <li><span class="alacarte-item-name">60-sec spotlight video</span><span class="alacarte-item-price">$500</span></li>
+              <li><span class="alacarte-item-name">Founding badge + certificate</span><span class="alacarte-item-price">Exclusive</span></li>
+            </ul>
+            <div class="alacarte-total"><span class="alacarte-total-label">Monthly total (matching Founding)</span><span class="alacarte-total-price">$5,075+</span></div>
+          </div>
+        </div>
       </div>
     </div>
     <div class="comparison"><table>
@@ -221,6 +234,7 @@
         <tr><td>60-sec spotlight video</td><td><span class="check">✓</span></td><td><span class="check">2×/year</span></td><td>$500</td></tr>
         <tr><td>Founding digital badge + certificate</td><td><span class="check">✓</span></td><td><span class="dash">—</span></td><td>Exclusive</td></tr>
         <tr><td>First access to events & awards</td><td><span class="check">✓</span></td><td><span class="dash">—</span></td><td><span class="dash">—</span></td></tr>
+        <tr><td>Free access to exclusive events + dedicated seating</td><td><span class="check">✓</span></td><td><span class="dash">—</span></td><td><span class="dash">—</span></td></tr>
       </tbody>
     </table></div>
   </div>
