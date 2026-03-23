@@ -4,6 +4,38 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>East Idaho — Stories · People · Places</title>
+
+<!-- SEO Meta Tags -->
+<meta name="description" content="The Saturday morning email for people who love East Idaho. Local stories, weekend plans, restaurant finds, and the people who make this valley what it is. Free weekly newsletter.">
+<meta name="keywords" content="East Idaho, Idaho Falls, Rexburg, local newsletter, East Idaho news, East Idaho events, Best of East Idaho, Idaho Falls restaurants">
+<meta name="author" content="East Idaho Media Co. LLC">
+<meta name="robots" content="index, follow">
+<link rel="canonical" href="https://eastidaho.com/">
+
+<!-- Open Graph / Facebook -->
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://eastidaho.com/">
+<meta property="og:title" content="East Idaho — Stories · People · Places">
+<meta property="og:description" content="The Saturday morning email for people who love East Idaho. Local stories, weekend plans, restaurant finds, and the people who make this valley what it is.">
+<meta property="og:image" content="https://eastidaho.com/og-image.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:site_name" content="East Idaho">
+<meta property="og:locale" content="en_US">
+
+<!-- Twitter / X -->
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="East Idaho — Stories · People · Places">
+<meta name="twitter:description" content="The Saturday morning email for people who love East Idaho. Local stories, weekend plans, restaurant finds, and the people who make this valley what it is.">
+<meta name="twitter:image" content="https://eastidaho.com/og-image.png">
+
+<!-- Favicon -->
+<link rel="icon" type="image/x-icon" href="/favicon.ico">
+<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32.png">
+<link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+
+<!-- Theme Color -->
+<meta name="theme-color" content="#0f1a2e">
 <style>
   @import url('https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=Outfit:wght@300;400;500;600;700&family=Playfair+Display:ital,wght@0,400;0,700;1,400&display=swap');
 
@@ -973,79 +1005,84 @@
   .contact-submit:hover { background: var(--sunrise); }
 
   /* ══════════════════════════════════
-     HERO SPONSOR PLACEMENTS
+     HERO SPONSOR CARDS
   ══════════════════════════════════ */
-  /* Option A: Presented by text */
-  .hero-presented-by {
-    border-top: 1px solid rgba(255,255,255,0.06);
-    padding-top: 14px;
-    margin-top: 18px;
-    font-size: 11px;
-    color: rgba(255,255,255,0.2);
-    letter-spacing: 0.5px;
+  .hero-sponsors-blend {
+    background: var(--navy);
+    padding: 0 48px 60px;
+    position: relative;
+    overflow: hidden;
   }
-  .hero-presented-by a {
-    color: rgba(255,255,255,0.4);
-    font-weight: 600;
-    text-decoration: none;
-    transition: color 0.2s;
+  .hero-sponsors-blend::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background:
+      radial-gradient(ellipse at 15% 80%, rgba(240,149,108,0.06) 0%, transparent 55%),
+      radial-gradient(ellipse at 85% 20%, rgba(26,41,64,0.6) 0%, transparent 50%),
+      radial-gradient(ellipse at 50% 50%, rgba(36,51,82,0.3) 0%, transparent 70%);
   }
-  .hero-presented-by a:hover { color: rgba(255,255,255,0.6); }
-
-  /* Option B: Sponsor bar below hero */
-  .sponsor-bar {
-    background: #0a1220;
-    padding: 14px 48px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    gap: 20px;
-    flex-wrap: wrap;
-    border-bottom: 1px solid rgba(255,255,255,0.04);
+  .hero-sponsors-blend-inner {
+    max-width: 1200px;
+    margin: 0 auto;
+    position: relative;
+    z-index: 1;
   }
-  .sponsor-bar-label {
+  .hero-sponsors-label {
     font-size: 10px;
     text-transform: uppercase;
-    letter-spacing: 2px;
+    letter-spacing: 3px;
     color: rgba(255,255,255,0.2);
+    text-align: center;
+    margin-bottom: 20px;
   }
-  .sponsor-bar-logos {
-    display: flex;
+  .hero-sponsors-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
     gap: 16px;
-    align-items: center;
-    flex-wrap: wrap;
   }
-  .sponsor-bar-item {
-    padding: 5px 16px;
+  .hero-sponsor-card {
+    background: rgba(255,255,255,0.04);
     border: 1px solid rgba(255,255,255,0.08);
+    border-radius: 10px;
+    padding: 24px 20px;
+    text-align: center;
+    cursor: pointer;
+    transition: all 0.25s ease;
+  }
+  .hero-sponsor-card:hover {
+    background: rgba(255,255,255,0.07);
+    border-color: rgba(240,149,108,0.3);
+    transform: translateY(-2px);
+  }
+  .hero-sponsor-badge {
+    display: inline-block;
+    font-size: 9px;
+    text-transform: uppercase;
+    letter-spacing: 1.5px;
+    color: var(--coral);
+    font-weight: 700;
+    background: rgba(240,149,108,0.1);
+    padding: 3px 12px;
     border-radius: 4px;
+    margin-bottom: 12px;
+  }
+  .hero-sponsor-badge.presenting {
+    color: var(--coral-light);
+    background: rgba(252,180,152,0.08);
+  }
+  .hero-sponsor-name {
+    font-family: 'DM Serif Display', serif;
+    font-size: 18px;
+    color: #fff;
+    margin-bottom: 4px;
+    line-height: 1.3;
+  }
+  .hero-sponsor-type {
     font-size: 12px;
     color: rgba(255,255,255,0.35);
-    font-weight: 600;
-    text-decoration: none;
-    transition: all 0.2s;
+    letter-spacing: 0.3px;
   }
-  .sponsor-bar-item:hover {
-    border-color: rgba(255,255,255,0.15);
-    color: rgba(255,255,255,0.5);
-  }
-
-  /* Option C: Badge on preview card */
-  .preview-sponsor {
-    border-top: 1px solid #ddd8d0;
-    padding-top: 10px;
-    margin-top: 12px;
-    font-size: 10px;
-    color: var(--text-faint);
-    text-transform: uppercase;
-    letter-spacing: 1px;
-  }
-  .preview-sponsor a {
-    color: var(--text-body);
-    font-weight: 600;
-    text-decoration: none;
-  }
-  .preview-sponsor a:hover { color: var(--coral); }
 
   /* ══════════════════════════════════
      FOOTER LEGAL
@@ -1069,7 +1106,8 @@
     .modal-form { flex-direction: column; }
     .deck-stats { grid-template-columns: 1fr; }
     .deck-tiers { grid-template-columns: 1fr; }
-    .sponsor-bar { padding: 14px 24px; }
+    .hero-sponsors-blend { padding: 0 24px 40px; }
+    .hero-sponsors-grid { grid-template-columns: 1fr; }
   }
 </style>
 </head>
@@ -1110,10 +1148,6 @@
         </div>
         Join 2,400+ East Idahoans who read us every week
       </div>
-      <!-- Sponsor: Option A — Presented by text -->
-      <div class="hero-presented-by">
-        Presented by <a href="#" target="_blank">Idaho Central Credit Union</a>
-      </div>
     </div>
 
     <div class="hero-preview">
@@ -1127,20 +1161,31 @@
         <span class="preview-tag coral">Quick Hits</span>
         <span class="preview-tag blue">Poll</span>
       </div>
-      <!-- Sponsor: Option C — Badge on preview card -->
-      <div class="preview-sponsor">
-        Sponsored by <a href="#" target="_blank">Idaho Central Credit Union</a>
-      </div>
     </div>
   </div>
 </section>
 
-<!-- Sponsor: Option B — Sponsor bar below hero -->
-<div class="sponsor-bar">
-  <span class="sponsor-bar-label">Proudly supported by</span>
-  <div class="sponsor-bar-logos">
-    <a class="sponsor-bar-item" href="#" target="_blank">Idaho Central Credit Union</a>
-    <a class="sponsor-bar-item" href="#" target="_blank">Copper Rill Restaurant</a>
+<!-- ═══════════ HERO SPONSORS ═══════════ -->
+<div class="hero-sponsors-blend">
+  <div class="hero-sponsors-blend-inner">
+    <div class="hero-sponsors-label">Proudly supported by</div>
+    <div class="hero-sponsors-grid">
+      <div class="hero-sponsor-card" onclick="openSponsorModal('Idaho Central Credit Union','Idaho\'s largest credit union, proudly serving the valley since 1940. From checking and savings to home loans and business banking, ICCU is built on the belief that banking should be personal. With branches across East Idaho, they\'re the financial partner that actually knows your name.','Banking & Financial Services','Multiple locations across East Idaho','https://www.iccu.com','founding')">
+        <div class="hero-sponsor-badge">Founding Sponsor</div>
+        <div class="hero-sponsor-name">Idaho Central Credit Union</div>
+        <div class="hero-sponsor-type">Banking & Financial Services</div>
+      </div>
+      <div class="hero-sponsor-card" onclick="openSponsorModal('Copper Rill Restaurant','Chef Jud\'s scratch kitchen on River Parkway. Seasonal menu, locally sourced ingredients, and the kind of meal that makes you forget you\'re in Idaho Falls. Copper Rill is where you go when you want to eat well and feel at home. Reservations recommended on weekends.','Fine Dining','415 River Pkwy, Idaho Falls','https://copperrill.com','founding')">
+        <div class="hero-sponsor-badge">Founding Sponsor</div>
+        <div class="hero-sponsor-name">Copper Rill Restaurant</div>
+        <div class="hero-sponsor-type">Fine Dining · Idaho Falls</div>
+      </div>
+      <div class="hero-sponsor-card" onclick="openSponsorModal('Realty Group IF','The East Idaho real estate team that actually lives here. Whether you\'re buying your first home, selling, or relocating to the valley, Realty Group IF brings deep local knowledge and a personal touch to every transaction.','Real Estate','Idaho Falls, ID','https://example.com','presenting')">
+        <div class="hero-sponsor-badge presenting">Presenting Sponsor</div>
+        <div class="hero-sponsor-name">Realty Group IF</div>
+        <div class="hero-sponsor-type">Real Estate · Idaho Falls</div>
+      </div>
+    </div>
   </div>
 </div>
 
@@ -1563,6 +1608,19 @@
   </div>
 </div>
 
+<!-- Sponsor Detail Modal -->
+<div class="modal-overlay" id="sponsor-detail-modal" onclick="if(event.target===this)closeModal(this)">
+  <div class="modal">
+    <button class="modal-close" onclick="closeModal(document.getElementById('sponsor-detail-modal'))">&times;</button>
+    <div id="sponsor-detail-badge" class="hero-sponsor-badge" style="display: inline-block; margin-bottom: 12px;"></div>
+    <div class="modal-title" id="sponsor-detail-name"></div>
+    <p class="modal-text" id="sponsor-detail-desc"></p>
+    <div class="biz-modal-detail"><span>🏷</span> <span id="sponsor-detail-type"></span></div>
+    <div class="biz-modal-detail"><span>📍</span> <span id="sponsor-detail-address"></span></div>
+    <div class="biz-modal-links" id="sponsor-detail-links"></div>
+  </div>
+</div>
+
 <!-- ═══════════ SCRIPTS ═══════════ -->
 <script>
 // Modal open/close
@@ -1598,6 +1656,31 @@ function openBizModal(emoji, category, name, desc, address, link) {
     linksEl.appendChild(a);
   }
   openModal('biz-modal');
+}
+
+// Sponsor detail modal
+function openSponsorModal(name, desc, type, address, link, tier) {
+  var badge = document.getElementById('sponsor-detail-badge');
+  badge.textContent = tier === 'founding' ? 'Founding Sponsor' : 'Presenting Sponsor';
+  badge.className = 'hero-sponsor-badge' + (tier === 'presenting' ? ' presenting' : '');
+  badge.style.display = 'inline-block';
+  badge.style.background = 'rgba(240,149,108,0.1)';
+  badge.style.color = '#f0956c';
+  document.getElementById('sponsor-detail-name').textContent = name;
+  document.getElementById('sponsor-detail-desc').textContent = desc;
+  document.getElementById('sponsor-detail-type').textContent = type;
+  document.getElementById('sponsor-detail-address').textContent = address;
+  var linksEl = document.getElementById('sponsor-detail-links');
+  linksEl.innerHTML = '';
+  if (link) {
+    var a = document.createElement('a');
+    a.className = 'biz-modal-link primary';
+    a.href = link;
+    a.target = '_blank';
+    a.textContent = 'Visit Website →';
+    linksEl.appendChild(a);
+  }
+  openModal('sponsor-detail-modal');
 }
 
 // Subscribe via Cloudflare Pages Function (used in hero, bottom CTA, and modals)
