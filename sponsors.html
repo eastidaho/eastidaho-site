@@ -59,6 +59,10 @@
   .tier-features li{font-size:13.5px;color:var(--text-body);line-height:1.5;padding:6px 0;padding-left:24px;position:relative}
   .tier-features li::before{content:'✓';position:absolute;left:0;color:var(--coral);font-weight:700;font-size:13px}
   .tier-spots{margin-top:20px;padding-top:14px;border-top:1px solid var(--stone);font-size:13px;color:var(--sunrise);font-weight:700;text-align:center}
+  .tier-btn{display:block;width:100%;padding:14px;border-radius:6px;font-family:'Outfit',sans-serif;font-size:15px;font-weight:700;text-align:center;text-decoration:none;cursor:pointer;transition:all .2s;margin-top:16px;border:none;letter-spacing:.3px}
+  .tier-btn.primary{background:var(--coral);color:#fff}.tier-btn.primary:hover{background:var(--sunrise)}
+  .tier-btn.secondary{background:var(--navy);color:#fff}.tier-btn.secondary:hover{background:var(--navy-light)}
+  .tier-btn.outline{background:transparent;color:var(--text-body);border:1px solid var(--stone)}.tier-btn.outline:hover{border-color:var(--coral);color:var(--coral)}
   .tier-note{margin-top:12px;padding-top:12px;border-top:1px solid var(--stone);font-size:11.5px;color:var(--text-muted);line-height:1.5;text-align:center;font-style:italic}
   .alacarte-list{list-style:none;flex:1}
   .alacarte-list li{font-size:13px;color:var(--text-body);padding:8px 0;border-bottom:1px solid var(--stone);display:flex;justify-content:space-between;align-items:center;gap:8px}
@@ -167,6 +171,7 @@
           <li>Official Founding Sponsor certificate to display at your business, plus a photo post announcing the partnership</li>
         </ul>
         <div class="tier-spots">Only 4 founding spots available — ever.</div>
+        <a class="tier-btn primary" href="https://buy.stripe.com/8x23cw1oX35i85QgZS5wI02">Claim a Founding Spot →</a>
         <div class="tier-note">Once founding spots are filled, they will be replaced by Premium Sponsors at a higher rate — without the exclusive founding price, badge, or certificate. Founding Sponsors keep their $1,500 rate for life.</div>
       </div>
       <div class="tier-card community">
@@ -187,6 +192,7 @@
           <li>Rate locked in at $500 for as long as you stay active</li>
         </ul>
         <div class="tier-spots">Limited to 20 community sponsors at a time. Waitlist available when full.</div>
+        <a class="tier-btn secondary" href="https://buy.stripe.com/8x29AU7Nl0Xa1Hs3925wI03">Join as Community Sponsor →</a>
       </div>
     </div>
     <div class="tier-card-wide">
@@ -214,6 +220,7 @@
               <li><span class="alacarte-item-name">Founding badge + certificate</span><span class="alacarte-item-price">Exclusive</span></li>
             </ul>
             <div class="alacarte-total"><span class="alacarte-total-label">Monthly total (matching Founding)</span><span class="alacarte-total-price">$5,075+</span></div>
+            <button class="tier-btn outline" onclick="openAlacarteContact()" style="margin-top:16px">Contact Us →</button>
           </div>
         </div>
       </div>
@@ -275,7 +282,27 @@
     <div class="contact-success" id="sponsor-contact-success">Thanks! We'll be in touch within 24 hours.</div>
   </div>
 </div></div>
-<div class="deck-footer">© 2026 East Idaho Media Co. LLC. All rights reserved. &nbsp;·&nbsp; <a href="/">eastidaho.com</a></div>
+<!-- À La Carte Contact Modal -->
+<div class="modal-overlay" id="alacarte-contact-modal" onclick="if(event.target===this)this.style.display='none'" style="display:none;position:fixed;inset:0;background:rgba(15,26,46,0.85);z-index:1000;align-items:center;justify-content:center">
+  <div style="background:#fff;border-radius:14px;max-width:480px;width:90%;padding:36px 32px;position:relative;margin:auto;margin-top:10vh;">
+    <button onclick="document.getElementById('alacarte-contact-modal').style.display='none'" style="position:absolute;top:14px;right:18px;background:none;border:none;font-size:24px;color:#a8adb8;cursor:pointer">&times;</button>
+    <div style="font-size:11px;text-transform:uppercase;letter-spacing:3px;color:var(--coral);font-weight:700;margin-bottom:8px">À La Carte Inquiry</div>
+    <div style="font-family:'DM Serif Display',serif;font-size:24px;color:var(--text-primary);margin-bottom:6px">Let's build your custom package.</div>
+    <p style="font-size:14px;color:var(--text-muted);margin-bottom:20px">Tell us what you're looking for and we'll put together a custom quote within 24 hours.</p>
+    <form id="alacarte-form" onsubmit="submitAlacarteForm(event)" style="display:flex;flex-direction:column;gap:12px">
+      <div style="display:grid;grid-template-columns:1fr 1fr;gap:12px">
+        <input type="text" name="name" placeholder="Your name" required style="padding:11px 14px;border:1px solid var(--stone);border-radius:6px;font-family:'Outfit',sans-serif;font-size:14px;outline:none">
+        <input type="text" name="business" placeholder="Business name" style="padding:11px 14px;border:1px solid var(--stone);border-radius:6px;font-family:'Outfit',sans-serif;font-size:14px;outline:none">
+      </div>
+      <input type="email" name="email" placeholder="Email address" required style="padding:11px 14px;border:1px solid var(--stone);border-radius:6px;font-family:'Outfit',sans-serif;font-size:14px;outline:none">
+      <textarea name="message" placeholder="What placements are you interested in?" required style="padding:11px 14px;border:1px solid var(--stone);border-radius:6px;font-family:'Outfit',sans-serif;font-size:14px;outline:none;resize:vertical;min-height:100px"></textarea>
+      <button type="submit" style="padding:13px 24px;background:var(--coral);border:none;color:#fff;border-radius:6px;font-family:'Outfit',sans-serif;font-size:14px;font-weight:700;cursor:pointer;align-self:flex-start">Send Inquiry →</button>
+    </form>
+    <div id="alacarte-form-success" style="display:none;color:var(--coral);font-weight:600;font-size:15px;padding-top:16px">Thanks! We'll be in touch within 24 hours.</div>
+  </div>
+</div>
+
+<div class="deck-footer">© 2026 East Idaho Media Co. LLC. All rights reserved. &nbsp;·&nbsp; <a href="/">eastidaho.com</a> &nbsp;·&nbsp; <a href="/privacy.html">Privacy</a> &nbsp;·&nbsp; <a href="/terms.html">Terms</a></div>
 <script>
 async function handleSponsorContact(e){
   e.preventDefault();
@@ -284,6 +311,19 @@ async function handleSponsorContact(e){
   try{var r=await fetch('/api/contact',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify(d)});
     if(r.ok){f.style.display='none';document.getElementById('sponsor-contact-success').style.display='block';}
     else{alert('Something went wrong. Please email hello@eastidaho.com directly.');}
+  }catch(err){alert('Something went wrong. Please email hello@eastidaho.com directly.');}
+}
+
+function openAlacarteContact(){
+  document.getElementById('alacarte-contact-modal').style.display='flex';
+}
+
+async function submitAlacarteForm(e){
+  e.preventDefault();
+  var f=e.target;
+  var d={name:f.name.value,email:f.email.value,subject:'À La Carte Sponsorship Inquiry',message:(f.business.value?'Business: '+f.business.value+'\n\n':'')+f.message.value};
+  try{await fetch('/api/contact',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify(d)});
+    f.style.display='none';document.getElementById('alacarte-form-success').style.display='block';
   }catch(err){alert('Something went wrong. Please email hello@eastidaho.com directly.');}
 }
 </script>
