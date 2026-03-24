@@ -6,6 +6,9 @@
 <title>Partner With East Idaho — Sponsorship Packages</title>
 <meta name="description" content="Reach the people who love East Idaho. Founding Sponsor and Community Sponsor packages for local businesses.">
 <link rel="icon" type="image/x-icon" href="/favicon.ico">
+<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32.png">
+<link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+<meta name="theme-color" content="#0f1a2e">
 <style>
   @import url('https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=Outfit:wght@300;400;500;600;700&display=swap');
   :root{--navy:#0f1a2e;--navy-mid:#1a2940;--navy-light:#243352;--coral:#f0956c;--coral-light:#fcb498;--sunrise:#e8735a;--cream:#faf9f7;--warm-white:#f3f1ed;--parchment:#ece8e1;--stone:#ddd8d0;--text-primary:#0f1a2e;--text-body:#3d4a5c;--text-muted:#7a8394;--text-faint:#a8adb8}
@@ -288,21 +291,48 @@
     <button onclick="document.getElementById('alacarte-contact-modal').style.display='none'" style="position:absolute;top:14px;right:18px;background:none;border:none;font-size:24px;color:#a8adb8;cursor:pointer">&times;</button>
     <div style="font-size:11px;text-transform:uppercase;letter-spacing:3px;color:var(--coral);font-weight:700;margin-bottom:8px">À La Carte Inquiry</div>
     <div style="font-family:'DM Serif Display',serif;font-size:24px;color:var(--text-primary);margin-bottom:6px">Let's build your custom package.</div>
-    <p style="font-size:14px;color:var(--text-muted);margin-bottom:20px">Tell us what you're looking for and we'll put together a custom quote within 24 hours.</p>
+    <p style="font-size:14px;color:var(--text-muted);margin-bottom:20px">Tell us what you're interested in and we'll put together a custom quote within 24 hours.</p>
     <form id="alacarte-form" onsubmit="submitAlacarteForm(event)" style="display:flex;flex-direction:column;gap:12px">
-      <div style="display:grid;grid-template-columns:1fr 1fr;gap:12px">
-        <input type="text" name="name" placeholder="Your name" required style="padding:11px 14px;border:1px solid var(--stone);border-radius:6px;font-family:'Outfit',sans-serif;font-size:14px;outline:none">
-        <input type="text" name="business" placeholder="Business name" style="padding:11px 14px;border:1px solid var(--stone);border-radius:6px;font-family:'Outfit',sans-serif;font-size:14px;outline:none">
-      </div>
-      <input type="email" name="email" placeholder="Email address" required style="padding:11px 14px;border:1px solid var(--stone);border-radius:6px;font-family:'Outfit',sans-serif;font-size:14px;outline:none">
-      <textarea name="message" placeholder="What placements are you interested in?" required style="padding:11px 14px;border:1px solid var(--stone);border-radius:6px;font-family:'Outfit',sans-serif;font-size:14px;outline:none;resize:vertical;min-height:100px"></textarea>
+      <input type="text" name="name" placeholder="Your name" required style="width:100%;padding:11px 14px;border:1px solid var(--stone);border-radius:6px;font-family:'Outfit',sans-serif;font-size:14px;outline:none;box-sizing:border-box">
+      <input type="text" name="business" placeholder="Business name" style="width:100%;padding:11px 14px;border:1px solid var(--stone);border-radius:6px;font-family:'Outfit',sans-serif;font-size:14px;outline:none;box-sizing:border-box">
+      <input type="email" name="email" placeholder="Email address" required style="width:100%;padding:11px 14px;border:1px solid var(--stone);border-radius:6px;font-family:'Outfit',sans-serif;font-size:14px;outline:none;box-sizing:border-box">
+      <select name="interests" required style="width:100%;padding:11px 14px;border:1px solid var(--stone);border-radius:6px;font-family:'Outfit',sans-serif;font-size:14px;outline:none;box-sizing:border-box;color:var(--text-body);background:#fff;appearance:auto">
+        <option value="" disabled selected>What are you interested in?</option>
+        <option value="Homepage hero placement">Homepage hero placement — $400/mo</option>
+        <option value="Newsletter spotlight">Featured newsletter spotlight — $300/issue</option>
+        <option value="Newsletter grid listing">Newsletter grid listing — $100/issue</option>
+        <option value="Podcast mention">Podcast mention — $200/episode</option>
+        <option value="YouTube mention">YouTube mention + logo — $200/video</option>
+        <option value="Social media post">Dedicated social media post — $75/post</option>
+        <option value="3-5 min video">3–5 min produced video — $2,500</option>
+        <option value="60-sec spotlight video">60-sec spotlight video — $500</option>
+        <option value="Multiple placements">Multiple placements — tell us below</option>
+        <option value="Not sure yet">Not sure yet — just want to learn more</option>
+      </select>
+      <textarea name="message" placeholder="Anything else you'd like us to know? (optional)" style="width:100%;padding:11px 14px;border:1px solid var(--stone);border-radius:6px;font-family:'Outfit',sans-serif;font-size:14px;outline:none;resize:vertical;min-height:80px;box-sizing:border-box"></textarea>
       <button type="submit" style="padding:13px 24px;background:var(--coral);border:none;color:#fff;border-radius:6px;font-family:'Outfit',sans-serif;font-size:14px;font-weight:700;cursor:pointer;align-self:flex-start">Send Inquiry →</button>
     </form>
     <div id="alacarte-form-success" style="display:none;color:var(--coral);font-weight:600;font-size:15px;padding-top:16px">Thanks! We'll be in touch within 24 hours.</div>
   </div>
 </div>
 
-<div class="deck-footer">© 2026 East Idaho Media Co. LLC. All rights reserved. &nbsp;·&nbsp; <a href="/">eastidaho.com</a> &nbsp;·&nbsp; <a href="/privacy.html">Privacy</a> &nbsp;·&nbsp; <a href="/terms.html">Terms</a></div>
+<footer style="background:#0a1220;padding:48px;text-align:center">
+  <div style="margin-bottom:16px"><img src="/logo-white.png" alt="East Idaho" style="height:48px;opacity:0.8"></div>
+  <div style="display:flex;justify-content:center;gap:28px;margin-bottom:24px;flex-wrap:wrap">
+    <a href="/" style="color:rgba(255,255,255,0.4);text-decoration:none;font-size:13px;font-weight:500">Home</a>
+    <a href="https://www.youtube.com/@eastidahomedia" target="_blank" style="color:rgba(255,255,255,0.4);text-decoration:none;font-size:13px;font-weight:500">YouTube</a>
+    <a href="https://www.instagram.com/east.idaho" target="_blank" style="color:rgba(255,255,255,0.4);text-decoration:none;font-size:13px;font-weight:500">Instagram</a>
+    <a href="https://www.tiktok.com/@eastidaho" target="_blank" style="color:rgba(255,255,255,0.4);text-decoration:none;font-size:13px;font-weight:500">TikTok</a>
+    <a href="https://www.facebook.com/eastidahomedia" target="_blank" style="color:rgba(255,255,255,0.4);text-decoration:none;font-size:13px;font-weight:500">Facebook</a>
+  </div>
+  <div style="font-size:12px;color:rgba(255,255,255,0.2);line-height:1.6">
+    <div style="margin-bottom:12px;display:flex;justify-content:center;gap:20px">
+      <a href="/privacy.html" style="color:rgba(255,255,255,0.3);text-decoration:none;font-size:12px">Privacy Policy</a>
+      <a href="/terms.html" style="color:rgba(255,255,255,0.3);text-decoration:none;font-size:12px">Terms and Conditions</a>
+    </div>
+    © 2026 East Idaho Media Co. LLC. All rights reserved.
+  </div>
+</footer>
 <script>
 async function handleSponsorContact(e){
   e.preventDefault();
@@ -321,7 +351,11 @@ function openAlacarteContact(){
 async function submitAlacarteForm(e){
   e.preventDefault();
   var f=e.target;
-  var d={name:f.name.value,email:f.email.value,subject:'À La Carte Sponsorship Inquiry',message:(f.business.value?'Business: '+f.business.value+'\n\n':'')+f.message.value};
+  var interest=f.interests.value;
+  var msg='Interest: '+interest;
+  if(f.business.value) msg=msg+'\nBusiness: '+f.business.value;
+  if(f.message.value) msg=msg+'\n\nAdditional notes: '+f.message.value;
+  var d={name:f.name.value,email:f.email.value,subject:'À La Carte Inquiry — '+interest,message:msg};
   try{await fetch('/api/contact',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify(d)});
     f.style.display='none';document.getElementById('alacarte-form-success').style.display='block';
   }catch(err){alert('Something went wrong. Please email hello@eastidaho.com directly.');}
