@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Blog — East Idaho</title>
+<meta name="description" content="Read every issue of the East Idaho newsletter. Local stories, honest recommendations, and the stuff worth knowing about the valley.">
+<link rel="icon" type="image/png" href="/logo-icon.png">
+<link rel="apple-touch-icon" href="/logo-icon.png">
+<meta name="theme-color" content="#0f1a2e">
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=Outfit:wght@300;400;500;600;700&display=swap');
+
+  :root {
+    --navy: #0f1a2e;
+    --navy-mid: #1a2940;
+    --coral: #f0956c;
+    --coral-light: #fcb498;
+    --sunrise: #e8735a;
+    --cream: #faf9f7;
+    --warm-white: #f3f1ed;
+    --stone: #ddd8d0;
+    --text-primary: #0f1a2e;
+    --text-body: #3d4a5c;
+    --text-muted: #7a8394;
+    --text-faint: #a8adb8;
+  }
+
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body { font-family: 'Outfit', sans-serif; color: var(--text-primary); background: var(--cream); line-height: 1.6; -webkit-font-smoothing: antialiased; }
+
+  /* Nav */
+  nav { background: var(--navy); padding: 0 48px; display: flex; justify-content: space-between; align-items: center; height: 64px; position: sticky; top: 0; z-index: 100; }
+  .nav-logo img { height: 32px; }
+  .nav-links { display: flex; align-items: center; gap: 28px; }
+  .nav-links a { color: rgba(255,255,255,0.5); text-decoration: none; font-size: 14px; font-weight: 500; transition: color 0.2s; }
+  .nav-links a:hover { color: #fff; }
+  .nav-cta { background: var(--coral) !important; color: #fff !important; padding: 8px 20px; border-radius: 5px; font-weight: 600 !important; }
+  .nav-cta:hover { background: var(--sunrise) !important; }
+
+  /* Header */
+  .blog-header { background: var(--navy); padding: 60px 48px 48px; text-align: center; position: relative; overflow: hidden; }
+  .blog-header::before { content: ''; position: absolute; inset: 0; background: radial-gradient(ellipse at 15% 80%, rgba(240,149,108,0.06) 0%, transparent 55%), radial-gradient(ellipse at 85% 20%, rgba(26,41,64,0.6) 0%, transparent 50%); }
+  .blog-header-inner { position: relative; z-index: 1; max-width: 640px; margin: 0 auto; }
+  .blog-header-eyebrow { font-size: 11px; text-transform: uppercase; letter-spacing: 3px; color: var(--coral); font-weight: 700; margin-bottom: 10px; }
+  .blog-header-title { font-family: 'DM Serif Display', serif; font-size: 38px; color: #fff; line-height: 1.15; margin-bottom: 12px; }
+  .blog-header-desc { font-size: 16px; color: rgba(255,255,255,0.4); line-height: 1.7; font-weight: 300; }
+
+  /* Post list */
+  .posts { max-width: 720px; margin: 0 auto; padding: 48px 24px 80px; }
+
+  .post-card { display: flex; gap: 24px; padding: 32px 0; border-bottom: 1px solid var(--stone); align-items: flex-start; text-decoration: none; transition: transform 0.15s; }
+  .post-card:first-child { padding-top: 0; }
+  .post-card:hover { transform: translateX(4px); }
+
+  .post-thumb { width: 180px; height: 120px; border-radius: 8px; background: var(--navy-mid); flex-shrink: 0; overflow: hidden; }
+  .post-thumb img { width: 100%; height: 100%; object-fit: cover; }
+
+  .post-info { flex: 1; }
+  .post-meta { font-size: 12px; color: var(--text-faint); text-transform: uppercase; letter-spacing: 1.5px; font-weight: 600; margin-bottom: 6px; }
+  .post-title { font-family: 'DM Serif Display', serif; font-size: 22px; color: var(--text-primary); line-height: 1.25; margin-bottom: 8px; text-decoration: none; }
+  .post-title:hover { color: var(--coral); }
+  .post-excerpt { font-size: 14.5px; color: var(--text-muted); line-height: 1.6; }
+  .post-tags { display: flex; gap: 6px; margin-top: 10px; flex-wrap: wrap; }
+  .post-tag { font-size: 10px; text-transform: uppercase; letter-spacing: 1px; font-weight: 700; padding: 3px 10px; border-radius: 3px; }
+  .post-tag.coral { background: rgba(240,149,108,0.1); color: var(--coral); }
+  .post-tag.navy { background: rgba(15,26,46,0.06); color: var(--navy); }
+
+  /* Empty state for when there's only one post */
+  .more-coming { text-align: center; padding: 48px 24px; color: var(--text-faint); font-size: 15px; font-style: italic; }
+
+  /* Footer */
+  footer { background: #0a1220; padding: 48px; text-align: center; }
+  .footer-logo { margin-bottom: 16px; }
+  .footer-logo img { height: 48px; opacity: 0.8; display: inline-block; }
+  .footer-links { display: flex; justify-content: center; gap: 28px; margin-bottom: 24px; flex-wrap: wrap; }
+  .footer-links a { color: rgba(255,255,255,0.4); text-decoration: none; font-size: 13px; font-weight: 500; transition: color 0.2s; }
+  .footer-links a:hover { color: rgba(255,255,255,0.7); }
+  .footer-legal { font-size: 12px; color: rgba(255,255,255,0.2); line-height: 1.6; }
+  .footer-legal-links { margin-bottom: 12px; display: flex; justify-content: center; gap: 20px; }
+  .footer-legal-links a { color: rgba(255,255,255,0.3); text-decoration: none; font-size: 12px; }
+
+  @media (max-width: 768px) {
+    nav { padding: 0 24px; }
+    .nav-links a:not(.nav-cta) { display: none; }
+    .blog-header { padding: 48px 24px 36px; }
+    .blog-header-title { font-size: 28px; }
+    .post-card { flex-direction: column; gap: 14px; }
+    .post-thumb { width: 100%; height: 180px; }
+    footer { padding: 36px 24px; }
+  }
+</style>
+</head>
+<body>
+
+<!-- Nav -->
+<nav>
+  <a class="nav-logo" href="/"><img src="/logo-white.png" alt="East Idaho"></a>
+  <div class="nav-links">
+    <a href="/#about">About</a>
+    <a href="/blog/">Blog</a>
+    <a href="/#best-of">Best Of</a>
+    <a href="/sponsors.html">Sponsors</a>
+    <a class="nav-cta" href="https://eastidaho.com/#subscribe">Subscribe Free</a>
+  </div>
+</nav>
+
+<!-- Header -->
+<div class="blog-header">
+  <div class="blog-header-inner">
+    <div class="blog-header-eyebrow">The East Idaho Blog</div>
+    <h1 class="blog-header-title">Every issue, always free to read.</h1>
+    <p class="blog-header-desc">Miss a Saturday? Catch up here. Every newsletter we send lives on this page so you can read it anytime.</p>
+  </div>
+</div>
+
+<!-- Posts -->
+<div class="posts">
+
+  <!-- ═══ ISSUE #000 ═══ -->
+  <a class="post-card" href="/blog/issue-000.html">
+    <div class="post-thumb">
+      <img src="/blog/images/watertower.jpg" alt="Idaho Falls Water Tower">
+    </div>
+    <div class="post-info">
+      <div class="post-meta">Issue #000 · March 29, 2026</div>
+      <div class="post-title">Welcome to East Idaho</div>
+      <p class="post-excerpt">This is Issue #000 — our very first newsletter. Here's who we are, what we're building, and why this valley deserves a media brand that actually lives here.</p>
+      <div class="post-tags">
+        <span class="post-tag coral">Our Mission</span>
+        <span class="post-tag navy">Photo of the Week</span>
+        <span class="post-tag coral">Events</span>
+      </div>
+    </div>
+  </a>
+
+  <!--
+  ═══ TO ADD A NEW POST, COPY THIS TEMPLATE ═══
+
+  <a class="post-card" href="/blog/issue-001.html">
+    <div class="post-thumb">
+      <img src="/blog/images/your-image.jpg" alt="Description">
+    </div>
+    <div class="post-info">
+      <div class="post-meta">Issue #001 · April 5, 2026</div>
+      <div class="post-title">Your Headline Here</div>
+      <p class="post-excerpt">A 1-2 sentence preview of what's in this issue.</p>
+      <div class="post-tags">
+        <span class="post-tag coral">Meet Your Neighbor</span>
+        <span class="post-tag navy">Events</span>
+      </div>
+    </div>
+  </a>
+
+  ═══ END TEMPLATE ═══
+  -->
+
+  <div class="more-coming">New issues every Saturday morning. Subscribe to get them first.</div>
+
+</div>
+
+<!-- Footer -->
+<footer>
+  <div class="footer-logo"><img src="/logo-white.png" alt="East Idaho"></div>
+  <div class="footer-links">
+    <a href="/">Home</a>
+    <a href="/blog/">Blog</a>
+    <a href="https://www.youtube.com/@eastidahomedia" target="_blank">YouTube</a>
+    <a href="https://www.instagram.com/east.idaho" target="_blank">Instagram</a>
+    <a href="https://www.tiktok.com/@eastidaho" target="_blank">TikTok</a>
+    <a href="https://www.facebook.com/eastidahomedia" target="_blank">Facebook</a>
+    <a href="/sponsors.html">Advertise</a>
+  </div>
+  <div class="footer-legal">
+    <div class="footer-legal-links">
+      <a href="/privacy.html">Privacy Policy</a>
+      <a href="/terms.html">Terms and Conditions</a>
+    </div>
+    © 2026 East Idaho Media Co. LLC. All rights reserved.
+  </div>
+</footer>
+
+</body>
+</html>
