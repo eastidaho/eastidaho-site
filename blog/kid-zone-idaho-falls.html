@@ -105,7 +105,7 @@
   <!-- Subscribe CTA -->
   <div class="subscribe-cta">
     <p>Get the best of East Idaho in your inbox every Saturday. Free forever.</p>
-    <a href="https://eastidaho.com/#subscribe">Subscribe to East Idaho →</a>
+    <a href="#" onclick="document.getElementById('subscribe-modal').classList.add('active'); return false;">Subscribe to East Idaho →</a>
   </div>
 
   <!-- Sponsors -->
@@ -153,6 +153,58 @@
     © 2026 East Idaho Media Co. LLC. All rights reserved.
   </div>
 </footer>
+
+<!-- Subscribe Modal -->
+<div class="modal-overlay" id="subscribe-modal" onclick="if(event.target===this)this.classList.remove('active')">
+  <div class="modal">
+    <button class="modal-close" onclick="document.getElementById('subscribe-modal').classList.remove('active')">&times;</button>
+    <div class="modal-eyebrow">Join the Community</div>
+    <div class="modal-title">Get East Idaho in your inbox every Saturday.</div>
+    <p class="modal-text">Local stories, honest recommendations, weekend plans, and the stuff worth knowing. One email a week. Free forever.</p>
+    <form class="modal-form" onsubmit="subscribeFromBlog(event, this)">
+      <input type="email" placeholder="you@email.com" required>
+      <button type="submit">Subscribe</button>
+    </form>
+    <div class="modal-form-message"></div>
+  </div>
+</div>
+
+<script>
+async function subscribeFromBlog(event, form) {
+  event.preventDefault();
+  var email = form.querySelector('input[type="email"]').value;
+  var button = form.querySelector('button');
+  var messageEl = form.nextElementSibling;
+  var originalText = button.textContent;
+  button.disabled = true;
+  button.textContent = 'Subscribing...';
+  try {
+    var response = await fetch('/api/subscribe', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({ email: email })
+    });
+    if (response.ok) {
+      form.style.display = 'none';
+      messageEl.style.display = 'block';
+      messageEl.style.color = '#4ade80';
+      messageEl.textContent = "You're in! Welcome to East Idaho.";
+    } else {
+      button.disabled = false;
+      button.textContent = originalText;
+      messageEl.style.display = 'block';
+      messageEl.style.color = '#fcb498';
+      messageEl.textContent = 'Something went wrong. Please try again.';
+    }
+  } catch (err) {
+    button.disabled = false;
+    button.textContent = originalText;
+    messageEl.style.display = 'block';
+    messageEl.style.color = '#fcb498';
+    messageEl.textContent = 'Something went wrong. Please try again.';
+  }
+}
+</script>
 
 </body>
 </html>
