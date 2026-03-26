@@ -36,90 +36,11 @@
 
 <!-- Theme Color -->
 <meta name="theme-color" content="#0f1a2e">
+<link rel="stylesheet" href="/styles.css">
 <style>
-  @import url('https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=Outfit:wght@300;400;500;600;700&family=Playfair+Display:ital,wght@0,400;0,700;1,400&display=swap');
-
-  :root {
-    --navy: #0f1a2e;
-    --navy-mid: #1a2940;
-    --navy-light: #243352;
-    --slate: #3d4a5c;
-    --coral: #f0956c;
-    --coral-light: #fcb498;
-    --coral-soft: #fdd5c2;
-    --sunrise: #e8735a;
-    --cream: #faf9f7;
-    --warm-white: #f3f1ed;
-    --parchment: #ece8e1;
-    --stone: #ddd8d0;
-    --text-primary: #0f1a2e;
-    --text-body: #3d4a5c;
-    --text-muted: #7a8394;
-    --text-faint: #a8adb8;
-  }
-
-  * { margin: 0; padding: 0; box-sizing: border-box; }
-  html { scroll-behavior: smooth; }
-
-  body {
-    font-family: 'Outfit', sans-serif;
-    color: var(--text-primary);
-    background: var(--cream);
-    line-height: 1.6;
-    overflow-x: hidden;
-  }
-
   /* ══════════════════════════════════
-     NAVIGATION
+     PAGE-SPECIFIC: Homepage
   ══════════════════════════════════ */
-  nav {
-    position: fixed;
-    top: 0; left: 0; right: 0;
-    z-index: 100;
-    padding: 0 48px;
-    height: 72px;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    background: rgba(15,26,46,0.97);
-    backdrop-filter: blur(12px);
-    border-bottom: 1px solid rgba(255,255,255,0.05);
-  }
-  .nav-logo {
-    height: 40px;
-    display: flex;
-    align-items: center;
-    text-decoration: none;
-  }
-  .nav-logo img {
-    height: 40px;
-    width: auto;
-  }
-  .nav-links {
-    display: flex;
-    gap: 32px;
-    align-items: center;
-  }
-  .nav-links a {
-    color: rgba(255,255,255,0.6);
-    text-decoration: none;
-    font-size: 14px;
-    font-weight: 500;
-    letter-spacing: 0.3px;
-    transition: color 0.2s;
-  }
-  .nav-links a:hover { color: #fff; }
-  .nav-cta {
-    background: var(--coral) !important;
-    color: #fff !important;
-    padding: 9px 22px;
-    border-radius: 5px;
-    font-weight: 600 !important;
-    transition: background 0.2s !important;
-  }
-  .nav-cta:hover { background: var(--sunrise) !important; }
-
-  /* ══════════════════════════════════
      HERO
   ══════════════════════════════════ */
   .hero {
@@ -657,29 +578,7 @@
   }
 
   /* ══════════════════════════════════
-     FOOTER
-  ══════════════════════════════════ */
-  footer {
-    background: #0a1220;
-    padding: 48px; text-align: center;
-  }
-  .footer-logo { margin-bottom: 16px; }
-  .footer-logo img { height: 48px; opacity: 0.8; }
-  .footer-links {
-    display: flex; justify-content: center;
-    gap: 28px; margin-bottom: 24px; flex-wrap: wrap;
-  }
-  .footer-links a {
-    color: rgba(255,255,255,0.4); text-decoration: none;
-    font-size: 13px; font-weight: 500; transition: color 0.2s;
-  }
-  .footer-links a:hover { color: rgba(255,255,255,0.7); }
-  .footer-legal {
-    font-size: 12px; color: rgba(255,255,255,0.2); line-height: 1.6;
-  }
-
-  /* ══════════════════════════════════
-     ANIMATIONS
+     ANIMATIONS (page-specific)
   ══════════════════════════════════ */
   @keyframes fadeUp {
     from { opacity: 0; transform: translateY(28px); }
@@ -1084,28 +983,7 @@
     letter-spacing: 0.3px;
   }
 
-  /* ══════════════════════════════════
-     FOOTER LEGAL
-  ══════════════════════════════════ */
-  .footer-legal-links {
-    margin-bottom: 12px;
-    display: flex;
-    justify-content: center;
-    gap: 20px;
-  }
-  .footer-legal-links a {
-    color: rgba(255,255,255,0.3);
-    text-decoration: none;
-    font-size: 12px;
-    transition: color 0.2s;
-  }
-  .footer-legal-links a:hover { color: rgba(255,255,255,0.5); }
-
   @media (max-width: 900px) {
-    .modal { padding: 28px 24px; }
-    .modal-form { flex-direction: column; }
-    .deck-stats { grid-template-columns: 1fr; }
-    .deck-tiers { grid-template-columns: 1fr; }
     .hero-sponsors-blend { padding: 0 24px 40px; }
     .hero-sponsors-grid { grid-template-columns: 1fr; }
   }
