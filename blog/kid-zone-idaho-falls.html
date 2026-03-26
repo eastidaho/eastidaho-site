@@ -17,109 +17,16 @@
 <meta property="og:site_name" content="East Idaho">
 <meta name="twitter:card" content="summary_large_image">
 
+<link rel="stylesheet" href="/styles.css">
 <style>
-  @import url('https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=Outfit:wght@300;400;500;600;700&display=swap');
-
-  :root {
-    --navy: #0f1a2e;
-    --navy-mid: #1a2940;
-    --coral: #f0956c;
-    --coral-light: #fcb498;
-    --sunrise: #e8735a;
-    --cream: #faf9f7;
-    --warm-white: #f3f1ed;
-    --stone: #ddd8d0;
-    --text-primary: #0f1a2e;
-    --text-body: #3d4a5c;
-    --text-muted: #7a8394;
-    --text-faint: #a8adb8;
-  }
-
-  * { margin: 0; padding: 0; box-sizing: border-box; }
-  body { font-family: 'Outfit', sans-serif; color: var(--text-primary); background: var(--cream); line-height: 1.6; -webkit-font-smoothing: antialiased; }
-
-  /* Nav */
-  nav { background: var(--navy); padding: 0 48px; display: flex; justify-content: space-between; align-items: center; height: 64px; position: sticky; top: 0; z-index: 100; }
-  .nav-logo img { height: 32px; }
-  .nav-links { display: flex; align-items: center; gap: 28px; }
-  .nav-links a { color: rgba(255,255,255,0.5); text-decoration: none; font-size: 14px; font-weight: 500; transition: color 0.2s; }
-  .nav-links a:hover { color: #fff; }
-  .nav-cta { background: var(--coral) !important; color: #fff !important; padding: 8px 20px; border-radius: 5px; font-weight: 600 !important; }
-  .nav-cta:hover { background: var(--sunrise) !important; }
-
-  /* Article header */
-  .article-header { background: var(--navy); padding: 48px 48px 56px; position: relative; overflow: hidden; }
-  .article-header::before { content: ''; position: absolute; inset: 0; background: radial-gradient(ellipse at 15% 80%, rgba(240,149,108,0.06) 0%, transparent 55%), radial-gradient(ellipse at 85% 20%, rgba(26,41,64,0.6) 0%, transparent 50%); }
-  .article-header-inner { position: relative; z-index: 1; max-width: 680px; margin: 0 auto; }
-  .article-back { display: inline-block; font-size: 13px; color: rgba(255,255,255,0.3); text-decoration: none; margin-bottom: 24px; transition: color 0.2s; }
-  .article-back:hover { color: rgba(255,255,255,0.6); }
-  .article-meta { font-size: 12px; color: var(--coral); text-transform: uppercase; letter-spacing: 2px; font-weight: 700; margin-bottom: 12px; }
-  .article-title { font-family: 'DM Serif Display', serif; font-size: 40px; color: #fff; line-height: 1.12; margin-bottom: 14px; }
-  .article-subtitle { font-size: 17px; color: rgba(255,255,255,0.4); line-height: 1.7; font-weight: 300; }
-  .article-tags { display: flex; gap: 8px; margin-top: 18px; flex-wrap: wrap; }
-  .article-tag { font-size: 11px; text-transform: uppercase; letter-spacing: 1px; font-weight: 700; padding: 4px 12px; border-radius: 4px; background: rgba(240,149,108,0.12); color: var(--coral); }
-
-  /* Article body */
-  .article { max-width: 680px; margin: 0 auto; padding: 48px 24px 60px; }
-  .article h2 { font-family: 'DM Serif Display', serif; font-size: 28px; color: var(--text-primary); margin: 40px 0 16px; line-height: 1.2; }
-  .article h3 { font-family: 'DM Serif Display', serif; font-size: 22px; color: var(--text-primary); margin: 32px 0 12px; line-height: 1.25; }
-  .article p { font-size: 17px; color: var(--text-body); line-height: 1.85; margin-bottom: 18px; }
-  .article strong { color: var(--text-primary); }
-  .article a { color: var(--coral); }
-
-  /* Featured image */
-  .article-hero-img { width: 100%; border-radius: 10px; margin-bottom: 32px; background: var(--navy-mid); }
-
-  /* Info box */
-  .info-box { background: var(--warm-white); border: 1px solid var(--stone); border-radius: 8px; padding: 24px; margin: 32px 0; }
-  .info-box-title { font-family: 'DM Serif Display', serif; font-size: 20px; color: var(--text-primary); margin-bottom: 12px; }
-  .info-row { display: flex; gap: 10px; padding: 8px 0; border-bottom: 1px solid var(--stone); font-size: 15px; color: var(--text-body); }
-  .info-row:last-child { border-bottom: none; }
-  .info-icon { flex-shrink: 0; width: 24px; text-align: center; }
-  .info-label { font-weight: 700; color: var(--text-primary); min-width: 70px; }
-
-  /* Divider */
-  .divider { height: 1px; margin: 40px 0; background: linear-gradient(to right, var(--coral), var(--stone) 40%, transparent); }
-
-  /* Subscribe CTA */
-  .subscribe-cta { background: var(--coral); border-radius: 8px; padding: 28px; text-align: center; margin: 40px 0; }
-  .subscribe-cta p { color: #fff; font-size: 17px; font-weight: 600; margin-bottom: 14px; }
-  .subscribe-cta a { display: inline-block; padding: 11px 28px; background: #fff; color: var(--coral); font-size: 14px; font-weight: 700; text-decoration: none; border-radius: 5px; }
-
-  /* Sponsors */
-  .sponsors-bar { background: var(--warm-white); border: 1px solid var(--stone); border-radius: 8px; padding: 20px; margin: 8px 0 40px; }
-  .sponsors-label { font-size: 9px; text-transform: uppercase; letter-spacing: 2.5px; color: var(--text-faint); font-weight: 700; margin-bottom: 12px; text-align: center; }
-  .sponsors-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 8px; }
-  .sponsor-item { text-align: center; padding: 10px 8px; background: #fffdf9; border-radius: 6px; border: 1px solid #e8e2d8; text-decoration: none; }
-  .sponsor-name { font-size: 12.5px; font-weight: 700; color: var(--text-primary); display: block; }
-  .sponsor-type { font-size: 10.5px; color: var(--text-muted); }
-
-  /* Footer */
-  footer { background: #0a1220; padding: 48px; text-align: center; }
-  .footer-logo { margin-bottom: 16px; }
-  .footer-logo img { height: 48px; opacity: 0.8; display: inline-block; }
-  .footer-links { display: flex; justify-content: center; gap: 28px; margin-bottom: 24px; flex-wrap: wrap; }
-  .footer-links a { color: rgba(255,255,255,0.4); text-decoration: none; font-size: 13px; font-weight: 500; }
-  .footer-links a:hover { color: rgba(255,255,255,0.7); }
-  .footer-legal { font-size: 12px; color: rgba(255,255,255,0.2); line-height: 1.6; }
-  .footer-legal-links { margin-bottom: 12px; display: flex; justify-content: center; gap: 20px; }
-  .footer-legal-links a { color: rgba(255,255,255,0.3); text-decoration: none; font-size: 12px; }
-
-  @media (max-width: 768px) {
-    nav { padding: 0 24px; }
-    .nav-links a:not(.nav-cta) { display: none; }
-    .article-header { padding: 36px 24px 44px; }
-    .article-title { font-size: 30px; }
-    .article { padding: 36px 20px 48px; }
-    .sponsors-grid { grid-template-columns: repeat(2, 1fr); }
-    footer { padding: 36px 24px; }
-  }
+  /* Page-specific: blog article */
+  .article-body img.hero-img { background: var(--navy-mid); }
 </style>
 </head>
 <body>
 
 <!-- Nav -->
-<nav>
+<nav class="sticky">
   <a class="nav-logo" href="/"><img src="/logo-white.png" alt="East Idaho"></a>
   <div class="nav-links">
     <a href="/#about">About</a>
@@ -131,24 +38,24 @@
 </nav>
 
 <!-- Article Header -->
-<div class="article-header">
-  <div class="article-header-inner">
-    <a class="article-back" href="/blog/">← All Posts</a>
-    <div class="article-meta">March 25, 2026</div>
-    <h1 class="article-title">Kid Zone Idaho Falls: The Indoor Playground Your Kids Will Love</h1>
-    <p class="article-subtitle">If you're looking for a place to burn off some energy rain or shine, Kid Zone is worth adding to your list.</p>
-    <div class="article-tags">
-      <span class="article-tag">Family</span>
-      <span class="article-tag">Idaho Falls</span>
-      <span class="article-tag">Things to Do</span>
+<div class="page-header">
+  <div class="page-header-inner">
+    <a class="page-header-back" href="/blog/">← All Posts</a>
+    <div class="page-header-meta">March 25, 2026</div>
+    <h1 class="page-header-title">Kid Zone Idaho Falls: The Indoor Playground Your Kids Will Love</h1>
+    <p class="page-header-subtitle">If you're looking for a place to burn off some energy rain or shine, Kid Zone is worth adding to your list.</p>
+    <div class="page-header-tags">
+      <span class="page-header-tag">Family</span>
+      <span class="page-header-tag">Idaho Falls</span>
+      <span class="page-header-tag">Things to Do</span>
     </div>
   </div>
 </div>
 
 <!-- Article Body -->
-<div class="article">
+<div class="article-body">
 
-  <img class="article-hero-img" src="/blog/images/kid-zone.jpg" alt="Kid Zone Idaho Falls indoor playground">
+  <img class="hero-img" src="/blog/images/kid-zone.jpg" alt="Kid Zone Idaho Falls indoor playground">
 
   <p>If you're looking for a place to burn off some energy rain or shine, Kid Zone in Idaho Falls is worth adding to your list. Judging by the packed house even on a random Wednesday afternoon, plenty of local families already have.</p>
 
@@ -204,20 +111,20 @@
   <!-- Sponsors -->
   <div class="sponsors-bar">
     <div class="sponsors-label">This Post Is Brought to You by Our Sponsors</div>
-    <div class="sponsors-grid">
-      <a class="sponsor-item" href="https://complyn.com" target="_blank">
+    <div class="sponsors-grid-sm">
+      <a class="sponsor-item-sm" href="https://complyn.com" target="_blank">
         <span class="sponsor-name">📋 Complyn</span>
         <span class="sponsor-type">Business Services</span>
       </a>
-      <a class="sponsor-item" href="https://rivendstudio.com" target="_blank">
+      <a class="sponsor-item-sm" href="https://rivendstudio.com" target="_blank">
         <span class="sponsor-name">🎨 Rivend Studio</span>
         <span class="sponsor-type">Creative Studio</span>
       </a>
-      <a class="sponsor-item" href="https://www.instagram.com/firelight.fitness" target="_blank">
+      <a class="sponsor-item-sm" href="https://www.instagram.com/firelight.fitness" target="_blank">
         <span class="sponsor-name">🏋️ Firelight Fitness</span>
         <span class="sponsor-type">Fitness & Wellness</span>
       </a>
-      <a class="sponsor-item" href="https://eastidaho.com/sponsors">
+      <a class="sponsor-item-sm" href="https://eastidaho.com/sponsors">
         <span class="sponsor-name">✨ Your Business?</span>
         <span class="sponsor-type" style="color:var(--coral);">Become a sponsor</span>
       </a>
