@@ -1001,7 +1001,7 @@
   <div class="nav-links">
     <a href="#about">About</a>
     <a href="/blog/">Blog</a>
-    <a href="#podcast">Podcast</a>
+    <a href="#latest-issue">Podcast</a>
     <a href="#best-of">Best Of</a>
     <a href="/sponsors.html">Sponsors</a>
     <a class="nav-cta" href="#" onclick="openModal('subscribe-modal'); return false;">Subscribe Free</a>
@@ -1031,7 +1031,7 @@
       </div>
     </div>
 
-    <div class="hero-preview">
+    <a href="#latest-issue" class="hero-preview" style="text-decoration:none;color:inherit;cursor:pointer;">
       <div class="preview-date">Issue #000 · March 23, 2026</div>
       <div class="preview-headline">Why We Started East Idaho</div>
       <div class="preview-excerpt">This valley deserves a media brand that actually lives here. We're building the Saturday morning read for people who love East Idaho — local stories, honest recommendations, and the stuff worth knowing. Here's what we're about and what to expect.</div>
@@ -1041,7 +1041,7 @@
         <span class="preview-tag blue">Meet the Team</span>
         <span class="preview-tag coral">Get Involved</span>
       </div>
-    </div>
+    </a>
   </div>
 </section>
 
@@ -1134,15 +1134,11 @@
       </div>
       <div class="about-card-item">
         <div class="about-card-day">Mon</div>
-        <div class="about-card-desc"><strong>Hot Take Monday</strong> — our spiciest opinion of the week, posted everywhere</div>
-      </div>
-      <div class="about-card-item">
-        <div class="about-card-day">Wed</div>
-        <div class="about-card-desc"><strong>What We're Eating</strong> — an honest food recommendation, every Wednesday</div>
+        <div class="about-card-desc"><strong>Morning Show</strong> — start the week with the latest from the valley</div>
       </div>
       <div class="about-card-item">
         <div class="about-card-day">Fri</div>
-        <div class="about-card-desc"><strong>Weekend Roundup</strong> — everything worth doing this weekend, one post</div>
+        <div class="about-card-desc"><strong>Foodie Friday</strong> — an honest food recommendation to kick off your weekend</div>
       </div>
       <div class="about-card-item">
         <div class="about-card-day">Daily</div>
@@ -1153,7 +1149,7 @@
 </section>
 
 <!-- ═══════════ LATEST ISSUE ═══════════ -->
-<section class="latest-episode" id="podcast">
+<section class="latest-episode" id="latest-issue">
   <div class="episode-inner">
     <div class="episode-content">
       <div class="episode-eyebrow">Latest Issue</div>
@@ -1165,14 +1161,16 @@
       </div>
       <p class="episode-desc">This is our introduction to you. Why we started East Idaho, what you can expect every Saturday morning, and an invitation to be part of something we're building for the valley. This is Issue Zero — and we're glad you're here.</p>
       <div class="episode-buttons">
-        <a class="btn-listen" href="#" onclick="openModal('subscribe-modal'); return false;">📧 Subscribe to Read</a>
+        <a class="btn-listen" href="#" onclick="openModal('newsletter-preview-modal'); return false;">📧 Read This Issue</a>
+        <a class="btn-watch" href="#" onclick="openModal('subscribe-modal'); return false;">Subscribe Free</a>
       </div>
+      <a href="/blog/" style="display:inline-block;margin-top:14px;font-size:13px;color:rgba(255,255,255,0.4);text-decoration:none;transition:color 0.2s;" onmouseover="this.style.color='#fff'" onmouseout="this.style.color='rgba(255,255,255,0.4)'">Browse all past issues →</a>
     </div>
-    <div class="episode-thumbnail" style="display: flex; align-items: center; justify-content: center;">
-      <div style="text-align: center; color: rgba(255,255,255,0.6);">
-        <div style="font-size: 48px; margin-bottom: 12px;">📧</div>
-        <div style="font-family: 'DM Serif Display', serif; font-size: 22px; color: #fff;">Issue #000</div>
-        <div style="font-size: 13px; color: rgba(255,255,255,0.4); margin-top: 4px;">Our first newsletter</div>
+    <div class="episode-thumbnail" style="display:flex;align-items:center;justify-content:center;cursor:pointer;" onclick="openModal('newsletter-preview-modal')">
+      <div style="text-align:center;color:rgba(255,255,255,0.6);">
+        <div style="font-size:48px;margin-bottom:12px;">📧</div>
+        <div style="font-family:'DM Serif Display',serif;font-size:22px;color:#fff;">Issue #000</div>
+        <div style="font-size:13px;color:rgba(255,255,255,0.4);margin-top:4px;">Click to read</div>
       </div>
     </div>
   </div>
@@ -1325,7 +1323,7 @@
   <div class="footer-links">
     <a href="#" onclick="openModal('subscribe-modal'); return false;">Newsletter</a>
     <a href="/blog/">Blog</a>
-    <a href="#podcast">Podcast</a>
+    <a href="#latest-issue">Podcast</a>
     <a href="https://www.youtube.com/@eastidahomedia" target="_blank">YouTube</a>
     <a href="https://www.instagram.com/east.idaho" target="_blank">Instagram</a>
     <a href="https://www.tiktok.com/@eastidaho" target="_blank">TikTok</a>
@@ -1344,6 +1342,51 @@
 </footer>
 
 <!-- ═══════════ MODALS ═══════════ -->
+
+<!-- Newsletter Preview Modal -->
+<div class="modal-overlay" id="newsletter-preview-modal" onclick="if(event.target===this)closeModal(this)">
+  <div class="modal wide" style="max-width:680px;padding:0;overflow:hidden;">
+    <button class="modal-close" onclick="closeModal(document.getElementById('newsletter-preview-modal'))" style="position:absolute;top:12px;right:12px;z-index:10;background:rgba(255,255,255,0.9);">&times;</button>
+    <div style="max-height:80vh;overflow-y:auto;">
+      <!-- Newsletter Header -->
+      <div style="background:#0f1a2e;padding:28px 32px 24px;text-align:center;">
+        <img src="logo-white.png" alt="East Idaho" style="height:40px;margin:0 auto 12px;display:block;">
+        <div style="width:40px;height:2px;background:#f0956c;margin:0 auto 10px;"></div>
+        <p style="font-size:12px;color:#7a8394;margin:0;"><strong style="color:#fcb498;">Issue #000</strong> · March 29, 2026 · Saturday</p>
+      </div>
+      <!-- Newsletter Body -->
+      <div style="padding:28px 32px;background:#fffdf9;">
+        <h2 style="font-family:'DM Serif Display',serif;font-size:22px;color:#0f1a2e;margin:0 0 14px;">Welcome to East Idaho.</h2>
+        <p style="font-size:15px;color:#3d4a5c;line-height:1.75;margin:0 0 12px;">This is Issue #000 — our very first newsletter. If you're reading this, you're one of the first people to join us, and that means a lot.</p>
+        <p style="font-size:15px;color:#3d4a5c;line-height:1.75;margin:0 0 12px;">Here's the short version of what we're doing: Every Saturday morning, we're sending you a 5-minute email about the people, places, and stories that make this valley what it is. Honest recommendations, weekend plans, local facts you didn't know, and the kind of stories that don't get told anywhere else.</p>
+        <p style="font-size:15px;color:#3d4a5c;line-height:1.75;margin:0 0 12px;">We're not a news site. We're not competing with anyone. We're just trying to be your most connected friend in the valley — the one who always knows what's going on and where to go.</p>
+        <p style="font-size:15px;color:#3d4a5c;line-height:1.75;margin:0 0 12px;">This is for all 300,000+ of us. Idaho Falls, Rexburg, Rigby, Driggs, Ammon, Shelley, Blackfoot, and everyone in between.</p>
+        <p style="font-size:15px;color:#3d4a5c;line-height:1.75;margin:0 0 12px;"><strong style="color:#0f1a2e;">One ask: hit reply and tell us where in East Idaho you're from.</strong> We read every single response, and it helps us know who we're writing for.</p>
+        <p style="font-family:'Playfair Display',serif;font-style:italic;color:#7a8394;font-size:14px;margin:16px 0 0;">— Nathan Summers, Cofounder</p>
+
+        <div style="height:1px;margin:28px 0;background:linear-gradient(to right,#f0956c,#e2ddd4 40%,transparent);"></div>
+
+        <p style="font-size:11px;text-transform:uppercase;letter-spacing:3px;color:#f0956c;font-weight:700;margin:0 0 4px;">📷 Photo of the Week</p>
+        <h3 style="font-family:'DM Serif Display',serif;font-size:18px;color:#0f1a2e;margin:0 0 10px;">The Water Tower We All Miss</h3>
+        <p style="font-size:13px;color:#7a8394;line-height:1.5;margin:0 0 20px;"><strong style="color:#3d4a5c;">The Idaho Falls water tower</strong> — gone but never forgotten. It stood tall over the Snake River for decades, and if you grew up here, you know exactly what it meant to see it on the skyline. 📸 Dan Cutler</p>
+
+        <div style="height:1px;margin:28px 0;background:linear-gradient(to right,#f0956c,#e2ddd4 40%,transparent);"></div>
+
+        <p style="font-size:11px;text-transform:uppercase;letter-spacing:3px;color:#f0956c;font-weight:700;margin:0 0 4px;">💡 Did You Know</p>
+        <div style="background:#fef7f2;padding:16px 18px;border-radius:6px;margin:8px 0 20px;">
+          <p style="font-size:14px;color:#3d4a5c;line-height:1.6;margin:0;">Idaho Falls has had hydroelectric power since 1900 — those dams downtown on the Snake River are why your electric bill is so low. Idaho Falls Power is one of the few city-owned utilities in the state, and the rates are some of the lowest in the country.</p>
+        </div>
+
+        <p style="font-size:13px;color:#7a8394;text-align:center;margin:24px 0 8px;font-style:italic;">This is a preview. Subscribe to get the full newsletter every Saturday.</p>
+      </div>
+      <!-- Newsletter CTA -->
+      <div style="background:#f0956c;padding:20px 32px;text-align:center;">
+        <p style="color:#fff;font-size:15px;font-weight:600;margin:0 0 10px;">Get this in your inbox every Saturday morning.</p>
+        <a href="#" onclick="closeModal(document.getElementById('newsletter-preview-modal')); openModal('subscribe-modal'); return false;" style="display:inline-block;padding:10px 28px;background:#fff;color:#f0956c;font-size:13px;font-weight:700;text-decoration:none;border-radius:4px;">Subscribe Free →</a>
+      </div>
+    </div>
+  </div>
+</div>
 
 <!-- Subscribe Modal -->
 <div class="modal-overlay" id="subscribe-modal" onclick="if(event.target===this)closeModal(this)">
