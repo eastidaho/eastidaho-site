@@ -59,23 +59,25 @@
 
   <p>If you've been looking for real, slow-smoked BBQ in Idaho Falls — the kind where the meat falls apart before the fork even touches it — Dave's Fire & Smoke BBQ is the spot.</p>
 
-  <p>Tucked near the corner of 1st Street and Ronglyn Ave, close to Ravsten Stadium, Dave's is easy to miss if you're not looking for it. But the locals who know, know. And once you've had the brisket, you'll understand why people keep coming back.</p>
+  <p>Dave's is a food truck parked near the corner of 1st Street and Ronglyn Ave, close to Ravsten Stadium. It's easy to miss if you're not looking for it. But the locals who know, know. And once you've had the brisket, you'll understand why people keep coming back.</p>
 
-  <h2>What to Order</h2>
+  <h2>What We Ordered</h2>
 
   <p>The menu is straightforward and everything revolves around slow-smoked meat done right — pulled pork, brisket, sausage, ribs, and smoked chicken, all prepared with a mix of fruit woods and house seasonings that give it a flavor you won't find anywhere else in the valley.</p>
 
-  <p>The <strong>Piggy Mac</strong> is the move if it's your first time. It's their house-made mac and cheese loaded with slow-smoked pulled pork — the kind of comfort food that makes you close your eyes on the first bite. The <strong>Brisket Mac</strong> is the upgrade if you want to go all in.</p>
+  <p>We tried three things and every one of them delivered.</p>
 
-  <p>The <strong>brisket nachos</strong> are another fan favorite — piled high with meat, cheese, and all the fixings. It's a shareable plate, but you probably won't want to share it.</p>
+  <p>The <strong>Piggy Mac</strong> is the move. House-made mac and cheese loaded with slow-smoked pulled pork — the kind of comfort food that makes you close your eyes on the first bite. If you only order one thing, make it this.</p>
 
-  <p>For sandwiches, the <strong>pulled pork sandwich</strong> is the classic. Slow-smoked pork on a brioche bun with pickles and your choice of sauce. Simple, done right. The <strong>Brisket Philly</strong> is for when you want something a little different — and it delivers.</p>
+  <p>The <strong>brisket nachos</strong> came piled high with meat, cheese, and all the fixings. It's technically a shareable plate, but we didn't share it.</p>
 
-  <p>Sides include house-made mac and cheese, southern-style baked beans, potato salad, broccoli salad, and a fresh kale slaw that's a surprisingly good counterbalance to all that smoke. Don't skip the loaded baked potato either — they stuff it with pulled pork or brisket, cheese, sour cream, and green onions.</p>
+  <p>The <strong>loaded baked potato with brisket</strong> was the sleeper hit. They stuff an Idaho baked potato with slow-smoked brisket, cheese, sour cream, and green onions. It's massive, it's hearty, and it's the kind of thing you didn't know you needed until it's sitting in front of you.</p>
+
+  <p>Other standouts on the menu include the pulled pork sandwich on a brioche bun, the Brisket Philly, and the Brisket Mac if you want to upgrade from the Piggy Mac. Sides include southern-style baked beans, potato salad, broccoli salad, and a fresh kale slaw that's a surprisingly good counterbalance to all that smoke.</p>
 
   <h2>The Vibe</h2>
 
-  <p>Dave's isn't a sit-down restaurant with tablecloths and a hostess. It's a BBQ joint — and that's what makes it great. The service is friendly, the prices are fair, and the food speaks for itself. The owners are usually there, and they genuinely care about what they're putting out.</p>
+  <p>Dave's isn't a sit-down restaurant with tablecloths and a hostess. It's a food truck — and that's what makes it great. The service is friendly, the prices are fair, and the food speaks for itself. The owners are usually there, and they genuinely care about what they're putting out.</p>
 
   <p>One review we came across put it perfectly: someone with Texas roots and BBQ in their blood said Dave's impressed them. That's not an easy thing to do.</p>
 
@@ -101,17 +103,12 @@
     <div class="info-row">
       <span class="info-icon">🚗</span>
       <span class="info-label">Note</span>
-      <span>Located near Ravsten Stadium on 1st St & Ronglyn Ave</span>
+      <span>Food truck near Ravsten Stadium, 1st St & Ronglyn Ave</span>
     </div>
     <div class="info-row">
       <span class="info-icon">📱</span>
       <span class="info-label">Order</span>
       <span>Pickup, delivery via DoorDash & Grubhub</span>
-    </div>
-    <div class="info-row">
-      <span class="info-icon">🌐</span>
-      <span class="info-label">Website</span>
-      <span><a href="https://www.davesfireandsmokebbq.com" target="_blank" style="color:var(--coral);text-decoration:none;font-weight:600;">davesfireandsmokebbq.com</a></span>
     </div>
     <div class="info-row">
       <span class="info-icon">f</span>
@@ -129,7 +126,7 @@
   <!-- Subscribe CTA -->
   <div class="subscribe-cta">
     <p>Get the best of East Idaho in your inbox every Saturday. Free forever.</p>
-    <a href="https://eastidaho.com/#subscribe">Subscribe to East Idaho →</a>
+    <a href="#" onclick="document.getElementById('subscribe-modal').classList.add('active'); return false;">Subscribe to East Idaho →</a>
   </div>
 
   <!-- Sponsors -->
@@ -177,6 +174,58 @@
     © 2026 East Idaho Media Co. LLC. All rights reserved.
   </div>
 </footer>
+
+<!-- Subscribe Modal -->
+<div class="modal-overlay" id="subscribe-modal" onclick="if(event.target===this)this.classList.remove('active')">
+  <div class="modal">
+    <button class="modal-close" onclick="document.getElementById('subscribe-modal').classList.remove('active')">&times;</button>
+    <div class="modal-eyebrow">Join the Community</div>
+    <div class="modal-title">Get East Idaho in your inbox every Saturday.</div>
+    <p class="modal-text">Local stories, honest recommendations, weekend plans, and the stuff worth knowing. One email a week. Free forever.</p>
+    <form class="modal-form" onsubmit="subscribeFromBlog(event, this)">
+      <input type="email" placeholder="you@email.com" required>
+      <button type="submit">Subscribe</button>
+    </form>
+    <div class="modal-form-message"></div>
+  </div>
+</div>
+
+<script>
+async function subscribeFromBlog(event, form) {
+  event.preventDefault();
+  var email = form.querySelector('input[type="email"]').value;
+  var button = form.querySelector('button');
+  var messageEl = form.nextElementSibling;
+  var originalText = button.textContent;
+  button.disabled = true;
+  button.textContent = 'Subscribing...';
+  try {
+    var response = await fetch('/api/subscribe', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({ email: email })
+    });
+    if (response.ok) {
+      form.style.display = 'none';
+      messageEl.style.display = 'block';
+      messageEl.style.color = '#4ade80';
+      messageEl.textContent = "You're in! Welcome to East Idaho.";
+    } else {
+      button.disabled = false;
+      button.textContent = originalText;
+      messageEl.style.display = 'block';
+      messageEl.style.color = '#fcb498';
+      messageEl.textContent = 'Something went wrong. Please try again.';
+    }
+  } catch (err) {
+    button.disabled = false;
+    button.textContent = originalText;
+    messageEl.style.display = 'block';
+    messageEl.style.color = '#fcb498';
+    messageEl.textContent = 'Something went wrong. Please try again.';
+  }
+}
+</script>
 
 </body>
 </html>
