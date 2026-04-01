@@ -43,6 +43,48 @@
   ══════════════════════════════════ */
 
   /* ══════════════════════════════════
+     ANNOUNCEMENT BANNER
+  ══════════════════════════════════ */
+  .announcement-banner {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 12px;
+    padding: 10px 24px;
+    background: linear-gradient(135deg, #e8735a 0%, #f0956c 100%);
+    text-decoration: none;
+    position: relative;
+    z-index: 101;
+    transition: background 0.2s;
+    flex-wrap: wrap;
+  }
+  .announcement-banner:hover {
+    background: linear-gradient(135deg, #d4623e 0%, #e8845b 100%);
+  }
+  .announcement-text {
+    font-size: 13.5px;
+    color: #fff;
+    letter-spacing: 0.3px;
+  }
+  .announcement-cta {
+    font-size: 12px;
+    font-weight: 700;
+    color: #fff;
+    background: rgba(255,255,255,0.2);
+    padding: 3px 14px;
+    border-radius: 4px;
+    letter-spacing: 0.5px;
+    white-space: nowrap;
+  }
+  .announcement-banner:hover .announcement-cta {
+    background: rgba(255,255,255,0.3);
+  }
+  @media (max-width: 600px) {
+    .announcement-banner { padding: 10px 16px; gap: 8px; }
+    .announcement-text { font-size: 12px; text-align: center; }
+  }
+
+  /* ══════════════════════════════════
      HERO
   ══════════════════════════════════ */
   .hero {
@@ -992,6 +1034,27 @@
 </style>
 </head>
 <body>
+
+<!-- ═══════════ ANNOUNCEMENT BANNER ═══════════ -->
+<a href="/events/hot-wing-challenge.html" class="announcement-banner">
+  <span class="announcement-text">🔥 <strong>East Idaho Hot Wing Challenge</strong> — April 11th at 6:00 PM in Rigby. Think you can handle it?</span>
+  <span class="announcement-cta">Learn More →</span>
+</a>
+
+<!-- ═══════════ NAV ═══════════ -->
+<nav>
+  <a class="nav-logo" href="/">
+    <img src="logo-white.png" alt="East Idaho">
+  </a>
+  <div class="nav-links">
+    <a href="#about">About</a>
+    <a href="/blog/">Blog</a>
+    <a href="#latest-issue">Podcast</a>
+    <a href="#best-of">Best Of</a>
+    <a href="/services.html">Services</a>
+    <a class="nav-cta" href="#" onclick="openModal('subscribe-modal'); return false;">Subscribe Free</a>
+  </div>
+</nav>
 
 <!-- ═══════════ HERO ═══════════ -->
 <section class="hero" id="subscribe">
