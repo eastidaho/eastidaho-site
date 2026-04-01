@@ -53,8 +53,11 @@
     padding: 10px 24px;
     background: linear-gradient(135deg, #e8735a 0%, #f0956c 100%);
     text-decoration: none;
-    position: relative;
-    z-index: 101;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 102;
     transition: background 0.2s;
     flex-wrap: wrap;
   }
@@ -83,6 +86,10 @@
     .announcement-banner { padding: 10px 16px; gap: 8px; }
     .announcement-text { font-size: 12px; text-align: center; }
   }
+
+  /* Push nav below the fixed announcement banner */
+  nav { top: 38px; }
+  @media (max-width: 600px) { nav { top: 50px; } }
 
   /* ══════════════════════════════════
      HERO
@@ -116,7 +123,7 @@
     z-index: 1;
     max-width: 1200px;
     margin: 0 auto;
-    padding: 120px 48px 80px;
+    padding: 155px 48px 80px;
     display: grid;
     grid-template-columns: 1fr 420px;
     gap: 80px;
