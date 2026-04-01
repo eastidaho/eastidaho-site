@@ -42,6 +42,49 @@ body {
   -webkit-font-smoothing: antialiased;
 }
 
+/* ── Announcement Banner ── */
+.announcement-banner {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  background: #f0956c;
+  color: #0f1a2e;
+  text-align: center;
+  padding: 10px 20px;
+  font-family: 'Outfit', sans-serif;
+  font-size: 14px;
+  font-weight: 500;
+  letter-spacing: 0.01em;
+  text-decoration: none;
+  transition: background 0.2s ease;
+}
+
+.announcement-banner:hover {
+  background: #e8845a;
+}
+
+.announcement-banner .banner-cta {
+  background: #0f1a2e;
+  color: #f0956c;
+  border-radius: 4px;
+  padding: 2px 10px;
+  font-size: 12px;
+  font-weight: 600;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  white-space: nowrap;
+  flex-shrink: 0;
+}
+
+@media (max-width: 600px) {
+  .announcement-banner {
+    flex-direction: column;
+    gap: 6px;
+    font-size: 13px;
+  }
+}
+
 /* ══════════════════════════════════
    NAVIGATION
 ══════════════════════════════════ */
