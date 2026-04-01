@@ -1043,7 +1043,7 @@
 <body>
 
 <!-- ═══════════ ANNOUNCEMENT BANNER ═══════════ -->
-<a href="/events/hot-wing-challenge.html" class="announcement-banner">
+<a href="#" onclick="openModal('event-modal'); return false;" class="announcement-banner">
   <span class="announcement-text">🔥 <strong>East Idaho Hot Wing Challenge</strong> — April 11th at 6:00 PM in Rigby. Think you can handle it?</span>
   <span class="announcement-cta">Learn More →</span>
 </a>
@@ -1398,6 +1398,47 @@
 </footer>
 
 <!-- ═══════════ MODALS ═══════════ -->
+
+<!-- Event Modal: Hot Wing Challenge -->
+<div class="modal-overlay" id="event-modal" onclick="if(event.target===this)closeModal(this)">
+  <div class="modal" style="max-width:520px;">
+    <button class="modal-close" onclick="closeModal(document.getElementById('event-modal'))">&times;</button>
+
+    <div style="text-align:center;margin-bottom:8px;font-size:48px;">🔥</div>
+    <div class="modal-eyebrow">Upcoming Event</div>
+    <div class="modal-title" style="text-align:center;">East Idaho Hot Wing Challenge</div>
+
+    <div style="background:var(--warm-white);border:1px solid var(--stone);border-radius:8px;padding:20px;margin:20px 0;">
+      <div style="display:flex;gap:10px;padding:8px 0;border-bottom:1px solid var(--stone);font-size:15px;color:var(--text-body);">
+        <span style="flex-shrink:0;width:24px;text-align:center;">📅</span>
+        <span style="font-weight:700;color:var(--text-primary);min-width:55px;">Date</span>
+        <span>Saturday, April 11, 2026</span>
+      </div>
+      <div style="display:flex;gap:10px;padding:8px 0;border-bottom:1px solid var(--stone);font-size:15px;color:var(--text-body);">
+        <span style="flex-shrink:0;width:24px;text-align:center;">🕕</span>
+        <span style="font-weight:700;color:var(--text-primary);min-width:55px;">Time</span>
+        <span>6:00 PM</span>
+      </div>
+      <div style="display:flex;gap:10px;padding:8px 0;border-bottom:1px solid var(--stone);font-size:15px;color:var(--text-body);">
+        <span style="flex-shrink:0;width:24px;text-align:center;">📍</span>
+        <span style="font-weight:700;color:var(--text-primary);min-width:55px;">Where</span>
+        <span>659 N 4116 E #3, Rigby, ID 83442</span>
+      </div>
+      <div style="display:flex;gap:10px;padding:8px 0;font-size:15px;color:var(--text-body);">
+        <span style="flex-shrink:0;width:24px;text-align:center;">🏆</span>
+        <span style="font-weight:700;color:var(--text-primary);min-width:55px;">What</span>
+        <span>Hot wing eating challenge — do you have what it takes?</span>
+      </div>
+    </div>
+
+    <p class="modal-text" style="text-align:center;">Think you can handle the heat? Sign up now to secure your spot. Space is limited.</p>
+
+    <div style="display:flex;flex-direction:column;gap:10px;align-items:center;margin-top:20px;">
+      <a href="https://noreply.eastidaho.com/hot-wings-challenge" target="_blank" style="display:inline-block;padding:14px 36px;background:var(--coral);color:#fff;border-radius:6px;font-size:15px;font-weight:700;text-decoration:none;transition:background 0.2s;letter-spacing:0.3px;">Sign Up Now →</a>
+      <span style="font-size:12px;color:var(--text-faint);">Spots are limited — don't wait</span>
+    </div>
+  </div>
+</div>
 
 <!-- Newsletter Preview Modal -->
 <div class="modal-overlay" id="newsletter-preview-modal" onclick="if(event.target===this)closeModal(this)">
