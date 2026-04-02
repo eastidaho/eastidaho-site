@@ -53,8 +53,11 @@
     padding: 10px 24px;
     background: linear-gradient(135deg, #e8735a 0%, #f0956c 100%);
     text-decoration: none;
-    position: relative;
-    z-index: 102;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 110;
     transition: background 0.2s;
     flex-wrap: wrap;
   }
@@ -79,9 +82,14 @@
   .announcement-banner:hover .announcement-cta {
     background: rgba(255,255,255,0.3);
   }
+
+  /* Push nav below the banner */
+  nav { top: 38px !important; }
+
   @media (max-width: 600px) {
-    .announcement-banner { padding: 10px 16px; gap: 8px; }
+    .announcement-banner { padding: 10px 16px; gap: 8px; text-align: center; }
     .announcement-text { font-size: 12px; text-align: center; }
+    nav { top: 56px !important; }
   }
 
   /* ══════════════════════════════════
@@ -116,7 +124,7 @@
     z-index: 1;
     max-width: 1200px;
     margin: 0 auto;
-    padding: 120px 48px 80px;
+    padding: 160px 48px 80px;
     display: grid;
     grid-template-columns: 1fr 420px;
     gap: 80px;
@@ -644,7 +652,7 @@
     .nav-links a:not(.nav-cta) { display: none; }
     .hero-content {
       grid-template-columns: 1fr;
-      padding: 110px 24px 60px; gap: 40px;
+      padding: 150px 24px 60px; gap: 40px;
     }
     .hero-title { font-size: 40px; }
     .hero-preview { transform: rotate(0deg); }
@@ -1036,7 +1044,7 @@
 <body>
 
 <!-- ═══════════ ANNOUNCEMENT BANNER ═══════════ -->
-<a href="/events/hot-wing-challenge.html" class="announcement-banner">
+<a href="/events/hot-wing-challenge.html" class="announcement-banner" id="announcement-banner">
   <span class="announcement-text">🔥 <strong>East Idaho Hot Wing Challenge</strong> — April 11th at 6:00 PM in Rigby. Think you can handle it?</span>
   <span class="announcement-cta">Learn More →</span>
 </a>
