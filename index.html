@@ -83,13 +83,74 @@
     background: rgba(255,255,255,0.3);
   }
 
-  /* Push nav below the banner */
-  nav { top: 38px !important; }
-
   @media (max-width: 600px) {
-    .announcement-banner { padding: 10px 16px; gap: 8px; text-align: center; }
-    .announcement-text { font-size: 12px; text-align: center; }
-    nav { top: 56px !important; }
+    .announcement-banner { padding: 10px 16px; gap: 6px; text-align: center; justify-content: center; }
+    .announcement-text { font-size: 11.5px; text-align: center; }
+    .announcement-cta { margin-top: 4px; }
+  }
+
+  /* Hamburger menu button (mobile only) */
+  .nav-hamburger {
+    display: none;
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 8px;
+    z-index: 120;
+  }
+  .nav-hamburger span {
+    display: block;
+    width: 22px;
+    height: 2px;
+    background: rgba(255,255,255,0.7);
+    margin: 5px 0;
+    border-radius: 2px;
+    transition: all 0.3s;
+  }
+  .nav-hamburger.active span:nth-child(1) { transform: rotate(45deg) translate(5px, 5px); }
+  .nav-hamburger.active span:nth-child(2) { opacity: 0; }
+  .nav-hamburger.active span:nth-child(3) { transform: rotate(-45deg) translate(5px, -5px); }
+
+  /* Mobile nav drawer */
+  .nav-mobile-drawer {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(15,26,46,0.98);
+    z-index: 105;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 24px;
+  }
+  .nav-mobile-drawer.active { display: flex; }
+  .nav-mobile-drawer a {
+    color: rgba(255,255,255,0.7);
+    text-decoration: none;
+    font-size: 20px;
+    font-weight: 600;
+    letter-spacing: 0.5px;
+    transition: color 0.2s;
+  }
+  .nav-mobile-drawer a:hover { color: #fff; }
+  .nav-mobile-drawer .nav-cta {
+    background: var(--coral) !important;
+    color: #fff !important;
+    padding: 12px 28px;
+    border-radius: 6px;
+    font-size: 16px;
+    margin-top: 8px;
+  }
+
+  @media (max-width: 900px) {
+    .nav-hamburger { display: block; }
+    .nav-links { display: none; }
+  }
+  @media (min-width: 901px) {
+    .nav-mobile-drawer { display: none !important; }
   }
 
   /* ══════════════════════════════════
@@ -648,8 +709,6 @@
   ══════════════════════════════════ */
   @media (max-width: 900px) {
     nav { padding: 0 24px; }
-    .nav-links { gap: 16px; }
-    .nav-links a:not(.nav-cta) { display: none; }
     .hero-content {
       grid-template-columns: 1fr;
       padding: 150px 24px 60px; gap: 40px;
@@ -1062,7 +1121,22 @@
     <a href="/services.html">Services</a>
     <a class="nav-cta" href="#" onclick="openModal('subscribe-modal'); return false;">Subscribe Free</a>
   </div>
+  <button class="nav-hamburger" id="hamburger-btn" onclick="toggleMobileNav()">
+    <span></span>
+    <span></span>
+    <span></span>
+  </button>
 </nav>
+
+<!-- Mobile Nav Drawer -->
+<div class="nav-mobile-drawer" id="mobile-nav">
+  <a href="#about" onclick="closeMobileNav()">About</a>
+  <a href="/blog/">Newsletter</a>
+  <a href="#latest-issue" onclick="closeMobileNav()">Podcast</a>
+  <a href="#best-of" onclick="closeMobileNav()">Best Of</a>
+  <a href="/services.html">Services</a>
+  <a class="nav-cta" href="#" onclick="closeMobileNav(); openModal('subscribe-modal'); return false;">Subscribe Free</a>
+</div>
 
 <!-- ═══════════ HERO ═══════════ -->
 <section class="hero" id="subscribe">
@@ -1662,6 +1736,32 @@
 
 <!-- ═══════════ SCRIPTS ═══════════ -->
 <script>
+// Dynamic banner offset — positions nav below the announcement banner
+function adjustNavPosition() {
+  var banner = document.getElementById('announcement-banner');
+  var nav = document.querySelector('nav');
+  if (banner && nav) {
+    var bannerHeight = banner.offsetHeight;
+    nav.style.top = bannerHeight + 'px';
+  }
+}
+window.addEventListener('load', adjustNavPosition);
+window.addEventListener('resize', adjustNavPosition);
+
+// Mobile nav hamburger
+function toggleMobileNav() {
+  var drawer = document.getElementById('mobile-nav');
+  var btn = document.getElementById('hamburger-btn');
+  drawer.classList.toggle('active');
+  btn.classList.toggle('active');
+  document.body.style.overflow = drawer.classList.contains('active') ? 'hidden' : '';
+}
+function closeMobileNav() {
+  document.getElementById('mobile-nav').classList.remove('active');
+  document.getElementById('hamburger-btn').classList.remove('active');
+  document.body.style.overflow = '';
+}
+
 // Modal open/close
 function openModal(id) {
   document.getElementById(id).classList.add('active');
