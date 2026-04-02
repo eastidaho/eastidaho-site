@@ -97,6 +97,7 @@
     cursor: pointer;
     padding: 8px;
     z-index: 120;
+    position: relative;
   }
   .nav-hamburger span {
     display: block;
@@ -148,6 +149,7 @@
   @media (max-width: 900px) {
     .nav-hamburger { display: block; }
     .nav-links { display: none; }
+    nav { z-index: 106 !important; }
   }
   @media (min-width: 901px) {
     .nav-mobile-drawer { display: none !important; }
