@@ -1,0 +1,444 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>You're In — East Idaho Hot Wings Challenge</title>
+  <link rel="icon" type="image/png" href="/logo-icon.png">
+  <link rel="apple-touch-icon" href="/logo-icon.png">
+  <link href="https://fonts.googleapis.com/css2?family=Black+Han+Sans&family=Bebas+Neue&family=Figtree:wght@400;600;700&display=swap" rel="stylesheet" />
+  <style>
+    :root {
+      --fire-1: #FF1F00;
+      --fire-2: #FF6B00;
+      --fire-3: #FFB800;
+      --char: #1A0800;
+      --smoke: #2E1A0E;
+      --ash: #F5EBE0;
+      --white: #FFF8F3;
+    }
+
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    html, body {
+      min-height: 100vh;
+      background-color: var(--char);
+      color: var(--white);
+      font-family: 'Figtree', sans-serif;
+      overflow-x: hidden;
+    }
+
+    body::before {
+      content: '';
+      position: fixed;
+      inset: 0;
+      background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='0.08'/%3E%3C/svg%3E");
+      pointer-events: none;
+      z-index: 100;
+      opacity: 0.4;
+    }
+
+    body::after {
+      content: '';
+      position: fixed;
+      top: -150px;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 800px;
+      height: 600px;
+      background: radial-gradient(ellipse at 50% 20%, rgba(255,107,0,0.28) 0%, rgba(255,31,0,0.10) 40%, transparent 70%);
+      pointer-events: none;
+      z-index: 0;
+    }
+
+    /* Back button */
+    .back-link {
+      position: fixed;
+      top: 24px;
+      left: 32px;
+      font-size: 14px;
+      color: rgba(245,235,224,0.3);
+      text-decoration: none;
+      z-index: 50;
+      transition: color 0.2s;
+      font-family: 'Figtree', sans-serif;
+    }
+    .back-link:hover { color: rgba(245,235,224,0.7); }
+
+    .page {
+      position: relative;
+      z-index: 1;
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      padding: 3rem 1.5rem;
+    }
+
+    .flame-row {
+      display: flex;
+      gap: 0.4rem;
+      margin-bottom: 1.6rem;
+      animation: rise 0.8s ease-out both;
+    }
+
+    .flame {
+      font-size: 2.8rem;
+      animation: flicker 1.8s ease-in-out infinite alternate;
+      filter: drop-shadow(0 0 12px rgba(255,107,0,0.9));
+    }
+    .flame:nth-child(2) { animation-delay: 0.3s; animation-duration: 2.1s; }
+    .flame:nth-child(3) { animation-delay: 0.6s; animation-duration: 1.6s; }
+
+    @keyframes flicker {
+      from { transform: scaleY(1) rotate(-2deg); }
+      to   { transform: scaleY(1.08) rotate(2deg); }
+    }
+
+    .badge {
+      background: var(--fire-1);
+      color: var(--white);
+      font-family: 'Black Han Sans', sans-serif;
+      font-size: 0.72rem;
+      letter-spacing: 0.22em;
+      text-transform: uppercase;
+      padding: 0.35rem 1.1rem;
+      border-radius: 2px;
+      margin-bottom: 1.2rem;
+      animation: fade-up 0.6s 0.2s ease-out both;
+    }
+
+    h1 {
+      font-family: 'Bebas Neue', sans-serif;
+      font-size: clamp(4rem, 14vw, 9rem);
+      line-height: 0.92;
+      text-align: center;
+      letter-spacing: 0.01em;
+      animation: fade-up 0.7s 0.35s ease-out both;
+    }
+
+    h1 .line-fire {
+      display: block;
+      background: linear-gradient(90deg, var(--fire-1), var(--fire-2), var(--fire-3));
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+    }
+    h1 .line-white {
+      display: block;
+      color: var(--white);
+    }
+
+    .divider {
+      width: 80px;
+      height: 3px;
+      background: linear-gradient(90deg, var(--fire-1), var(--fire-3));
+      border-radius: 2px;
+      margin: 2rem auto;
+      animation: fade-up 0.6s 0.55s ease-out both;
+    }
+
+    .sub {
+      font-size: 1.15rem;
+      font-weight: 600;
+      text-align: center;
+      max-width: 480px;
+      color: var(--ash);
+      line-height: 1.6;
+      animation: fade-up 0.6s 0.65s ease-out both;
+    }
+    .sub strong { color: var(--fire-3); }
+
+    .cards {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+      gap: 1rem;
+      margin-top: 2.5rem;
+      width: 100%;
+      max-width: 620px;
+      animation: fade-up 0.7s 0.8s ease-out both;
+    }
+
+    .card {
+      background: rgba(255,255,255,0.04);
+      border: 1px solid rgba(255,107,0,0.25);
+      border-radius: 8px;
+      padding: 1.4rem 1.2rem;
+      text-align: center;
+    }
+
+    .card-icon { font-size: 1.8rem; margin-bottom: 0.5rem; }
+    .card-label {
+      font-family: 'Black Han Sans', sans-serif;
+      font-size: 0.65rem;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      color: var(--fire-2);
+      margin-bottom: 0.3rem;
+    }
+    .card-value {
+      font-size: 0.95rem;
+      font-weight: 600;
+      color: var(--ash);
+    }
+
+    .cta-wrap {
+      margin-top: 2.8rem;
+      animation: fade-up 0.6s 1s ease-out both;
+    }
+
+    .btn {
+      display: inline-block;
+      background: linear-gradient(135deg, var(--fire-1), var(--fire-2));
+      color: var(--white);
+      text-decoration: none;
+      font-family: 'Black Han Sans', sans-serif;
+      font-size: 1rem;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      padding: 1rem 2.6rem;
+      border-radius: 4px;
+      border: none;
+      cursor: pointer;
+      box-shadow: 0 0 30px rgba(255,60,0,0.45), 0 4px 16px rgba(0,0,0,0.5);
+      transition: box-shadow 0.2s, transform 0.15s;
+    }
+    .btn:hover {
+      transform: translateY(-2px) scale(1.02);
+      box-shadow: 0 0 50px rgba(255,80,0,0.65), 0 6px 24px rgba(0,0,0,0.5);
+    }
+
+    .footer-note {
+      margin-top: 3rem;
+      font-size: 0.8rem;
+      color: rgba(245,235,224,0.4);
+      text-align: center;
+      animation: fade-up 0.6s 1.1s ease-out both;
+    }
+    .footer-note a { color: var(--fire-2); text-decoration: none; cursor: pointer; }
+
+    .smoke-bar {
+      position: fixed;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      height: 120px;
+      background: linear-gradient(to top, rgba(26,8,0,0.9), transparent);
+      pointer-events: none;
+      z-index: 2;
+    }
+
+    /* Contact Modal */
+    .modal-bg {
+      display: none;
+      position: fixed;
+      inset: 0;
+      background: rgba(26,8,0,0.85);
+      backdrop-filter: blur(6px);
+      z-index: 200;
+      align-items: center;
+      justify-content: center;
+      padding: 24px;
+    }
+    .modal-bg.active { display: flex; }
+    .modal-box {
+      background: var(--smoke);
+      border: 1px solid rgba(255,107,0,0.2);
+      border-radius: 12px;
+      max-width: 460px;
+      width: 100%;
+      padding: 36px 32px;
+      position: relative;
+      box-shadow: 0 30px 80px rgba(0,0,0,0.6);
+      animation: modal-in 0.3s ease-out;
+    }
+    @keyframes modal-in {
+      from { opacity: 0; transform: translateY(20px) scale(0.97); }
+      to { opacity: 1; transform: translateY(0) scale(1); }
+    }
+    .modal-close {
+      position: absolute;
+      top: 14px;
+      right: 16px;
+      width: 32px;
+      height: 32px;
+      border-radius: 50%;
+      border: none;
+      background: rgba(255,255,255,0.06);
+      color: var(--ash);
+      font-size: 18px;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      transition: background 0.2s;
+    }
+    .modal-close:hover { background: rgba(255,255,255,0.12); }
+    .modal-label {
+      font-family: 'Black Han Sans', sans-serif;
+      font-size: 0.65rem;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      color: var(--fire-2);
+      margin-bottom: 8px;
+    }
+    .modal-title {
+      font-family: 'Bebas Neue', sans-serif;
+      font-size: 2rem;
+      color: var(--white);
+      margin-bottom: 6px;
+    }
+    .modal-desc {
+      font-size: 14px;
+      color: rgba(245,235,224,0.5);
+      margin-bottom: 20px;
+      line-height: 1.6;
+    }
+    .modal-form { display: flex; flex-direction: column; gap: 12px; }
+    .modal-input, .modal-textarea {
+      width: 100%;
+      padding: 12px 16px;
+      background: rgba(255,255,255,0.05);
+      border: 1px solid rgba(255,107,0,0.15);
+      border-radius: 6px;
+      color: var(--white);
+      font-family: 'Figtree', sans-serif;
+      font-size: 14px;
+      outline: none;
+      transition: border-color 0.2s;
+      box-sizing: border-box;
+    }
+    .modal-input::placeholder, .modal-textarea::placeholder { color: rgba(245,235,224,0.2); }
+    .modal-input:focus, .modal-textarea:focus { border-color: var(--fire-2); }
+    .modal-textarea { resize: vertical; min-height: 90px; }
+    .modal-submit {
+      padding: 13px 24px;
+      background: linear-gradient(135deg, var(--fire-1), var(--fire-2));
+      border: none;
+      color: var(--white);
+      border-radius: 6px;
+      font-family: 'Black Han Sans', sans-serif;
+      font-size: 0.85rem;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      cursor: pointer;
+      transition: all 0.2s;
+      align-self: flex-start;
+      box-shadow: 0 0 20px rgba(255,60,0,0.3);
+    }
+    .modal-submit:hover { transform: translateY(-1px); box-shadow: 0 0 30px rgba(255,80,0,0.5); }
+    .modal-success { display: none; text-align: center; padding: 20px; color: var(--fire-3); font-weight: 700; font-size: 15px; }
+
+    @keyframes rise {
+      from { transform: translateY(20px); opacity: 0; }
+      to   { transform: translateY(0);    opacity: 1; }
+    }
+
+    @keyframes fade-up {
+      from { transform: translateY(24px); opacity: 0; }
+      to   { transform: translateY(0);    opacity: 1; }
+    }
+
+    @media (max-width: 600px) {
+      .back-link { top: 16px; left: 20px; }
+    }
+  </style>
+</head>
+<body>
+  <a class="back-link" href="/">← Back to East Idaho</a>
+  <div class="smoke-bar"></div>
+  <div class="page">
+
+    <div class="flame-row">
+      <span class="flame">🔥</span>
+      <span class="flame">🌶️</span>
+      <span class="flame">🔥</span>
+    </div>
+
+    <div class="badge">East Idaho Hot Wings Challenge</div>
+
+    <h1>
+      <span class="line-white">You're</span>
+      <span class="line-fire">In The</span>
+      <span class="line-white">Heat.</span>
+    </h1>
+
+    <div class="divider"></div>
+
+    <p class="sub">
+      Welcome to the roster, challenger. You've officially signed up —
+      now <strong>prepare your palate</strong> for the most scorching wings
+      Idaho has ever dared to serve.
+    </p>
+
+    <div class="cards">
+      <div class="card">
+        <div class="card-icon">📍</div>
+        <div class="card-label">Location</div>
+        <div class="card-value">Rigby, Idaho</div>
+      </div>
+      <div class="card">
+        <div class="card-icon">📋</div>
+        <div class="card-label">Status</div>
+        <div class="card-value">Registered ✓</div>
+      </div>
+      <div class="card">
+        <div class="card-icon">📩</div>
+        <div class="card-label">Next Step</div>
+        <div class="card-value">Check your email</div>
+      </div>
+    </div>
+
+    <div class="cta-wrap">
+      <a href="https://noreply.eastidaho.com/hot-wings-challenge" class="btn">View Challenge Details</a>
+    </div>
+
+    <p class="footer-note">
+      Confirmation sent to your inbox &bull; Questions? <a onclick="document.getElementById('contact-modal').classList.add('active'); return false;">Contact us</a>
+    </p>
+
+  </div>
+
+  <!-- Contact Modal -->
+  <div class="modal-bg" id="contact-modal" onclick="if(event.target===this)this.classList.remove('active')">
+    <div class="modal-box">
+      <button class="modal-close" onclick="document.getElementById('contact-modal').classList.remove('active')">&times;</button>
+      <div class="modal-label">Hot Wings Challenge</div>
+      <div class="modal-title">Got Questions?</div>
+      <p class="modal-desc">Ask us anything about the challenge — rules, location, what to expect, or how to prepare your taste buds.</p>
+      <form class="modal-form" id="hw-contact-form" onsubmit="submitHWContact(event)">
+        <input class="modal-input" type="text" name="name" placeholder="Your name" required>
+        <input class="modal-input" type="email" name="email" placeholder="Email address" required>
+        <textarea class="modal-textarea" name="message" placeholder="What's your question?" required></textarea>
+        <button class="modal-submit" type="submit">Send Message →</button>
+      </form>
+      <div class="modal-success" id="hw-contact-success">🔥 Got it! We'll get back to you soon.</div>
+    </div>
+  </div>
+
+  <script>
+  async function submitHWContact(e) {
+    e.preventDefault();
+    var f = e.target;
+    var d = {
+      name: f.name.value,
+      email: f.email.value,
+      subject: 'Hot Wings Challenge Question',
+      message: f.message.value
+    };
+    try {
+      await fetch('/api/contact', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify(d)
+      });
+      f.style.display = 'none';
+      document.getElementById('hw-contact-success').style.display = 'block';
+    } catch(err) {
+      alert('Something went wrong. Please email hello@eastidaho.com directly.');
+    }
+  }
+  </script>
+</body>
+</html>
