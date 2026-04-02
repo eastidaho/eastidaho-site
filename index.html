@@ -53,10 +53,7 @@
     padding: 10px 24px;
     background: linear-gradient(135deg, #e8735a 0%, #f0956c 100%);
     text-decoration: none;
-    position: fixed;
-    top: 0;
-    left: 0;
-    right: 0;
+    position: relative;
     z-index: 102;
     transition: background 0.2s;
     flex-wrap: wrap;
@@ -86,10 +83,6 @@
     .announcement-banner { padding: 10px 16px; gap: 8px; }
     .announcement-text { font-size: 12px; text-align: center; }
   }
-
-  /* Push nav below the fixed announcement banner */
-  nav { top: 38px; }
-  @media (max-width: 600px) { nav { top: 50px; } }
 
   /* ══════════════════════════════════
      HERO
@@ -123,7 +116,7 @@
     z-index: 1;
     max-width: 1200px;
     margin: 0 auto;
-    padding: 155px 48px 80px;
+    padding: 120px 48px 80px;
     display: grid;
     grid-template-columns: 1fr 420px;
     gap: 80px;
@@ -1043,7 +1036,7 @@
 <body>
 
 <!-- ═══════════ ANNOUNCEMENT BANNER ═══════════ -->
-<a href="#" onclick="openModal('event-modal'); return false;" class="announcement-banner">
+<a href="/events/hot-wing-challenge.html" class="announcement-banner">
   <span class="announcement-text">🔥 <strong>East Idaho Hot Wing Challenge</strong> — April 11th at 6:00 PM in Rigby. Think you can handle it?</span>
   <span class="announcement-cta">Learn More →</span>
 </a>
@@ -1428,7 +1421,10 @@
 
     <div style="display:flex;flex-direction:column;gap:10px;align-items:center;margin-top:20px;">
       <a href="https://noreply.eastidaho.com/hot-wings-challenge" target="_blank" style="display:inline-block;padding:14px 36px;background:var(--coral);color:#fff;border-radius:6px;font-size:15px;font-weight:700;text-decoration:none;transition:background 0.2s;letter-spacing:0.3px;">Sign Up Now →</a>
-      <span style="font-size:12px;color:var(--text-faint);">Spots are limited — don't wait</span>
+      <div style="margin-top:10px;">
+        <a href="/events/hot-wing-challenge.html" style="font-size:13px;color:var(--text-muted);text-decoration:none;transition:color 0.2s;" onmouseover="this.style.color='var(--coral)'" onmouseout="this.style.color='var(--text-muted)'">View full challenge details & sauce lineup →</a>
+      </div>
+      <span style="font-size:12px;color:var(--text-faint);display:block;margin-top:8px;">Spots are limited — don't wait</span>
     </div>
   </div>
 </div>
