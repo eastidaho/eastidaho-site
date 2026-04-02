@@ -1,0 +1,281 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>East Idaho Hot Wing Challenge — April 11, 2026</title>
+<meta name="description" content="The East Idaho Hot Wing Challenge. 10 wings. 10 sauces. Following the Hot Ones Season 29 lineup. April 11, 2026 at 6:00 PM in Rigby, Idaho. Do you have what it takes?">
+<link rel="icon" type="image/png" href="/logo-icon.png">
+<link rel="apple-touch-icon" href="/logo-icon.png">
+<meta name="theme-color" content="#1A0800">
+
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://eastidaho.com/events/hot-wing-challenge.html">
+<meta property="og:title" content="East Idaho Hot Wing Challenge — April 11, 2026">
+<meta property="og:description" content="10 wings. 10 sauces. The Hot Ones Season 29 lineup. Do you have what it takes?">
+<meta property="og:image" content="https://eastidaho.com/og-image.png">
+
+<link href="https://fonts.googleapis.com/css2?family=Black+Han+Sans&family=Bebas+Neue&family=Figtree:wght@400;600;700&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --fire-1: #FF1F00; --fire-2: #FF6B00; --fire-3: #FFB800;
+    --char: #1A0800; --smoke: #2E1A0E; --ash: #F5EBE0; --white: #FFF8F3;
+  }
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+  html { scroll-behavior: smooth; }
+  body { min-height: 100vh; background: var(--char); color: var(--white); font-family: 'Figtree', sans-serif; overflow-x: hidden; line-height: 1.6; }
+  body::before { content: ''; position: fixed; inset: 0; background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='0.08'/%3E%3C/svg%3E"); pointer-events: none; z-index: 100; opacity: 0.4; }
+  body::after { content: ''; position: fixed; top: -150px; left: 50%; transform: translateX(-50%); width: 800px; height: 600px; background: radial-gradient(ellipse at 50% 20%, rgba(255,107,0,0.2) 0%, rgba(255,31,0,0.08) 40%, transparent 70%); pointer-events: none; z-index: 0; }
+  a { color: var(--fire-2); text-decoration: none; }
+
+  .back-link { position: fixed; top: 24px; left: 32px; font-size: 14px; color: rgba(245,235,224,0.3); text-decoration: none; z-index: 50; transition: color 0.2s; }
+  .back-link:hover { color: rgba(245,235,224,0.7); }
+
+  /* Hero */
+  .hero { position: relative; z-index: 1; text-align: center; padding: 100px 24px 60px; }
+  .flame-row { display: flex; gap: 0.4rem; justify-content: center; margin-bottom: 1.4rem; }
+  .flame { font-size: 2.4rem; animation: flicker 1.8s ease-in-out infinite alternate; filter: drop-shadow(0 0 12px rgba(255,107,0,0.9)); }
+  .flame:nth-child(2) { animation-delay: 0.3s; }
+  .flame:nth-child(3) { animation-delay: 0.6s; }
+  @keyframes flicker { from { transform: scaleY(1) rotate(-2deg); } to { transform: scaleY(1.08) rotate(2deg); } }
+  .badge { display: inline-block; background: var(--fire-1); color: var(--white); font-family: 'Black Han Sans', sans-serif; font-size: 0.7rem; letter-spacing: 0.22em; text-transform: uppercase; padding: 0.35rem 1.1rem; border-radius: 2px; margin-bottom: 1rem; }
+  .hero h1 { font-family: 'Bebas Neue', sans-serif; font-size: clamp(3rem, 10vw, 7rem); line-height: 0.92; letter-spacing: 0.01em; }
+  .hero h1 .line-fire { display: block; background: linear-gradient(90deg, var(--fire-1), var(--fire-2), var(--fire-3)); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text; }
+  .hero-sub { font-size: 1.1rem; color: var(--ash); max-width: 520px; margin: 1.5rem auto 0; line-height: 1.7; font-weight: 600; }
+  .hero-sub strong { color: var(--fire-3); }
+  .divider { width: 80px; height: 3px; background: linear-gradient(90deg, var(--fire-1), var(--fire-3)); border-radius: 2px; margin: 1.5rem auto; }
+
+  /* Content */
+  .content { position: relative; z-index: 1; max-width: 720px; margin: 0 auto; padding: 0 24px 80px; }
+  .section { margin-bottom: 48px; }
+  .section-label { font-family: 'Black Han Sans', sans-serif; font-size: 0.65rem; letter-spacing: 0.2em; text-transform: uppercase; color: var(--fire-2); margin-bottom: 8px; }
+  .section-title { font-family: 'Bebas Neue', sans-serif; font-size: 2.2rem; color: var(--white); margin-bottom: 16px; line-height: 1; }
+  .section p { font-size: 15px; color: var(--ash); line-height: 1.75; margin-bottom: 14px; }
+
+  /* Info cards */
+  .info-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 12px; margin-bottom: 32px; }
+  .info-card { background: rgba(255,255,255,0.04); border: 1px solid rgba(255,107,0,0.2); border-radius: 8px; padding: 20px; text-align: center; }
+  .info-card-icon { font-size: 1.6rem; margin-bottom: 6px; }
+  .info-card-label { font-family: 'Black Han Sans', sans-serif; font-size: 0.6rem; letter-spacing: 0.18em; text-transform: uppercase; color: var(--fire-2); margin-bottom: 4px; }
+  .info-card-value { font-size: 0.95rem; font-weight: 700; color: var(--white); line-height: 1.4; }
+  .info-card-sub { font-size: 0.8rem; color: rgba(245,235,224,0.4); margin-top: 2px; }
+
+  /* Sauce lineup */
+  .sauce-list { list-style: none; }
+  .sauce-item { display: flex; align-items: center; gap: 16px; padding: 14px 16px; border-bottom: 1px solid rgba(255,107,0,0.1); transition: background 0.15s; }
+  .sauce-item:hover { background: rgba(255,107,0,0.04); }
+  .sauce-num { font-family: 'Bebas Neue', sans-serif; font-size: 1.6rem; color: var(--fire-2); min-width: 36px; text-align: center; }
+  .sauce-info { flex: 1; }
+  .sauce-name { font-weight: 700; font-size: 15px; color: var(--white); }
+  .sauce-maker { font-size: 13px; color: rgba(245,235,224,0.45); }
+  .sauce-heat { font-family: 'Black Han Sans', sans-serif; font-size: 0.6rem; letter-spacing: 0.15em; text-transform: uppercase; padding: 3px 10px; border-radius: 3px; white-space: nowrap; }
+  .heat-mild { background: rgba(255,184,0,0.15); color: var(--fire-3); }
+  .heat-med { background: rgba(255,107,0,0.15); color: var(--fire-2); }
+  .heat-hot { background: rgba(255,31,0,0.15); color: var(--fire-1); }
+  .heat-extreme { background: rgba(255,31,0,0.25); color: #ff4444; }
+
+  /* Rules */
+  .rules-list { list-style: none; counter-reset: rule; }
+  .rules-list li { counter-increment: rule; padding: 12px 0; border-bottom: 1px solid rgba(255,107,0,0.08); font-size: 15px; color: var(--ash); display: flex; gap: 12px; align-items: flex-start; }
+  .rules-list li::before { content: counter(rule); font-family: 'Bebas Neue', sans-serif; font-size: 1.3rem; color: var(--fire-2); min-width: 24px; text-align: center; flex-shrink: 0; }
+
+  /* CTA */
+  .cta-section { text-align: center; padding: 48px 24px; background: rgba(255,107,0,0.04); border: 1px solid rgba(255,107,0,0.15); border-radius: 12px; margin-bottom: 48px; }
+  .cta-title { font-family: 'Bebas Neue', sans-serif; font-size: 2.4rem; color: var(--white); margin-bottom: 8px; }
+  .cta-sub { font-size: 15px; color: var(--ash); margin-bottom: 24px; }
+  .btn { display: inline-block; background: linear-gradient(135deg, var(--fire-1), var(--fire-2)); color: var(--white); font-family: 'Black Han Sans', sans-serif; font-size: 1rem; letter-spacing: 0.12em; text-transform: uppercase; padding: 1rem 2.6rem; border-radius: 4px; border: none; cursor: pointer; box-shadow: 0 0 30px rgba(255,60,0,0.45), 0 4px 16px rgba(0,0,0,0.5); transition: box-shadow 0.2s, transform 0.15s; text-decoration: none; }
+  .btn:hover { transform: translateY(-2px) scale(1.02); box-shadow: 0 0 50px rgba(255,80,0,0.65), 0 6px 24px rgba(0,0,0,0.5); }
+
+  /* Disclaimer */
+  .disclaimer { background: rgba(255,255,255,0.03); border: 1px solid rgba(255,255,255,0.06); border-radius: 8px; padding: 24px; margin-bottom: 48px; }
+  .disclaimer-title { font-family: 'Black Han Sans', sans-serif; font-size: 0.65rem; letter-spacing: 0.2em; text-transform: uppercase; color: rgba(245,235,224,0.4); margin-bottom: 10px; }
+  .disclaimer p { font-size: 12.5px; color: rgba(245,235,224,0.35); line-height: 1.7; margin-bottom: 8px; }
+  .disclaimer p:last-child { margin-bottom: 0; }
+
+  /* Footer */
+  .event-footer { text-align: center; padding: 32px 24px; font-size: 12px; color: rgba(245,235,224,0.2); position: relative; z-index: 1; }
+  .event-footer a { color: var(--fire-2); text-decoration: none; }
+  .event-footer img { height: 36px; opacity: 0.4; margin-bottom: 12px; }
+
+  .smoke-bar { position: fixed; bottom: 0; left: 0; right: 0; height: 120px; background: linear-gradient(to top, rgba(26,8,0,0.9), transparent); pointer-events: none; z-index: 2; }
+
+  @media (max-width: 600px) {
+    .hero { padding: 80px 20px 48px; }
+    .back-link { top: 16px; left: 20px; }
+    .info-grid { grid-template-columns: 1fr; }
+    .sauce-item { gap: 10px; padding: 12px 10px; }
+  }
+</style>
+</head>
+<body>
+
+<a class="back-link" href="/">← Back to East Idaho</a>
+<div class="smoke-bar"></div>
+
+<!-- Hero -->
+<div class="hero">
+  <div class="flame-row">
+    <span class="flame">🔥</span>
+    <span class="flame">🌶️</span>
+    <span class="flame">🔥</span>
+  </div>
+  <div class="badge">East Idaho Presents</div>
+  <h1>
+    <span style="display:block;color:var(--white);">Hot Wing</span>
+    <span class="line-fire">Challenge</span>
+  </h1>
+  <div class="divider"></div>
+  <p class="hero-sub">10 wings. 10 sauces. The official <strong>Hot Ones Season 29</strong> lineup. One question: <strong>can you handle it?</strong></p>
+</div>
+
+<!-- Content -->
+<div class="content">
+
+  <!-- Event Info -->
+  <div class="info-grid">
+    <div class="info-card">
+      <div class="info-card-icon">📅</div>
+      <div class="info-card-label">Date</div>
+      <div class="info-card-value">Saturday, April 11, 2026</div>
+    </div>
+    <div class="info-card">
+      <div class="info-card-icon">🕕</div>
+      <div class="info-card-label">Time</div>
+      <div class="info-card-value">6:00 PM</div>
+      <div class="info-card-sub">Doors open at 5:30 PM</div>
+    </div>
+    <div class="info-card">
+      <div class="info-card-icon">📍</div>
+      <div class="info-card-label">Location</div>
+      <div class="info-card-value">659 N 4116 E, #3</div>
+      <div class="info-card-sub">Rigby, ID 83442</div>
+    </div>
+  </div>
+
+  <!-- What Is It -->
+  <div class="section">
+    <div class="section-label">The Challenge</div>
+    <div class="section-title">What Is The Hot Wing Challenge?</div>
+    <p>Inspired by the legendary YouTube show <strong>Hot Ones</strong>, participants eat 10 chicken wings — each coated in a progressively hotter hot sauce from the official Hot Ones Season 29 lineup. It starts easy. It doesn't stay that way.</p>
+    <p>From the creamy garlic warmth of Wing #1 to the face-melting fury of <strong>The Last Dab: Thermageddon</strong> on Wing #10, this is a test of willpower, taste buds, and sheer determination. Finish all 10 wings, and you walk away a champion. Tap out, and you'll have a great story anyway.</p>
+  </div>
+
+  <!-- Sauce Lineup -->
+  <div class="section">
+    <div class="section-label">The Gauntlet</div>
+    <div class="section-title">Season 29 Hot Sauce Lineup</div>
+    <ul class="sauce-list">
+      <li class="sauce-item">
+        <span class="sauce-num">1</span>
+        <div class="sauce-info"><div class="sauce-name">Garlic Delight</div><div class="sauce-maker">Piko Peppers (Microsaucerie)</div></div>
+        <span class="sauce-heat heat-mild">1.5 / 10</span>
+      </li>
+      <li class="sauce-item">
+        <span class="sauce-num">2</span>
+        <div class="sauce-info"><div class="sauce-name">Pickled Garlic Sriracha</div><div class="sauce-maker">Hot Ones — 18,000 SHU</div></div>
+        <span class="sauce-heat heat-mild">3 / 10</span>
+      </li>
+      <li class="sauce-item">
+        <span class="sauce-num">3</span>
+        <div class="sauce-info"><div class="sauce-name">White Hot Mustard Sauce</div><div class="sauce-maker">Quentin's Sauce — 25,000 SHU</div></div>
+        <span class="sauce-heat heat-mild">3.5 / 10</span>
+      </li>
+      <li class="sauce-item">
+        <span class="sauce-num">4</span>
+        <div class="sauce-info"><div class="sauce-name">Smoked Habanero & Peach</div><div class="sauce-maker">Smokin' Dragon — 38,000 SHU</div></div>
+        <span class="sauce-heat heat-med">5 / 10</span>
+      </li>
+      <li class="sauce-item">
+        <span class="sauce-num">5</span>
+        <div class="sauce-info"><div class="sauce-name">Tropical Amarillo</div><div class="sauce-maker">Hot Ones</div></div>
+        <span class="sauce-heat heat-med">6 / 10</span>
+      </li>
+      <li class="sauce-item">
+        <span class="sauce-num">6</span>
+        <div class="sauce-info"><div class="sauce-name">Homegrown Hell — Sichuan Tangerine</div><div class="sauce-maker">Sauce Leopard</div></div>
+        <span class="sauce-heat heat-med">6.5 / 10</span>
+      </li>
+      <li class="sauce-item">
+        <span class="sauce-num">7</span>
+        <div class="sauce-info"><div class="sauce-name">Nirvana</div><div class="sauce-maker">Funky's</div></div>
+        <span class="sauce-heat heat-hot">7.5 / 10</span>
+      </li>
+      <li class="sauce-item">
+        <span class="sauce-num">8</span>
+        <div class="sauce-info"><div class="sauce-name">Da Bomb — Evolution</div><div class="sauce-maker">Da Bomb — 135,600 SHU</div></div>
+        <span class="sauce-heat heat-hot">8.5 / 10</span>
+      </li>
+      <li class="sauce-item">
+        <span class="sauce-num">9</span>
+        <div class="sauce-info"><div class="sauce-name">Scorpion Disco</div><div class="sauce-maker">Butterfly Bakery of Vermont</div></div>
+        <span class="sauce-heat heat-extreme">9 / 10</span>
+      </li>
+      <li class="sauce-item">
+        <span class="sauce-num">10</span>
+        <div class="sauce-info"><div class="sauce-name">The Last Dab: Thermageddon</div><div class="sauce-maker">Hot Ones — 2,000,000+ SHU</div></div>
+        <span class="sauce-heat heat-extreme">10 / 10</span>
+      </li>
+    </ul>
+  </div>
+
+  <!-- Rules -->
+  <div class="section">
+    <div class="section-label">Know Before You Go</div>
+    <div class="section-title">Challenge Rules</div>
+    <ul class="rules-list">
+      <li>Each participant eats 10 chicken wings, one at a time, in order from mildest to hottest.</li>
+      <li>Each wing is coated in the corresponding sauce from the Hot Ones Season 29 lineup.</li>
+      <li>You must finish each wing before moving on to the next. No skipping sauces.</li>
+      <li>You may drink water or milk between wings. No other beverages or food allowed during the challenge.</li>
+      <li>If you tap out at any point, you're done — no re-entry. No shame. These sauces are no joke.</li>
+      <li>Participants who complete all 10 wings will be declared official East Idaho Hot Wing Challenge Champions and will be featured on our social media channels.</li>
+      <li>All participants must sign a liability waiver before competing. See disclaimers below.</li>
+      <li>The event will be filmed. By participating, you consent to being photographed and recorded for East Idaho Media content.</li>
+    </ul>
+  </div>
+
+  <!-- CTA -->
+  <div class="cta-section">
+    <div class="cta-title">Think You Can Handle It?</div>
+    <p class="cta-sub">Spots are limited. Sign up now and prove you've got what it takes.</p>
+    <a href="https://noreply.eastidaho.com/hot-wings-challenge" class="btn">Sign Up Now →</a>
+  </div>
+
+  <!-- What to Expect -->
+  <div class="section">
+    <div class="section-label">Day Of</div>
+    <div class="section-title">What to Expect</div>
+    <p>Doors open at <strong>5:30 PM</strong> for check-in and waivers. The challenge begins promptly at <strong>6:00 PM</strong>. Spectators are welcome — come cheer on the brave (or watch them sweat).</p>
+    <p>Water and milk will be available. We recommend eating a light meal beforehand — an empty stomach and Thermageddon are not friends.</p>
+    <p>The event will be filmed and photographed for East Idaho Media content across our newsletter, social media, and YouTube channels.</p>
+  </div>
+
+  <!-- Disclaimers -->
+  <div class="disclaimer">
+    <div class="disclaimer-title">Important Disclaimers & Liability</div>
+    <p>The East Idaho Hot Wing Challenge involves consuming extremely spicy food, including hot sauces with Scoville Heat Unit (SHU) ratings exceeding 2,000,000. Participation is entirely voluntary and at your own risk.</p>
+    <p>All participants must be 18 years of age or older and must sign a liability waiver prior to competing. Participants under 18 may compete only with a signed parental/guardian consent form presented at check-in.</p>
+    <p>By participating, you acknowledge that consuming extremely hot foods may cause physical discomfort including but not limited to: mouth and throat irritation, stomach pain, nausea, sweating, and allergic reactions. If you have any food allergies, sensitivities, gastrointestinal conditions, or other health concerns, consult your doctor before participating.</p>
+    <p>East Idaho Media Co. LLC, its owners, employees, volunteers, and the venue are not responsible for any illness, injury, allergic reaction, or adverse health effect resulting from participation in this event.</p>
+    <p>By attending and/or participating, you consent to being photographed, filmed, and recorded. This content may be used by East Idaho Media Co. LLC across all media channels including but not limited to social media, newsletters, YouTube, podcasts, and the eastidaho.com website.</p>
+    <p>East Idaho Media Co. LLC reserves the right to refuse participation to anyone and to modify or cancel the event at any time.</p>
+    <p>This event is not affiliated with, endorsed by, or sponsored by Hot Ones, First We Feast, HEATONIST, or any of the hot sauce brands in the Season 29 lineup. Hot sauce names and brands are the property of their respective owners.</p>
+  </div>
+
+  <!-- Contact -->
+  <div style="text-align:center;margin-bottom:48px;">
+    <p style="font-size:14px;color:rgba(245,235,224,0.4);margin-bottom:12px;">Have questions about the event?</p>
+    <a href="mailto:hello@eastidaho.com?subject=Hot Wing Challenge Question" style="color:var(--fire-2);font-weight:700;font-size:14px;">Email us at hello@eastidaho.com →</a>
+  </div>
+
+</div>
+
+<!-- Footer -->
+<div class="event-footer">
+  <img src="/logo-white.png" alt="East Idaho"><br>
+  <a href="/">eastidaho.com</a> &nbsp;·&nbsp; <a href="/privacy.html">Privacy</a> &nbsp;·&nbsp; <a href="/terms.html">Terms</a><br><br>
+  © 2026 East Idaho Media Co. LLC. All rights reserved.
+</div>
+
+</body>
+</html>
