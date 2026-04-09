@@ -265,8 +265,9 @@ h2.st{font-family:'DM Serif Display',serif;font-size:clamp(2rem,4vw,3rem);line-h
 </div>
 </div>
 <div>
-<div style="border-radius:12px;overflow:hidden;max-width:340px;margin:0 auto;aspect-ratio:9/16;">
-<iframe width="100%" height="100%" src="https://www.youtube.com/embed/XMFgMOH9moo?autoplay=1&mute=1&loop=1&playlist=XMFgMOH9moo&controls=0&showinfo=0&rel=0" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen style="display:block;"></iframe>
+<div style="border-radius:12px;overflow:hidden;max-width:340px;margin:0 auto;aspect-ratio:9/16;position:relative;" id="cs-video-wrap">
+<iframe id="cs-video" width="100%" height="100%" src="https://www.youtube.com/embed/XMFgMOH9moo?autoplay=1&mute=1&loop=1&playlist=XMFgMOH9moo&controls=0&showinfo=0&rel=0&enablejsapi=1&origin=https://eastidaho.com" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen style="display:block;"></iframe>
+<button onclick="toggleMute()" id="mute-btn" style="position:absolute;bottom:14px;right:14px;width:40px;height:40px;border-radius:50%;border:none;background:rgba(0,0,0,.55);backdrop-filter:blur(4px);color:#fff;font-size:18px;cursor:pointer;display:flex;align-items:center;justify-content:center;transition:background .2s;z-index:2;">&#128263;</button>
 </div>
 <p style="text-align:center;margin-top:12px;font-size:.85rem;color:#7a849a;font-style:italic;">The social media highlight we created for Center Stage Idaho Falls</p>
 </div>
@@ -437,6 +438,22 @@ h2.st{font-family:'DM Serif Display',serif;font-size:clamp(2rem,4vw,3rem);line-h
 </div>
 
 <script>
+// Video mute toggle
+var csMuted = true;
+function toggleMute() {
+  var iframe = document.getElementById('cs-video');
+  var btn = document.getElementById('mute-btn');
+  if (csMuted) {
+    iframe.contentWindow.postMessage('{"event":"command","func":"unMute","args":""}', '*');
+    btn.innerHTML = '&#128266;';
+    csMuted = false;
+  } else {
+    iframe.contentWindow.postMessage('{"event":"command","func":"mute","args":""}', '*');
+    btn.innerHTML = '&#128263;';
+    csMuted = true;
+  }
+}
+
 // Nav offset for announcement banner
 function adjustNavPosition(){var b=document.getElementById('announcement-banner');var n=document.querySelector('nav');if(b&&n){n.style.top=b.offsetHeight+'px';}}
 window.addEventListener('load',adjustNavPosition);
