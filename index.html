@@ -61,7 +61,7 @@ body { font-family:'Outfit',sans-serif; overflow-x:hidden; }
 .stat-card-lbl{font-size:.78rem;color:rgba(255,255,255,.5);line-height:1.4}
 
 /* SPONSORS */
-.sponsors-blend{background:var(--navy);padding:0 48px 60px;position:relative;overflow:hidden}
+.sponsors-blend{background:var(--navy);padding:40px 48px 60px;position:relative;overflow:hidden}
 .sponsors-blend::before{content:'';position:absolute;inset:0;background:radial-gradient(ellipse at 15% 80%,rgba(240,149,108,.06) 0%,transparent 55%),radial-gradient(ellipse at 85% 20%,rgba(26,41,64,.6) 0%,transparent 50%)}
 .sponsors-blend-inner{max-width:1160px;margin:0 auto;position:relative;z-index:1}
 .sponsors-label{font-size:10px;text-transform:uppercase;letter-spacing:3px;color:rgba(255,255,255,.2);text-align:center;margin-bottom:20px}
@@ -212,14 +212,11 @@ h2.st{font-family:'DM Serif Display',serif;font-size:clamp(2rem,4vw,3rem);line-h
 <p class="hero-sub">East Idaho Media Co. tells the stories of the people, places, and businesses that make this valley what it is &#8212; and helps local businesses grow with professional video, web design, and real local reach.</p>
 <div class="hero-btns">
 <a href="#services" class="btn-p">Our Services <svg width="15" height="15" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path d="M5 12h14M12 5l7 7-7 7"/></svg></a>
-<a href="#subscribe" class="btn-g">Subscribe Free <svg width="15" height="15" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path d="M5 12h14M12 5l7 7-7 7"/></svg></a>
+<a href="#" onclick="openModal('subscribe-modal');return false;" class="btn-g">Subscribe Free <svg width="15" height="15" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path d="M5 12h14M12 5l7 7-7 7"/></svg></a>
 </div>
 </div>
-<div class="hero-stats">
-<div class="stat-card"><div class="stat-card-val">1,500+</div><div class="stat-card-lbl">Social followers &amp; growing</div></div>
-<div class="stat-card"><div class="stat-card-val">12 Days</div><div class="stat-card-lbl">To grow by 1,100+ followers</div></div>
-<div class="stat-card"><div class="stat-card-val">41K+</div><div class="stat-card-lbl">Views on a single feature</div></div>
-<div class="stat-card"><div class="stat-card-val">Idaho Falls</div><div class="stat-card-lbl">Primary audience location</div></div>
+<div style="border-radius:12px;overflow:hidden;border:1px solid rgba(255,255,255,.1);aspect-ratio:16/9;">
+<iframe width="100%" height="100%" src="https://www.youtube.com/embed/YY4Qo_G8yqI" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen style="display:block;"></iframe>
 </div>
 </div>
 </section>
@@ -229,9 +226,9 @@ h2.st{font-family:'DM Serif Display',serif;font-size:clamp(2rem,4vw,3rem);line-h
 <div class="sponsors-blend-inner">
 <div class="sponsors-label">Proudly supported by</div>
 <div class="sponsors-grid">
-<a class="sp-card" href="https://rctheatre.org" target="_blank"><div class="sp-badge">Sponsor</div><div class="sp-name">Rexburg Community Theatre</div><div class="sp-type">Community Theater &#183; Rexburg</div></a>
-<a class="sp-card" href="https://reedsdairy.com" target="_blank"><div class="sp-badge">Sponsor</div><div class="sp-name">Reeds Dairy</div><div class="sp-type">Dairy &amp; Ice Cream &#183; Idaho Falls</div></a>
-<a class="sp-card" href="https://www.lilmikesbbq.com" target="_blank"><div class="sp-badge">Sponsor</div><div class="sp-name">Lil Mike's BBQ</div><div class="sp-type">BBQ &#183; Rigby &amp; Idaho Falls</div></a>
+<div class="sp-card" onclick="openSponsorModal('Rexburg Community Theatre','Bringing live theater to the heart of Rexburg. From musicals to dramas to community productions, RCT has been a stage for local talent and a gathering place for audiences who love the arts.','Community Theater','Rexburg, ID','https://rctheatre.org')"><div class="sp-badge">Sponsor</div><div class="sp-name">Rexburg Community Theatre</div><div class="sp-type">Community Theater &#183; Rexburg</div></div>
+<div class="sp-card" onclick="openSponsorModal('Reeds Dairy','A local Idaho Falls dairy producing fresh milk, ice cream, and dairy products. Family-owned and a valley staple for generations.','Dairy &amp; Ice Cream','Idaho Falls, ID','https://reedsdairy.com')"><div class="sp-badge">Sponsor</div><div class="sp-name">Reeds Dairy</div><div class="sp-type">Dairy &amp; Ice Cream &#183; Idaho Falls</div></div>
+<div class="sp-card" onclick="openSponsorModal('Lil Mike\'s BBQ','The best BBQ in Rigby and Idaho Falls. Fresh meat daily, never frozen. Brisket, ribs, pulled pork, loaded potatoes, and more. Started as a food truck, now a local favorite.','BBQ Restaurant','Rigby &amp; Idaho Falls','https://www.lilmikesbbq.com')"><div class="sp-badge">Sponsor</div><div class="sp-name">Lil Mike's BBQ</div><div class="sp-type">BBQ &#183; Rigby &amp; Idaho Falls</div></div>
 </div>
 </div>
 </div>
@@ -260,13 +257,83 @@ h2.st{font-family:'DM Serif Display',serif;font-size:clamp(2rem,4vw,3rem);line-h
 <h2 class="st">A media brand built for this valley.</h2>
 <p class="sd">We're not a news site. We're not an agency. We're a small team of three who live here, create here, and believe East Idaho deserves media that actually sounds like the people who live in it. From Idaho Falls to Rexburg to Rigby to Driggs &#8212; we cover the whole valley.</p>
 <p class="sd">Every week we publish a free newsletter, post daily content across all platforms, and produce professional video for local businesses.</p>
-<a href="/services.html" class="btn-p" style="width:fit-content;margin-top:.5rem">See All Services <svg width="15" height="15" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path d="M5 12h14M12 5l7 7-7 7"/></svg></a>
-</div>
-<div class="channels">
-<a class="ch-card" href="https://www.instagram.com/east.idaho" target="_blank"><div class="ch-icon">&#128247;</div><div class="ch-name">Instagram</div><div class="ch-handle">@east.idaho</div></a>
+<div class="channels" style="margin-top:1.5rem;">
 <a class="ch-card" href="https://www.tiktok.com/@eastidaho" target="_blank"><div class="ch-icon">&#127916;</div><div class="ch-name">TikTok</div><div class="ch-handle">@eastidaho</div></a>
+<a class="ch-card" href="https://www.instagram.com/east.idaho" target="_blank"><div class="ch-icon">&#128247;</div><div class="ch-name">Instagram</div><div class="ch-handle">@east.idaho</div></a>
 <a class="ch-card" href="https://www.youtube.com/@eastidahomedia" target="_blank"><div class="ch-icon">&#9654;&#65039;</div><div class="ch-name">YouTube</div><div class="ch-handle">@eastidahomedia</div></a>
 <a class="ch-card" href="https://www.facebook.com/eastidahomedia" target="_blank"><div class="ch-icon">&#128172;</div><div class="ch-name">Facebook</div><div class="ch-handle">@eastidahomedia</div></a>
+</div>
+</div>
+<div>
+<div style="display:grid;grid-template-columns:1fr 1fr;gap:12px;">
+<div style="border-radius:12px;overflow:hidden;border:1.5px solid var(--border);background:#fff;">
+<blockquote class="tiktok-embed" cite="https://www.tiktok.com/t/ZTkAqVckC/" data-video-id="" style="max-width:100%;min-width:250px;">
+<section style="padding:20px;text-align:center;">
+<a href="https://www.tiktok.com/t/ZTkAqVckC/" target="_blank" style="color:var(--coral);font-weight:700;font-size:14px;text-decoration:none;">Watch on TikTok &#8594;</a>
+</section>
+</blockquote>
+</div>
+<div style="border-radius:12px;overflow:hidden;border:1.5px solid var(--border);background:#fff;">
+<blockquote class="tiktok-embed" cite="https://www.tiktok.com/t/ZTkAbknP3/" data-video-id="" style="max-width:100%;min-width:250px;">
+<section style="padding:20px;text-align:center;">
+<a href="https://www.tiktok.com/t/ZTkAbknP3/" target="_blank" style="color:var(--coral);font-weight:700;font-size:14px;text-decoration:none;">Watch on TikTok &#8594;</a>
+</section>
+</blockquote>
+</div>
+</div>
+</div>
+</div>
+</section>
+
+<!-- STATS -->
+<section style="background:var(--navy2);padding:4rem clamp(1rem,4vw,3rem);position:relative;overflow:hidden;">
+<div style="max-width:1160px;margin:0 auto;">
+<div style="text-align:center;margin-bottom:2rem;">
+<div class="cases-ey">By the Numbers</div>
+<h2 class="cases-title">Growing fast &#8212; and just getting started.</h2>
+</div>
+<div class="hero-stats" style="max-width:800px;margin:0 auto;">
+<div class="stat-card"><div class="stat-card-val">1,500+</div><div class="stat-card-lbl">Social followers &amp; growing</div></div>
+<div class="stat-card"><div class="stat-card-val">12 Days</div><div class="stat-card-lbl">To grow by 1,100+ followers</div></div>
+<div class="stat-card"><div class="stat-card-val">41K+</div><div class="stat-card-lbl">Views on a single feature</div></div>
+<div class="stat-card"><div class="stat-card-val">Idaho Falls</div><div class="stat-card-lbl">Primary audience location</div></div>
+</div>
+</div>
+</section>
+
+
+<!-- EVENTS -->
+<section style="background:var(--off);padding:5rem clamp(1rem,4vw,3rem);" id="events">
+<div style="max-width:1160px;margin:0 auto;">
+<div style="text-align:center;margin-bottom:3rem;">
+<div class="ey" style="justify-content:center;">Upcoming Events</div>
+<h2 class="st">What's happening in the valley.</h2>
+</div>
+<div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(320px,1fr));gap:1.25rem;">
+<a href="/events/hot-wing-challenge.html" style="background:#fff;border:1.5px solid var(--border);border-radius:14px;padding:2rem;text-decoration:none;position:relative;overflow:hidden;transition:border-color .25s,transform .25s,box-shadow .25s;display:block;">
+<div style="position:absolute;top:0;left:0;right:0;height:3px;background:linear-gradient(90deg,#FF1F00,#FF6B00);"></div>
+<div style="font-size:2rem;margin-bottom:.5rem;">&#128293;</div>
+<div style="font-size:.65rem;font-weight:700;letter-spacing:.15em;text-transform:uppercase;color:#FF6B00;margin-bottom:.4rem;">April 11, 2026 &#183; 6:00 PM</div>
+<div style="font-family:'DM Serif Display',serif;font-size:1.3rem;color:var(--navy);margin-bottom:.5rem;">East Idaho Hot Wing Challenge</div>
+<div style="font-size:.9rem;color:#7a849a;line-height:1.6;">10 wings. 10 sauces. The Hot Ones Season 29 lineup. Think you can handle it? Rigby, Idaho.</div>
+<div style="margin-top:1rem;font-size:.85rem;font-weight:700;color:var(--coral);">View Details &#8594;</div>
+</a>
+<a href="https://rctheatre.org" target="_blank" style="background:#fff;border:1.5px solid var(--border);border-radius:14px;padding:2rem;text-decoration:none;position:relative;overflow:hidden;transition:border-color .25s,transform .25s;display:block;">
+<div style="position:absolute;top:0;left:0;right:0;height:3px;background:var(--coral);"></div>
+<div style="font-size:2rem;margin-bottom:.5rem;">&#127917;</div>
+<div style="font-size:.65rem;font-weight:700;letter-spacing:.15em;text-transform:uppercase;color:var(--coral);margin-bottom:.4rem;">June 25&#8211;29, 2026</div>
+<div style="font-family:'DM Serif Display',serif;font-size:1.3rem;color:var(--navy);margin-bottom:.5rem;">Seussical the Musical</div>
+<div style="font-size:.9rem;color:#7a849a;line-height:1.6;">Rexburg Community Theatre brings Dr. Seuss to life with this fantastical musical extravaganza for the whole family. Madison Jr. High School, Rexburg.</div>
+<div style="margin-top:1rem;font-size:.85rem;font-weight:700;color:var(--coral);">Learn More &#8594;</div>
+</a>
+<div style="background:#fff;border:1.5px solid var(--border);border-radius:14px;padding:2rem;position:relative;overflow:hidden;">
+<div style="position:absolute;top:0;left:0;right:0;height:3px;background:var(--coral);"></div>
+<div style="font-size:2rem;margin-bottom:.5rem;">&#127925;</div>
+<div style="font-size:.65rem;font-weight:700;letter-spacing:.15em;text-transform:uppercase;color:var(--coral);margin-bottom:.4rem;">August 5, 2026 &#183; Tickets On Sale</div>
+<div style="font-family:'DM Serif Display',serif;font-size:1.3rem;color:var(--navy);margin-bottom:.5rem;">Lindsey Stirling &#8212; Duality Untamed</div>
+<div style="font-size:.9rem;color:#7a849a;line-height:1.6;">With special guest Pvris at the Mountain America Center, Idaho Falls. An unforgettable night of music, movement, and magic.</div>
+<div style="margin-top:1rem;font-size:.85rem;font-weight:700;color:var(--coral);">Tickets at Ticketmaster &#8594;</div>
+</div>
 </div>
 </div>
 </section>
@@ -298,6 +365,15 @@ h2.st{font-family:'DM Serif Display',serif;font-size:clamp(2rem,4vw,3rem);line-h
 <div class="nl-msg"></div>
 </div>
 </section>
+
+
+<!-- SPONSOR MODAL -->
+<div class="modal-overlay" id="sponsor-modal" onclick="if(event.target===this)closeModal(this)">
+<div class="modal">
+<button class="modal-close" onclick="closeModal(document.getElementById('sponsor-modal'))">&times;</button>
+<div id="sp-modal-content"></div>
+</div>
+</div>
 
 <!-- FOOTER -->
 <footer>
@@ -382,6 +458,13 @@ window.addEventListener('resize',adjustNavPosition);
 function toggleMobileNav(){var d=document.getElementById('mobile-nav');var b=document.getElementById('hamburger-btn');d.classList.toggle('active');b.classList.toggle('active');document.body.style.overflow=d.classList.contains('active')?'hidden':'';}
 function closeMobileNav(){document.getElementById('mobile-nav').classList.remove('active');document.getElementById('hamburger-btn').classList.remove('active');document.body.style.overflow='';}
 
+// Sponsor modal
+function openSponsorModal(name,desc,category,location,url){
+var c=document.getElementById('sp-modal-content');
+c.innerHTML='<div class="modal-eyebrow">'+category+'</div><div class="modal-title">'+name+'</div><p class="modal-text">'+desc+'</p><p class="modal-text" style="font-size:13px;color:var(--text-faint);">'+location+'</p><div style="display:flex;gap:10px;margin-top:20px;flex-wrap:wrap;"><a href="'+url+'" target="_blank" style="display:inline-flex;align-items:center;gap:6px;padding:10px 20px;border-radius:6px;font-size:13px;font-weight:700;text-decoration:none;background:var(--coral);color:#fff;">Visit Website &rarr;</a></div>';
+openModal('sponsor-modal');
+}
+
 // Modals
 function openModal(id){document.getElementById(id).classList.add('active');document.body.style.overflow='hidden';}
 function closeModal(el){el.classList.remove('active');document.body.style.overflow='';}
@@ -397,5 +480,6 @@ async function submitContactForm(e){e.preventDefault();var f=e.target;try{await 
 // Services form
 async function submitSvcForm(e){e.preventDefault();var f=e.target;var msg='Package: '+f.package.value;if(f.business.value)msg+='\nBusiness: '+f.business.value;if(f.phone.value)msg+='\nPhone: '+f.phone.value;if(f.message.value)msg+='\n\n'+f.message.value;try{await fetch('/api/contact',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({name:f.name.value,email:f.email.value,subject:'Services Inquiry - '+f.package.value,message:msg})});f.style.display='none';document.getElementById('svc-success').style.display='block';}catch(err){alert('Something went wrong. Please email hello@eastidaho.com directly.');}}
 </script>
+<script async src="https://www.tiktok.com/embed.js"></script>
 </body>
 </html>
