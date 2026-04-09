@@ -265,14 +265,12 @@ h2.st{font-family:'DM Serif Display',serif;font-size:clamp(2rem,4vw,3rem);line-h
 </div>
 </div>
 <div>
-<div style="display:grid;grid-template-columns:1fr 1fr;gap:12px;">
-<div style="border-radius:12px;overflow:hidden;">
-<blockquote class="tiktok-embed" cite="https://www.tiktok.com/@eastidaho/video/7623527766104853774" data-video-id="7623527766104853774" style="max-width:605px;min-width:325px;"> <section> <a target="_blank" title="@eastidaho" href="https://www.tiktok.com/@eastidaho?refer=embed">@eastidaho</a> We took a little trip backstage at @CenterStageTheatre in Idaho Falls and wow... the behind-the-scenes is just as incredible as the show. Local talent. Real magic. Right here in our backyard. Go check them out and support your local theatre! <a title="eastidaho" target="_blank" href="https://www.tiktok.com/tag/eastidaho?refer=embed">#eastidaho</a> <a title="local" target="_blank" href="https://www.tiktok.com/tag/local?refer=embed">#local</a> <a title="theatre" target="_blank" href="https://www.tiktok.com/tag/theatre?refer=embed">#theatre</a> <a title="backstage" target="_blank" href="https://www.tiktok.com/tag/backstage?refer=embed">#backstage</a> <a title="talent" target="_blank" href="https://www.tiktok.com/tag/talent?refer=embed">#talent</a> <a target="_blank" title="original sound - East Idaho" href="https://www.tiktok.com/music/original-sound-7623527874326252302?refer=embed">original sound - East Idaho</a> </section> </blockquote>
+<div style="border-radius:12px;overflow:hidden;background:#000;max-width:340px;margin:0 auto;aspect-ratio:9/16;">
+<video autoplay muted loop playsinline style="width:100%;height:100%;object-fit:cover;display:block;">
+<source src="/videos/Center Stage Idaho Falls.mp4" type="video/mp4">
+</video>
 </div>
-<div style="border-radius:12px;overflow:hidden;">
-<blockquote class="tiktok-embed" cite="https://www.tiktok.com/@eastidaho/video/7621978887236488462" data-video-id="7621978887236488462" style="max-width:605px;min-width:325px;"> <section> <a target="_blank" title="@eastidaho" href="https://www.tiktok.com/@eastidaho?refer=embed">@eastidaho</a> Come make memories at Game Pulse in Rexburg. Isaac gave us the exclusive tour. They have everything from DND, Magic Warhammer and more! <a title="gametok" target="_blank" href="https://www.tiktok.com/tag/gametok?refer=embed">#gametok</a> <a title="warhammer" target="_blank" href="https://www.tiktok.com/tag/warhammer?refer=embed">#warhammer</a> <a title="magic" target="_blank" href="https://www.tiktok.com/tag/magic?refer=embed">#magic</a> <a title="eastidaho" target="_blank" href="https://www.tiktok.com/tag/eastidaho?refer=embed">#eastidaho</a> <a title="dnd" target="_blank" href="https://www.tiktok.com/tag/dnd?refer=embed">#dnd</a> <a target="_blank" title="original sound - East Idaho" href="https://www.tiktok.com/music/original-sound-7621978992903506701?refer=embed">original sound - East Idaho</a> </section> </blockquote>
-</div>
-</div>
+<p style="text-align:center;margin-top:12px;font-size:.85rem;color:#7a849a;font-style:italic;">The social media highlight we created for Center Stage Idaho Falls</p>
 </div>
 </div>
 </section>
@@ -472,6 +470,5 @@ async function submitContactForm(e){e.preventDefault();var f=e.target;try{await 
 // Services form
 async function submitSvcForm(e){e.preventDefault();var f=e.target;var msg='Package: '+f.package.value;if(f.business.value)msg+='\nBusiness: '+f.business.value;if(f.phone.value)msg+='\nPhone: '+f.phone.value;if(f.message.value)msg+='\n\n'+f.message.value;try{await fetch('/api/contact',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({name:f.name.value,email:f.email.value,subject:'Services Inquiry - '+f.package.value,message:msg})});f.style.display='none';document.getElementById('svc-success').style.display='block';}catch(err){alert('Something went wrong. Please email hello@eastidaho.com directly.');}}
 </script>
-<script async src="https://www.tiktok.com/embed.js"></script>
 </body>
 </html>
