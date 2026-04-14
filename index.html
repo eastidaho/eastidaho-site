@@ -3,157 +3,39 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>East Idaho — Stories · People · Places</title>
-<meta name="description" content="East Idaho Media Co. — local stories, video production, and the Saturday morning newsletter for people who love East Idaho. Idaho Falls, Rexburg, Rigby, and beyond.">
-<meta name="keywords" content="East Idaho, Idaho Falls, Rexburg, local newsletter, East Idaho news, video production, local media">
+<title>East Idaho — Empowering Local Businesses</title>
+<meta name="description" content="East Idaho helps local small businesses start, grow, and thrive. Free LLC registration, workshops, startup programs, grants, and marketing support for the valley.">
+<meta name="keywords" content="East Idaho, small business, LLC registration, Idaho Falls, Rexburg, startup, workshops, grants, local business support">
 <meta name="author" content="East Idaho Media Co. LLC">
-<meta name="robots" content="index, follow">
 <link rel="canonical" href="https://eastidaho.com/">
 <meta property="og:type" content="website">
 <meta property="og:url" content="https://eastidaho.com/">
-<meta property="og:title" content="East Idaho — Stories · People · Places">
-<meta property="og:description" content="Local stories, video production, and the Saturday morning newsletter for people who love East Idaho.">
+<meta property="og:title" content="East Idaho — Empowering Local Businesses">
+<meta property="og:description" content="Free LLC registration, workshops, startup programs, and marketing support for East Idaho businesses.">
 <meta property="og:image" content="https://eastidaho.com/og-image.png">
-<meta property="og:image:width" content="1200">
-<meta property="og:image:height" content="630">
 <meta property="og:site_name" content="East Idaho">
 <meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:title" content="East Idaho — Stories · People · Places">
-<meta name="twitter:image" content="https://eastidaho.com/og-image.png">
 <link rel="icon" type="image/png" href="/logo-icon.png">
 <link rel="apple-touch-icon" href="/logo-icon.png">
 <meta name="theme-color" content="#0f1a2e">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=Outfit:wght@300;400;500;600;700;800&family=Playfair+Display:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="/styles.css">
+<link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=Outfit:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
 <style>
-:root { --navy2:#16253f; --navy3:#1e3358; --coral2:#e8784d; --off:#f4f5f9; --border:#dde1ec; }
-html { scroll-behavior: smooth; }
-body { font-family:'Outfit',sans-serif; overflow-x:hidden; }
+:root{--navy:#0f1a2e;--navy2:#16253f;--navy3:#1e3358;--coral:#f0956c;--coral2:#e8784d;--cream:#faf9f7;--warm-white:#f3f1ed;--stone:#ddd8d0;--off:#f4f5f9;--border:#dde1ec;--text:#1a2535;--muted:#7a849a;--green:#34d399}
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{font-family:'Outfit',sans-serif;color:var(--text);overflow-x:hidden;background:#fff;line-height:1.6}
 
-/* ANNOUNCEMENT */
-.ann{display:flex;align-items:center;justify-content:center;gap:12px;padding:10px 24px;background:linear-gradient(135deg,#e8735a 0%,#f0956c 100%);text-decoration:none;position:fixed;top:0;left:0;right:0;z-index:110;flex-wrap:wrap}
-.ann:hover{background:linear-gradient(135deg,#d4623e 0%,#e8845b 100%)}
-.ann-text{font-size:13.5px;color:#fff;letter-spacing:.3px}
-.ann-cta{font-size:12px;font-weight:700;color:#fff;background:rgba(255,255,255,.2);padding:3px 14px;border-radius:4px;white-space:nowrap}
-.ann:hover .ann-cta{background:rgba(255,255,255,.3)}
-
-/* HERO */
-.hero{background:var(--navy);min-height:100vh;display:flex;align-items:center;padding:80px clamp(1rem,4vw,3rem);position:relative;overflow:hidden}
-.hero::before{content:'';position:absolute;inset:0;pointer-events:none;background:radial-gradient(ellipse 55% 60% at 85% 15%,rgba(240,149,108,.18) 0%,transparent 65%),radial-gradient(ellipse 40% 50% at 5% 85%,rgba(240,149,108,.10) 0%,transparent 65%),radial-gradient(ellipse 30% 40% at 50% 50%,rgba(30,51,88,.6) 0%,transparent 70%)}
-.hero::after{content:'';position:absolute;inset:0;pointer-events:none;background-image:radial-gradient(rgba(255,255,255,.04) 1px,transparent 1px);background-size:28px 28px}
-.hero-inner{max-width:1160px;margin:0 auto;width:100%;display:grid;grid-template-columns:1fr 520px;gap:3rem;align-items:center;position:relative;z-index:1}
-.hero-ey{display:inline-flex;align-items:center;gap:.6rem;font-size:.72rem;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:var(--coral);margin-bottom:1.5rem}
-.hero-ey::before{content:'';display:block;width:32px;height:2px;background:var(--coral)}
-.hero h1{font-family:'DM Serif Display',serif;font-size:clamp(3rem,6.5vw,5.5rem);color:#fff;line-height:1.04;margin-bottom:1.5rem}
-.hero h1 em{color:var(--coral);font-style:italic}
-.hero-sub{color:rgba(255,255,255,.58);font-size:1.1rem;line-height:1.75;max-width:480px;margin-bottom:2.5rem}
-.hero-btns{display:flex;gap:1rem;flex-wrap:wrap}
-.btn-p{display:inline-flex;align-items:center;gap:.55rem;background:var(--coral);color:#fff;text-decoration:none;font-weight:700;font-size:.95rem;padding:.9rem 2rem;border-radius:6px;transition:background .2s,transform .15s;box-shadow:0 4px 20px rgba(240,149,108,.35);border:none;cursor:pointer;font-family:'Outfit',sans-serif}
-.btn-p:hover{background:var(--coral2);transform:translateY(-2px)}
-.btn-g{display:inline-flex;align-items:center;gap:.55rem;border:1.5px solid rgba(255,255,255,.2);color:rgba(255,255,255,.8);text-decoration:none;font-weight:600;font-size:.95rem;padding:.9rem 2rem;border-radius:6px;background:none;cursor:pointer;font-family:'Outfit',sans-serif;transition:border-color .2s,color .2s}
-.btn-g:hover{border-color:var(--coral);color:var(--coral)}
-.hero-stats{display:grid;grid-template-columns:1fr 1fr;gap:.85rem}
-.stat-card{background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.1);border-radius:12px;padding:1.25rem 1.1rem;backdrop-filter:blur(8px);transition:background .2s,border-color .2s}
-.stat-card:hover{background:rgba(255,255,255,.09);border-color:rgba(240,149,108,.3)}
-.stat-card-val{font-family:'DM Serif Display',serif;font-size:2rem;color:var(--coral);line-height:1;margin-bottom:.3rem}
-.stat-card-lbl{font-size:.78rem;color:rgba(255,255,255,.5);line-height:1.4}
-
-/* SPONSORS */
-.sponsors-blend{background:var(--navy);padding:40px 48px 60px;position:relative;overflow:hidden}
-.sponsors-blend::before{content:'';position:absolute;inset:0;background:radial-gradient(ellipse at 15% 80%,rgba(240,149,108,.06) 0%,transparent 55%),radial-gradient(ellipse at 85% 20%,rgba(26,41,64,.6) 0%,transparent 50%)}
-.sponsors-blend-inner{max-width:1160px;margin:0 auto;position:relative;z-index:1}
-.sponsors-label{font-size:10px;text-transform:uppercase;letter-spacing:3px;color:rgba(255,255,255,.2);text-align:center;margin-bottom:20px}
-.sponsors-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}
-.sp-card{background:rgba(255,255,255,.04);border:1px solid rgba(255,255,255,.08);border-radius:10px;padding:24px 20px;text-align:center;cursor:pointer;transition:all .25s ease;text-decoration:none}
-.sp-card:hover{background:rgba(255,255,255,.07);border-color:rgba(240,149,108,.3);transform:translateY(-2px)}
-.sp-badge{display:inline-block;font-size:9px;text-transform:uppercase;letter-spacing:1.5px;color:var(--coral);font-weight:700;background:rgba(240,149,108,.1);padding:3px 12px;border-radius:4px;margin-bottom:12px}
-.sp-name{font-family:'DM Serif Display',serif;font-size:18px;color:#fff;margin-bottom:4px;line-height:1.3}
-.sp-type{font-size:12px;color:rgba(255,255,255,.35);letter-spacing:.3px}
-
-/* CASE STUDIES */
-.cases{background:var(--navy2);padding:5rem clamp(1rem,4vw,3rem);position:relative;overflow:hidden}
-.cases::before{content:'';position:absolute;top:0;left:0;right:0;height:1px;background:linear-gradient(90deg,transparent,rgba(240,149,108,.4),transparent)}
-.cases-inner{max-width:1160px;margin:0 auto}
-.cases-header{text-align:center;margin-bottom:3rem}
-.cases-ey{display:inline-flex;align-items:center;gap:.5rem;font-size:.7rem;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:var(--coral);margin-bottom:.75rem}
-.cases-ey::before,.cases-ey::after{content:'';display:block;width:24px;height:1.5px;background:var(--coral)}
-.cases-title{font-family:'DM Serif Display',serif;font-size:clamp(1.6rem,3vw,2.4rem);color:#fff;line-height:1.2}
-.cases-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1.25rem}
-.cc{background:rgba(255,255,255,.04);border:1px solid rgba(255,255,255,.09);border-radius:14px;padding:1.75rem;position:relative;overflow:hidden;transition:border-color .25s,transform .25s,background .25s}
-.cc:hover{border-color:rgba(240,149,108,.4);background:rgba(255,255,255,.06);transform:translateY(-4px)}
-.cc::before{content:'';position:absolute;top:0;left:0;right:0;height:2px;background:var(--coral);transform:scaleX(0);transform-origin:left;transition:transform .35s ease}
-.cc:hover::before{transform:scaleX(1)}
-.cc-num{font-family:'DM Serif Display',serif;font-size:3.5rem;color:rgba(255,255,255,.06);line-height:1;margin-bottom:.5rem}
-.cc-name{font-weight:700;font-size:1rem;color:#fff;margin-bottom:1.1rem}
-.cc-metrics{display:flex;flex-wrap:wrap;gap:.5rem}
-.cc-m{background:rgba(255,255,255,.07);border-radius:7px;padding:.4rem .7rem;display:flex;align-items:center;gap:.35rem;font-size:.8rem}
-.cc-m strong{color:#fff;font-weight:700}
-.cc-m span{color:rgba(255,255,255,.45)}
-.cc-m svg{color:var(--coral);flex-shrink:0}
-
-/* ABOUT / CHANNELS */
-.about{background:var(--off);padding:6rem clamp(1rem,4vw,3rem)}
-.about-inner{max-width:1160px;margin:0 auto;display:grid;grid-template-columns:1fr 1fr;gap:4rem;align-items:center}
-.ey{display:inline-flex;align-items:center;gap:.5rem;font-size:.7rem;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:var(--coral);margin-bottom:.7rem}
-.ey::before{content:'';display:block;width:22px;height:2px;background:var(--coral)}
-h2.st{font-family:'DM Serif Display',serif;font-size:clamp(2rem,4vw,3rem);line-height:1.12;margin-bottom:1rem}
-.sd{font-size:1.05rem;line-height:1.75;color:#7a849a;margin-bottom:2rem}
-.channels{display:grid;grid-template-columns:repeat(2,1fr);gap:.85rem}
-.ch-card{background:#fff;border:1.5px solid var(--border);border-radius:12px;padding:1.25rem;text-align:center;text-decoration:none;transition:border-color .2s,transform .2s}
-.ch-card:hover{border-color:var(--coral);transform:translateY(-3px)}
-.ch-icon{font-size:1.8rem;margin-bottom:.4rem}
-.ch-name{font-weight:700;font-size:.9rem;color:var(--navy);margin-bottom:.2rem}
-.ch-handle{font-size:.78rem;color:#7a849a}
-
-/* SERVICES */
-.svc{background:var(--navy);padding:6rem clamp(1rem,4vw,3rem);position:relative;overflow:hidden}
-.svc::before{content:'';position:absolute;inset:0;pointer-events:none;background:radial-gradient(ellipse 50% 70% at 0% 50%,rgba(240,149,108,.07) 0%,transparent 60%),radial-gradient(ellipse 40% 60% at 100% 50%,rgba(240,149,108,.06) 0%,transparent 60%)}
-.svc-inner{max-width:1160px;margin:0 auto;position:relative;z-index:1}
-.svc-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1.5rem;margin-top:2rem}
-.sc{border-radius:16px;padding:2.25rem 2rem;display:flex;flex-direction:column;position:relative;overflow:hidden;background:rgba(255,255,255,.055);border:1px solid rgba(255,255,255,.12);transition:transform .25s,box-shadow .25s,border-color .25s}
-.sc:hover{transform:translateY(-6px);box-shadow:0 20px 50px rgba(0,0,0,.35);border-color:rgba(240,149,108,.45)}
-.sc.hot{background:var(--coral);border-color:var(--coral);box-shadow:0 12px 40px rgba(240,149,108,.3)}
-.sc.hot:hover{box-shadow:0 20px 56px rgba(240,149,108,.45)}
-.sc-bar{position:absolute;top:0;left:0;right:0;height:3px;background:var(--coral)}
-.sc.hot .sc-bar{background:rgba(255,255,255,.35)}
-.hot-badge{position:absolute;top:14px;right:16px;background:var(--navy);color:#fff;font-size:.62rem;font-weight:800;letter-spacing:.1em;text-transform:uppercase;padding:.28rem .7rem;border-radius:100px}
-.sc-icon{width:48px;height:48px;border-radius:12px;display:flex;align-items:center;justify-content:center;margin-bottom:1.4rem;background:rgba(240,149,108,.15)}
-.sc.hot .sc-icon{background:rgba(255,255,255,.22)}
-.sc-icon svg{color:var(--coral)}.sc.hot .sc-icon svg{color:#fff}
-.sc-name{font-family:'DM Serif Display',serif;font-size:1.4rem;color:#fff;margin-bottom:.3rem}
-.sc-price{display:flex;align-items:baseline;gap:.3rem;margin-bottom:.2rem}
-.sc-price .num{font-family:'DM Serif Display',serif;font-size:3rem;color:var(--coral);line-height:1}
-.sc.hot .sc-price .num{color:#fff}
-.sc-price .per{font-size:.85rem;color:rgba(255,255,255,.5)}
-.sc.hot .sc-price .per{color:rgba(255,255,255,.7)}
-.sc-sub{font-size:.72rem;text-transform:uppercase;letter-spacing:.08em;color:rgba(255,255,255,.38);margin-bottom:1.4rem}
-.sc.hot .sc-sub{color:rgba(255,255,255,.65)}
-.sc-div{height:1px;background:rgba(255,255,255,.1);margin-bottom:1.3rem}
-.sc.hot .sc-div{background:rgba(255,255,255,.25)}
-.sc-feat{list-style:none;display:flex;flex-direction:column;gap:.65rem;flex:1;margin-bottom:1.75rem}
-.sc-feat li{display:flex;align-items:flex-start;gap:.6rem;font-size:.88rem;color:rgba(255,255,255,.7);line-height:1.45}
-.sc.hot .sc-feat li{color:rgba(255,255,255,.92)}
-.sc-feat li::before{content:'';flex-shrink:0;width:17px;height:17px;margin-top:1px;border-radius:50%;background:var(--coral) url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 20 20' fill='white'%3E%3Cpath fill-rule='evenodd' d='M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z' clip-rule='evenodd'/%3E%3C/svg%3E") center/10px no-repeat}
-.sc.hot .sc-feat li::before{background-color:rgba(255,255,255,.28)}
-.sc-btn{display:flex;align-items:center;justify-content:center;gap:.5rem;background:var(--coral);color:#fff;font-weight:700;font-size:.9rem;padding:.85rem 1.5rem;border-radius:8px;transition:background .2s,transform .15s;border:none;cursor:pointer;font-family:'Outfit',sans-serif;text-decoration:none}
-.sc-btn:hover{background:var(--coral2);transform:translateY(-1px)}
-.sc.hot .sc-btn{background:var(--navy)}.sc.hot .sc-btn:hover{background:var(--navy2)}
-
-/* NEWSLETTER CTA */
-.nl-cta{background:linear-gradient(135deg,var(--coral2) 0%,var(--coral) 50%,#f4a97c 100%);padding:6rem clamp(1rem,4vw,3rem);text-align:center;position:relative;overflow:hidden}
-.nl-cta::before{content:'';position:absolute;inset:0;pointer-events:none;background-image:radial-gradient(rgba(255,255,255,.08) 1px,transparent 1px);background-size:24px 24px}
-.nl-cta-inner{position:relative;z-index:1;max-width:520px;margin:0 auto}
-.nl-cta h2{font-family:'DM Serif Display',serif;font-size:clamp(2rem,4.5vw,3.2rem);color:#fff;line-height:1.1;margin-bottom:.8rem}
-.nl-cta p{color:rgba(255,255,255,.75);font-size:1.05rem;line-height:1.7;margin-bottom:2rem}
-.nl-form{display:flex;gap:10px;max-width:440px;margin:0 auto}
-.nl-form input{flex:1;padding:14px 18px;border:2px solid rgba(255,255,255,.25);border-radius:6px;background:rgba(255,255,255,.12);color:#fff;font-family:'Outfit',sans-serif;font-size:15px;outline:none;transition:border-color .2s}
-.nl-form input::placeholder{color:rgba(255,255,255,.4)}
-.nl-form input:focus{border-color:#fff}
-.nl-form button{padding:14px 24px;background:#fff;color:var(--coral2);border:none;border-radius:6px;font-family:'Outfit',sans-serif;font-size:15px;font-weight:800;cursor:pointer;white-space:nowrap;transition:transform .15s,box-shadow .2s}
-.nl-form button:hover{transform:translateY(-1px);box-shadow:0 4px 16px rgba(0,0,0,.15)}
-.nl-msg{display:none;margin-top:12px;font-size:14px;font-weight:600}
+/* NAV */
+nav{position:fixed;top:0;left:0;right:0;z-index:100;padding:0 48px;height:72px;display:flex;align-items:center;justify-content:space-between;background:rgba(15,26,46,.97);backdrop-filter:blur(12px);border-bottom:1px solid rgba(255,255,255,.05)}
+.nav-logo{height:40px;display:flex;align-items:center;text-decoration:none}
+.nav-logo img{height:40px;width:auto}
+.nav-links{display:flex;gap:32px;align-items:center}
+.nav-links a{color:rgba(255,255,255,.6);text-decoration:none;font-size:14px;font-weight:500;letter-spacing:.3px;transition:color .2s}
+.nav-links a:hover{color:#fff}
+.nav-cta{background:var(--coral)!important;color:#fff!important;padding:9px 22px;border-radius:5px;font-weight:600!important;transition:background .2s!important}
+.nav-cta:hover{background:var(--coral2)!important}
 
 /* HAMBURGER */
 .nav-hamburger{display:none;background:none;border:none;cursor:pointer;padding:8px;z-index:120;position:relative}
@@ -166,295 +48,314 @@ h2.st{font-family:'DM Serif Display',serif;font-size:clamp(2rem,4vw,3rem);line-h
 .nav-mobile-drawer a{color:rgba(255,255,255,.7);text-decoration:none;font-size:20px;font-weight:600;transition:color .2s}
 .nav-mobile-drawer a:hover{color:#fff}
 
-/* MODAL BG */
-.m-bg{display:none;position:fixed;inset:0;background:rgba(10,18,32,.85);backdrop-filter:blur(6px);z-index:1000;align-items:center;justify-content:center;padding:24px;overflow-y:auto}
-.m-bg.active{display:flex}
+/* SHARED */
+.wrap{max-width:1160px;margin:0 auto}
+.ey{display:inline-flex;align-items:center;gap:.5rem;font-size:.7rem;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:var(--coral);margin-bottom:.7rem}
+.ey::before{content:'';display:block;width:22px;height:2px;background:var(--coral)}
+h2.st{font-family:'DM Serif Display',serif;font-size:clamp(2rem,4vw,3rem);line-height:1.12;margin-bottom:1rem}
+.sd{font-size:1.05rem;line-height:1.75;color:var(--muted);margin-bottom:2rem}
+.btn-p{display:inline-flex;align-items:center;gap:.55rem;background:var(--coral);color:#fff;text-decoration:none;font-weight:700;font-size:.95rem;padding:.9rem 2rem;border-radius:6px;transition:background .2s,transform .15s;box-shadow:0 4px 20px rgba(240,149,108,.35);border:none;cursor:pointer;font-family:'Outfit',sans-serif}
+.btn-p:hover{background:var(--coral2);transform:translateY(-2px)}
+.btn-g{display:inline-flex;align-items:center;gap:.55rem;border:1.5px solid rgba(255,255,255,.2);color:rgba(255,255,255,.8);text-decoration:none;font-weight:600;font-size:.95rem;padding:.9rem 2rem;border-radius:6px;background:none;cursor:pointer;font-family:'Outfit',sans-serif;transition:border-color .2s,color .2s}
+.btn-g:hover{border-color:var(--coral);color:var(--coral)}
+.arrow{transition:transform .2s}.btn-p:hover .arrow,.btn-g:hover .arrow{transform:translateX(4px)}
 
-@media(max-width:960px){.hero-inner{grid-template-columns:1fr}.hero-stats{display:flex;flex-wrap:wrap;gap:.75rem}.about-inner{grid-template-columns:1fr}}
-@media(max-width:900px){.nav-hamburger{display:block}.nav-links{display:none}nav{z-index:106!important}.sponsors-blend{padding:0 24px 40px}.sponsors-grid{grid-template-columns:1fr}}
-@media(max-width:860px){.cases-grid{grid-template-columns:1fr}.svc-grid{grid-template-columns:1fr;max-width:460px}}
-@media(max-width:600px){.ann{padding:10px 16px;gap:6px;text-align:center}.ann-text{font-size:11.5px}.nl-form{flex-direction:column}}
+/* HERO */
+.hero{background:var(--navy);min-height:100vh;display:flex;align-items:center;padding:80px clamp(1rem,4vw,3rem);position:relative;overflow:hidden}
+.hero::before{content:'';position:absolute;inset:0;pointer-events:none;background:radial-gradient(ellipse 55% 60% at 85% 15%,rgba(240,149,108,.18) 0%,transparent 65%),radial-gradient(ellipse 40% 50% at 5% 85%,rgba(240,149,108,.10) 0%,transparent 65%),radial-gradient(ellipse 30% 40% at 50% 50%,rgba(30,51,88,.6) 0%,transparent 70%)}
+.hero::after{content:'';position:absolute;inset:0;pointer-events:none;background-image:radial-gradient(rgba(255,255,255,.04) 1px,transparent 1px);background-size:28px 28px}
+.hero-inner{max-width:1160px;margin:0 auto;width:100%;display:grid;grid-template-columns:1fr 480px;gap:3rem;align-items:center;position:relative;z-index:1}
+.hero h1{font-family:'DM Serif Display',serif;font-size:clamp(2.8rem,6vw,5rem);color:#fff;line-height:1.06;margin-bottom:1.5rem}
+.hero h1 em{color:var(--coral);font-style:italic}
+.hero-sub{color:rgba(255,255,255,.55);font-size:1.1rem;line-height:1.75;max-width:480px;margin-bottom:2.5rem}
+.hero-btns{display:flex;gap:1rem;flex-wrap:wrap}
+
+/* LLC CARD */
+.llc-card{background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.1);border-radius:16px;padding:2.5rem 2rem;backdrop-filter:blur(8px);text-align:center}
+.llc-icon{font-size:3rem;margin-bottom:12px}
+.llc-title{font-family:'DM Serif Display',serif;font-size:1.8rem;color:#fff;margin-bottom:8px}
+.llc-desc{font-size:.95rem;color:rgba(255,255,255,.5);line-height:1.65;margin-bottom:6px}
+.llc-free{display:inline-block;background:rgba(52,211,153,.15);color:var(--green);font-size:.75rem;font-weight:700;letter-spacing:.12em;text-transform:uppercase;padding:4px 14px;border-radius:4px;margin:12px 0 20px}
+.llc-btn{display:inline-flex;align-items:center;gap:.5rem;background:linear-gradient(135deg,#5ec8e6,var(--coral));color:#fff;font-weight:700;font-size:1rem;padding:14px 32px;border-radius:8px;text-decoration:none;transition:transform .2s,box-shadow .2s;box-shadow:0 0 30px rgba(94,200,230,.25),0 4px 16px rgba(0,0,0,.3)}
+.llc-btn:hover{transform:translateY(-2px) scale(1.02);box-shadow:0 0 50px rgba(94,200,230,.35),0 8px 24px rgba(0,0,0,.3)}
+.llc-note{font-size:.78rem;color:rgba(255,255,255,.3);margin-top:12px}
+
+/* MISSION */
+.mission{background:var(--off);padding:6rem clamp(1rem,4vw,3rem)}
+.mission-inner{max-width:1160px;margin:0 auto;text-align:center;max-width:760px}
+.mission-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:1.25rem;margin-top:3rem;text-align:center}
+.m-card{background:#fff;border:1.5px solid var(--border);border-radius:14px;padding:2rem 1.5rem;transition:border-color .25s,transform .25s}
+.m-card:hover{border-color:var(--coral);transform:translateY(-4px)}
+.m-card-icon{font-size:2rem;margin-bottom:.75rem}
+.m-card-title{font-family:'DM Serif Display',serif;font-size:1.1rem;color:var(--navy);margin-bottom:.4rem}
+.m-card-desc{font-size:.85rem;color:var(--muted);line-height:1.55}
+
+/* PROGRAMS */
+.programs{background:var(--navy);padding:6rem clamp(1rem,4vw,3rem);position:relative;overflow:hidden}
+.programs::before{content:'';position:absolute;inset:0;pointer-events:none;background:radial-gradient(ellipse 50% 70% at 0% 50%,rgba(240,149,108,.07) 0%,transparent 60%),radial-gradient(ellipse 40% 60% at 100% 50%,rgba(240,149,108,.06) 0%,transparent 60%)}
+.prog-inner{max-width:1160px;margin:0 auto;position:relative;z-index:1}
+.prog-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1.5rem;margin-top:2rem}
+.p-card{border-radius:16px;padding:2.25rem 2rem;display:flex;flex-direction:column;background:rgba(255,255,255,.055);border:1px solid rgba(255,255,255,.12);transition:transform .25s,box-shadow .25s,border-color .25s;position:relative;overflow:hidden}
+.p-card:hover{transform:translateY(-6px);box-shadow:0 20px 50px rgba(0,0,0,.35);border-color:rgba(240,149,108,.45)}
+.p-bar{position:absolute;top:0;left:0;right:0;height:3px;background:var(--coral)}
+.p-icon{width:48px;height:48px;border-radius:12px;display:flex;align-items:center;justify-content:center;margin-bottom:1.2rem;background:rgba(240,149,108,.15);font-size:1.4rem}
+.p-name{font-family:'DM Serif Display',serif;font-size:1.3rem;color:#fff;margin-bottom:.5rem}
+.p-desc{font-size:.88rem;color:rgba(255,255,255,.55);line-height:1.6;flex:1;margin-bottom:1.5rem}
+.p-tag{display:inline-block;font-size:.65rem;font-weight:700;letter-spacing:.1em;text-transform:uppercase;padding:.25rem .7rem;border-radius:100px;margin-bottom:12px}
+.p-tag.soon{background:rgba(247,210,107,.15);color:#f7d26b}
+.p-tag.active{background:rgba(52,211,153,.15);color:var(--green)}
+.p-tag.new{background:rgba(240,149,108,.15);color:var(--coral)}
+
+/* RESULTS */
+.results{background:var(--navy2);padding:5rem clamp(1rem,4vw,3rem);position:relative;overflow:hidden}
+.results::before{content:'';position:absolute;top:0;left:0;right:0;height:1px;background:linear-gradient(90deg,transparent,rgba(240,149,108,.4),transparent)}
+.results-inner{max-width:1160px;margin:0 auto}
+.results-header{text-align:center;margin-bottom:3rem}
+.r-ey{display:inline-flex;align-items:center;gap:.5rem;font-size:.7rem;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:var(--coral);margin-bottom:.75rem}
+.r-ey::before,.r-ey::after{content:'';display:block;width:24px;height:1.5px;background:var(--coral)}
+.r-title{font-family:'DM Serif Display',serif;font-size:clamp(1.6rem,3vw,2.4rem);color:#fff;line-height:1.2}
+.r-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1.25rem}
+.r-card{background:rgba(255,255,255,.04);border:1px solid rgba(255,255,255,.09);border-radius:14px;padding:1.75rem;position:relative;overflow:hidden;transition:border-color .25s,transform .25s,background .25s}
+.r-card:hover{border-color:rgba(240,149,108,.4);background:rgba(255,255,255,.06);transform:translateY(-4px)}
+.r-card::before{content:'';position:absolute;top:0;left:0;right:0;height:2px;background:var(--coral);transform:scaleX(0);transform-origin:left;transition:transform .35s ease}
+.r-card:hover::before{transform:scaleX(1)}
+.r-num{font-family:'DM Serif Display',serif;font-size:3.5rem;color:rgba(255,255,255,.06);line-height:1;margin-bottom:.5rem}
+.r-name{font-weight:700;font-size:1rem;color:#fff;margin-bottom:1.1rem}
+.r-metrics{display:flex;flex-wrap:wrap;gap:.5rem}
+.r-m{background:rgba(255,255,255,.07);border-radius:7px;padding:.4rem .7rem;display:flex;align-items:center;gap:.35rem;font-size:.8rem}
+.r-m strong{color:#fff;font-weight:700}
+.r-m span{color:rgba(255,255,255,.45)}
+.r-m svg{color:var(--coral);flex-shrink:0}
+
+/* CTA */
+.cta{background:linear-gradient(135deg,var(--coral2) 0%,var(--coral) 50%,#f4a97c 100%);padding:6rem clamp(1rem,4vw,3rem);text-align:center;position:relative;overflow:hidden}
+.cta::before{content:'';position:absolute;inset:0;pointer-events:none;background-image:radial-gradient(rgba(255,255,255,.08) 1px,transparent 1px);background-size:24px 24px}
+.cta-inner{position:relative;z-index:1;max-width:520px;margin:0 auto}
+.cta h2{font-family:'DM Serif Display',serif;font-size:clamp(2rem,4.5vw,3.2rem);color:#fff;line-height:1.1;margin-bottom:.8rem}
+.cta p{color:rgba(255,255,255,.75);font-size:1.05rem;line-height:1.7;margin-bottom:2rem}
+.cta-btns{display:flex;gap:1rem;justify-content:center;flex-wrap:wrap}
+.btn-w{display:inline-flex;align-items:center;gap:.55rem;background:#fff;color:var(--coral2);text-decoration:none;font-weight:800;font-size:.95rem;padding:.95rem 2.2rem;border-radius:6px;transition:transform .15s,box-shadow .2s;box-shadow:0 4px 20px rgba(0,0,0,.15);border:none;cursor:pointer;font-family:'Outfit',sans-serif}
+.btn-w:hover{transform:translateY(-2px);box-shadow:0 8px 30px rgba(0,0,0,.2)}
+.btn-ow{display:inline-flex;align-items:center;gap:.55rem;border:2px solid rgba(255,255,255,.5);color:#fff;text-decoration:none;font-weight:700;font-size:.95rem;padding:.95rem 2.2rem;border-radius:6px;background:none;cursor:pointer;font-family:'Outfit',sans-serif;transition:border-color .2s,background .2s}
+.btn-ow:hover{border-color:#fff;background:rgba(255,255,255,.1)}
+.cta-email{margin-top:1.5rem;font-size:.85rem;color:rgba(255,255,255,.6)}
+.cta-email a{color:rgba(255,255,255,.9);text-decoration:underline;text-underline-offset:3px}
+
+/* FOOTER */
+footer{background:#0a1220;padding:48px;text-align:center}
+.footer-logo{margin-bottom:16px}.footer-logo img{height:48px;opacity:.8;display:inline-block}
+.footer-links{display:flex;justify-content:center;gap:28px;margin-bottom:24px;flex-wrap:wrap}
+.footer-links a{color:rgba(255,255,255,.4);text-decoration:none;font-size:13px;font-weight:500;transition:color .2s}
+.footer-links a:hover{color:rgba(255,255,255,.7)}
+.footer-legal{font-size:12px;color:rgba(255,255,255,.2);line-height:1.6}
+.footer-legal-links{margin-bottom:12px;display:flex;justify-content:center;gap:20px}
+.footer-legal-links a{color:rgba(255,255,255,.3);text-decoration:none;font-size:12px}
+
+/* MODAL */
+.modal-overlay{display:none;position:fixed;inset:0;z-index:1000;background:rgba(10,18,32,.85);backdrop-filter:blur(6px);align-items:center;justify-content:center;padding:24px;overflow-y:auto}
+.modal-overlay.active{display:flex}
+.modal{background:var(--cream);border-radius:12px;max-width:520px;width:100%;padding:40px 36px;position:relative;box-shadow:0 30px 80px rgba(0,0,0,.4);max-height:90vh;overflow-y:auto;animation:modalIn .3s ease-out}
+@keyframes modalIn{from{opacity:0;transform:translateY(20px) scale(.97)}to{opacity:1;transform:translateY(0) scale(1)}}
+.modal-close{position:absolute;top:16px;right:16px;width:36px;height:36px;border-radius:50%;border:none;background:var(--warm-white);color:var(--muted);font-size:18px;cursor:pointer;display:flex;align-items:center;justify-content:center}
+.modal-close:hover{background:var(--stone)}
+.modal-eyebrow{font-size:11px;text-transform:uppercase;letter-spacing:3px;color:var(--coral);font-weight:700;margin-bottom:8px}
+.modal-title{font-family:'DM Serif Display',serif;font-size:28px;color:var(--text);line-height:1.2;margin-bottom:16px}
+.modal-text{font-size:15px;color:var(--muted);line-height:1.7;margin-bottom:16px}
+.contact-field{margin-bottom:14px}
+.contact-field label{display:block;font-size:12px;font-weight:700;text-transform:uppercase;letter-spacing:1px;color:var(--muted);margin-bottom:6px}
+.contact-field input,.contact-field textarea,.contact-field select{width:100%;padding:12px 16px;border:1px solid var(--stone);border-radius:6px;background:var(--warm-white);color:var(--text);font-family:'Outfit',sans-serif;font-size:15px;outline:none;transition:border-color .2s}
+.contact-field input:focus,.contact-field textarea:focus,.contact-field select:focus{border-color:var(--coral)}
+.contact-field textarea{min-height:100px;resize:vertical}
+.contact-submit{padding:13px 28px;background:var(--coral);color:#fff;border:none;border-radius:6px;font-family:'Outfit',sans-serif;font-size:15px;font-weight:700;cursor:pointer;transition:background .2s;width:100%;margin-top:8px}
+.contact-submit:hover{background:var(--coral2)}
+
+/* RESPONSIVE */
+@media(max-width:960px){.hero-inner{grid-template-columns:1fr}.mission-grid{grid-template-columns:repeat(2,1fr)}}
+@media(max-width:900px){.nav-hamburger{display:block}.nav-links{display:none}nav{z-index:106!important;padding:0 24px}}
+@media(max-width:860px){.r-grid{grid-template-columns:1fr}.prog-grid{grid-template-columns:1fr;max-width:460px}}
+@media(max-width:640px){.mission-grid{grid-template-columns:1fr}}
 </style>
 </head>
 <body>
-
-<!-- ANNOUNCEMENT -->
-<a href="/events/hot-wing-challenge.html" class="ann" id="announcement-banner">
-<span class="ann-text">&#128293; <strong>East Idaho Hot Wing Challenge</strong> &#8212; April 11th at 6:00 PM in Rigby. Think you can handle it?</span>
-<span class="ann-cta">Learn More &#8594;</span>
-</a>
 
 <!-- NAV -->
 <nav>
 <a class="nav-logo" href="/"><img src="logo-white.png" alt="East Idaho"></a>
 <div class="nav-links">
-<a href="#about">About</a>
-<a href="#services">Services</a>
-<a href="#sponsorships">Sponsors</a>
-<a class="nav-cta" href="#" onclick="openModal('app-modal');return false;">Download App</a>
+<a href="#mission">Mission</a>
+<a href="#programs">Programs</a>
+<a href="#results">Results</a>
+<a class="nav-cta" href="/register.html">Register Your LLC</a>
 </div>
 <button class="nav-hamburger" id="hamburger-btn" onclick="toggleMobileNav()"><span></span><span></span><span></span></button>
 </nav>
 <div class="nav-mobile-drawer" id="mobile-nav">
-<a href="#about" onclick="closeMobileNav()">About</a>
-<a href="#services" onclick="closeMobileNav()">Services</a>
-<a href="#sponsorships" onclick="closeMobileNav()">Sponsors</a>
-<a class="nav-cta" href="#" onclick="closeMobileNav();openModal('app-modal');return false;">Download App</a>
+<a href="#mission" onclick="closeMobileNav()">Mission</a>
+<a href="#programs" onclick="closeMobileNav()">Programs</a>
+<a href="#results" onclick="closeMobileNav()">Results</a>
+<a href="/register.html">Register Your LLC</a>
+<a href="#" onclick="closeMobileNav();openModal('contact-modal');return false;">Contact Us</a>
 </div>
 
 <!-- HERO -->
 <section class="hero">
 <div class="hero-inner">
 <div>
-<div class="hero-ey">Stories &#183; People &#183; Places</div>
-<h1>Your Most<br>Connected Friend<br><em>in the Valley.</em></h1>
-<p class="hero-sub">East Idaho Media Co. tells the stories of the people, places, and businesses that make this valley what it is &#8212; and helps local businesses grow with professional video, web design, and real local reach.</p>
+<div class="ey" style="color:var(--coral);">East Idaho Media Co.</div>
+<h1>Start, Grow, and<br>Thrive <em>Right Here<br>in the Valley.</em></h1>
+<p class="hero-sub">We help East Idaho small businesses get off the ground and grow &#8212; with free LLC registration, workshops, startup programs, marketing support, and a community that has your back.</p>
 <div class="hero-btns">
-<a href="#services" class="btn-p">Our Services <svg width="15" height="15" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path d="M5 12h14M12 5l7 7-7 7"/></svg></a>
-<a href="#" onclick="openModal('subscribe-modal');return false;" class="btn-g">Subscribe Free <svg width="15" height="15" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path d="M5 12h14M12 5l7 7-7 7"/></svg></a>
+<a href="/register.html" class="btn-p">Register Your LLC Free <svg class="arrow" width="15" height="15" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path d="M5 12h14M12 5l7 7-7 7"/></svg></a>
+<a href="#programs" class="btn-g">View Programs <svg class="arrow" width="15" height="15" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path d="M5 12h14M12 5l7 7-7 7"/></svg></a>
 </div>
 </div>
-<div style="border-radius:12px;overflow:hidden;border:1px solid rgba(255,255,255,.1);aspect-ratio:16/9;">
-<iframe width="100%" height="100%" src="https://www.youtube.com/embed/YY4Qo_G8yqI" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen style="display:block;"></iframe>
+<div class="llc-card">
+<div class="llc-icon">&#128221;</div>
+<div class="llc-title">Register Your Idaho LLC</div>
+<div class="llc-desc">We file with the Idaho Secretary of State on your behalf. You focus on building your business.</div>
+<div class="llc-free">&#10003; Our service is 100% free</div>
+<a href="/register.html" class="llc-btn">Start Your Filing <svg class="arrow" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path d="M5 12h14M12 5l7 7-7 7"/></svg></a>
+<div class="llc-note">Only pay the Idaho state filing fee ($100&#8211;$200)</div>
 </div>
 </div>
 </section>
 
-<!-- SPONSORS -->
-<div class="sponsors-blend">
-<div class="sponsors-blend-inner">
-<div class="sponsors-label">Proudly supported by</div>
-<div class="sponsors-grid">
-<div class="sp-card" onclick="openSponsorModal('Rexburg Community Theatre','Bringing live theater to the heart of Rexburg. From musicals to dramas to community productions, RCT has been a stage for local talent and a gathering place for audiences who love the arts.','Community Theater','Rexburg, ID','https://rctheatre.org')"><div class="sp-badge">Sponsor</div><div class="sp-name">Rexburg Community Theatre</div><div class="sp-type">Community Theater &#183; Rexburg</div></div>
-<div class="sp-card" onclick="openSponsorModal('Reeds Dairy','A local Idaho Falls dairy producing fresh milk, ice cream, and dairy products. Family-owned and a valley staple for generations.','Dairy &amp; Ice Cream','Idaho Falls, ID','https://reedsdairy.com')"><div class="sp-badge">Sponsor</div><div class="sp-name">Reeds Dairy</div><div class="sp-type">Dairy &amp; Ice Cream &#183; Idaho Falls</div></div>
-<div class="sp-card" onclick="openSponsorModal('Lil Mike\'s BBQ','The best BBQ in Rigby and Idaho Falls. Fresh meat daily, never frozen. Brisket, ribs, pulled pork, loaded potatoes, and more. Started as a food truck, now a local favorite.','BBQ Restaurant','Rigby &amp; Idaho Falls','https://www.lilmikesbbq.com')"><div class="sp-badge">Sponsor</div><div class="sp-name">Lil Mike's BBQ</div><div class="sp-type">BBQ &#183; Rigby &amp; Idaho Falls</div></div>
+<!-- MISSION -->
+<section class="mission" id="mission">
+<div class="mission-inner">
+<div class="ey" style="justify-content:center;">Our Mission</div>
+<h2 class="st" style="text-align:center;">We believe every great business starts with the right support.</h2>
+<p class="sd" style="text-align:center;max-width:640px;margin:0 auto 2rem;">East Idaho is full of talented, hardworking people with incredible ideas. Our job is to give them the tools, knowledge, and community they need to turn those ideas into thriving local businesses. From your first filing to your first customer &#8212; we're with you the whole way.</p>
+<div class="mission-grid">
+<div class="m-card">
+<div class="m-card-icon">&#128221;</div>
+<div class="m-card-title">Business Registration</div>
+<div class="m-card-desc">Free LLC filing with the Idaho Secretary of State. We handle the paperwork so you can focus on building.</div>
 </div>
+<div class="m-card">
+<div class="m-card-icon">&#127891;</div>
+<div class="m-card-title">Workshops &amp; Classes</div>
+<div class="m-card-desc">Hands-on sessions covering business planning, marketing, finance, and operations for local entrepreneurs.</div>
 </div>
+<div class="m-card">
+<div class="m-card-icon">&#127942;</div>
+<div class="m-card-title">Startup Programs</div>
+<div class="m-card-desc">Structured programs and competitions to help early-stage businesses launch with momentum and mentorship.</div>
 </div>
-
-<!-- EVENTS -->
-<section style="background:var(--off);padding:5rem clamp(1rem,4vw,3rem);" id="events">
-<div style="max-width:1160px;margin:0 auto;">
-<div style="text-align:center;margin-bottom:3rem;">
-<div class="ey" style="justify-content:center;">Upcoming Events</div>
-<h2 class="st">What's happening in the valley.</h2>
-</div>
-<div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(320px,1fr));gap:1.25rem;">
-<a href="/events/hot-wing-challenge.html" style="background:#fff;border:1.5px solid var(--border);border-radius:14px;padding:2rem;text-decoration:none;position:relative;overflow:hidden;transition:border-color .25s,transform .25s,box-shadow .25s;display:block;">
-<div style="position:absolute;top:0;left:0;right:0;height:3px;background:linear-gradient(90deg,#FF1F00,#FF6B00);"></div>
-<div style="font-size:2rem;margin-bottom:.5rem;">&#128293;</div>
-<div style="font-size:.65rem;font-weight:700;letter-spacing:.15em;text-transform:uppercase;color:#FF6B00;margin-bottom:.4rem;">April 11, 2026 &#183; 6:00 PM</div>
-<div style="font-family:'DM Serif Display',serif;font-size:1.3rem;color:var(--navy);margin-bottom:.5rem;">East Idaho Hot Wing Challenge</div>
-<div style="font-size:.9rem;color:#7a849a;line-height:1.6;">10 wings. 10 sauces. The Hot Ones Season 29 lineup. Think you can handle it? Rigby, Idaho.</div>
-<div style="margin-top:1rem;font-size:.85rem;font-weight:700;color:var(--coral);">View Details &#8594;</div>
-</a>
-<a href="https://rctheatre.org" target="_blank" style="background:#fff;border:1.5px solid var(--border);border-radius:14px;padding:2rem;text-decoration:none;position:relative;overflow:hidden;transition:border-color .25s,transform .25s;display:block;">
-<div style="position:absolute;top:0;left:0;right:0;height:3px;background:var(--coral);"></div>
-<div style="font-size:2rem;margin-bottom:.5rem;">&#127917;</div>
-<div style="font-size:.65rem;font-weight:700;letter-spacing:.15em;text-transform:uppercase;color:var(--coral);margin-bottom:.4rem;">June 25&#8211;29, 2026</div>
-<div style="font-family:'DM Serif Display',serif;font-size:1.3rem;color:var(--navy);margin-bottom:.5rem;">Seussical the Musical</div>
-<div style="font-size:.9rem;color:#7a849a;line-height:1.6;">Rexburg Community Theatre brings Dr. Seuss to life with this fantastical musical extravaganza for the whole family. Madison Jr. High School, Rexburg.</div>
-<div style="margin-top:1rem;font-size:.85rem;font-weight:700;color:var(--coral);">Learn More &#8594;</div>
-</a>
-<div style="background:#fff;border:1.5px solid var(--border);border-radius:14px;padding:2rem;position:relative;overflow:hidden;">
-<div style="position:absolute;top:0;left:0;right:0;height:3px;background:var(--coral);"></div>
-<div style="font-size:2rem;margin-bottom:.5rem;">&#127925;</div>
-<div style="font-size:.65rem;font-weight:700;letter-spacing:.15em;text-transform:uppercase;color:var(--coral);margin-bottom:.4rem;">August 5, 2026 &#183; Tickets On Sale</div>
-<div style="font-family:'DM Serif Display',serif;font-size:1.3rem;color:var(--navy);margin-bottom:.5rem;">Lindsey Stirling &#8212; Duality Untamed</div>
-<div style="font-size:.9rem;color:#7a849a;line-height:1.6;">With special guest Pvris at the Mountain America Center, Idaho Falls. An unforgettable night of music, movement, and magic.</div>
-<div style="margin-top:1rem;font-size:.85rem;font-weight:700;color:var(--coral);">Tickets at Ticketmaster &#8594;</div>
+<div class="m-card">
+<div class="m-card-icon">&#128176;</div>
+<div class="m-card-title">Grants &amp; Funding</div>
+<div class="m-card-desc">Connecting local businesses with grants, funding opportunities, and resources to fuel growth.</div>
 </div>
 </div>
 </div>
 </section>
 
+<!-- PROGRAMS -->
+<section class="programs" id="programs">
+<div class="prog-inner">
+<div class="ey" style="color:var(--coral);">Programs &amp; Services</div>
+<h2 class="st" style="color:#fff;">Everything you need to start and grow your business.</h2>
+<p class="sd" style="color:rgba(255,255,255,.45);">From filing your LLC to producing your first marketing video &#8212; we've built programs for every stage of your business journey.</p>
+<div class="prog-grid">
 
-
-<!-- CASE STUDIES -->
-<div class="cases">
-<div class="cases-inner">
-<div class="cases-header">
-<div class="cases-ey">Real Results</div>
-<h2 class="cases-title">What our content does for local businesses</h2>
-<p style="color:rgba(255,255,255,.45);font-size:.95rem;margin-top:.75rem;">All results below were achieved within one week of posting.</p>
-</div>
-<div class="cases-grid">
-<div class="cc"><div class="cc-num">01</div><div class="cc-name">"Shipwreck Stay" Local Airbnb</div><div class="cc-metrics"><div class="cc-m"><svg width="11" height="11" fill="currentColor" viewBox="0 0 20 20"><path d="M10 12a2 2 0 100-4 2 2 0 000 4z"/><path fill-rule="evenodd" d="M.458 10C1.732 5.943 5.522 3 10 3s8.268 2.943 9.542 7c-1.274 4.057-5.064 7-9.542 7S1.732 14.057.458 10zM14 10a4 4 0 11-8 0 4 4 0 018 0z" clip-rule="evenodd"/></svg><strong>41,000+</strong><span>Views</span></div><div class="cc-m"><svg width="11" height="11" fill="currentColor" viewBox="0 0 20 20"><path d="M15 8a3 3 0 10-2.977-2.63l-4.94 2.47a3 3 0 100 4.319l4.94 2.47a3 3 0 10.895-1.789l-4.94-2.47a3.027 3.027 0 000-.74l4.94-2.47C13.456 7.68 14.19 8 15 8z"/></svg><strong>1,500+</strong><span>Shares</span></div><div class="cc-m"><svg width="11" height="11" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M3.172 5.172a4 4 0 015.656 0L10 6.343l1.172-1.171a4 4 0 115.656 5.656L10 17.657l-6.828-6.829a4 4 0 010-5.656z" clip-rule="evenodd"/></svg><strong>2,200+</strong><span>Likes</span></div></div></div>
-<div class="cc"><div class="cc-num">02</div><div class="cc-name">North Hi-Way Caf&#233;</div><div class="cc-metrics"><div class="cc-m"><svg width="11" height="11" fill="currentColor" viewBox="0 0 20 20"><path d="M10 12a2 2 0 100-4 2 2 0 000 4z"/><path fill-rule="evenodd" d="M.458 10C1.732 5.943 5.522 3 10 3s8.268 2.943 9.542 7c-1.274 4.057-5.064 7-9.542 7S1.732 14.057.458 10zM14 10a4 4 0 11-8 0 4 4 0 018 0z" clip-rule="evenodd"/></svg><strong>25,000+</strong><span>Views</span></div><div class="cc-m"><svg width="11" height="11" fill="currentColor" viewBox="0 0 20 20"><path d="M15 8a3 3 0 10-2.977-2.63l-4.94 2.47a3 3 0 100 4.319l4.94 2.47a3 3 0 10.895-1.789l-4.94-2.47a3.027 3.027 0 000-.74l4.94-2.47C13.456 7.68 14.19 8 15 8z"/></svg><strong>154</strong><span>Shares</span></div><div class="cc-m"><svg width="11" height="11" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M3.172 5.172a4 4 0 015.656 0L10 6.343l1.172-1.171a4 4 0 115.656 5.656L10 17.657l-6.828-6.829a4 4 0 010-5.656z" clip-rule="evenodd"/></svg><strong>1,200+</strong><span>Likes</span></div></div></div>
-<div class="cc"><div class="cc-num">03</div><div class="cc-name">Fort Hall Casino</div><div class="cc-metrics"><div class="cc-m"><svg width="11" height="11" fill="currentColor" viewBox="0 0 20 20"><path d="M10 12a2 2 0 100-4 2 2 0 000 4z"/><path fill-rule="evenodd" d="M.458 10C1.732 5.943 5.522 3 10 3s8.268 2.943 9.542 7c-1.274 4.057-5.064 7-9.542 7S1.732 14.057.458 10zM14 10a4 4 0 11-8 0 4 4 0 018 0z" clip-rule="evenodd"/></svg><strong>16,000+</strong><span>Views</span></div><div class="cc-m"><svg width="11" height="11" fill="currentColor" viewBox="0 0 20 20"><path d="M15 8a3 3 0 10-2.977-2.63l-4.94 2.47a3 3 0 100 4.319l4.94 2.47a3 3 0 10.895-1.789l-4.94-2.47a3.027 3.027 0 000-.74l4.94-2.47C13.456 7.68 14.19 8 15 8z"/></svg><strong>97</strong><span>Shares</span></div><div class="cc-m"><svg width="11" height="11" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M3.172 5.172a4 4 0 015.656 0L10 6.343l1.172-1.171a4 4 0 115.656 5.656L10 17.657l-6.828-6.829a4 4 0 010-5.656z" clip-rule="evenodd"/></svg><strong>521</strong><span>Likes</span></div></div></div>
-</div>
-</div>
+<div class="p-card">
+<div class="p-bar"></div>
+<div class="p-tag active">Available Now</div>
+<div class="p-icon">&#128221;</div>
+<div class="p-name">Free LLC Registration</div>
+<div class="p-desc">We prepare and file your Certificate of Organization with the Idaho Secretary of State &#8212; for free. You only pay the state's filing fee. Includes registered agent and address privacy options.</div>
+<a href="/register.html" class="btn-p" style="font-size:.85rem;padding:.75rem 1.5rem;width:fit-content;">Start Filing <svg class="arrow" width="13" height="13" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path d="M5 12h14M12 5l7 7-7 7"/></svg></a>
 </div>
 
-<!-- ABOUT -->
-<section class="about" id="about">
-<div class="about-inner">
-<div>
-<div class="ey">Who We Are</div>
-<h2 class="st">A media brand built for this valley.</h2>
-<p class="sd">We're not a news site. We're not an agency. We're a small team of three who live here, create here, and believe East Idaho deserves media that actually sounds like the people who live in it. From Idaho Falls to Rexburg to Rigby to Driggs &#8212; we cover the whole valley.</p>
-<p class="sd">Every week we publish a free newsletter, post daily content across all platforms, and produce professional video for local businesses.</p>
-<div class="channels" style="margin-top:1.5rem;">
-<a class="ch-card" href="https://www.tiktok.com/@eastidaho" target="_blank"><div class="ch-icon">&#127916;</div><div class="ch-name">TikTok</div><div class="ch-handle">@eastidaho</div></a>
-<a class="ch-card" href="https://www.instagram.com/east.idaho" target="_blank"><div class="ch-icon">&#128247;</div><div class="ch-name">Instagram</div><div class="ch-handle">@east.idaho</div></a>
-<a class="ch-card" href="https://www.youtube.com/@eastidahomedia" target="_blank"><div class="ch-icon">&#9654;&#65039;</div><div class="ch-name">YouTube</div><div class="ch-handle">@eastidahomedia</div></a>
-<a class="ch-card" href="https://www.facebook.com/eastidahomedia" target="_blank"><div class="ch-icon">&#128172;</div><div class="ch-name">Facebook</div><div class="ch-handle">@eastidahomedia</div></a>
+<div class="p-card">
+<div class="p-bar"></div>
+<div class="p-tag active">Available Now</div>
+<div class="p-icon">&#127909;</div>
+<div class="p-name">Video &amp; Marketing</div>
+<div class="p-desc">Professional video production, social media content, and website design for local businesses. We help you show up online and get noticed by the customers already here.</div>
+<button class="btn-p" style="font-size:.85rem;padding:.75rem 1.5rem;width:fit-content;" onclick="openModal('contact-modal')">Inquire <svg class="arrow" width="13" height="13" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path d="M5 12h14M12 5l7 7-7 7"/></svg></button>
 </div>
+
+<div class="p-card">
+<div class="p-bar"></div>
+<div class="p-tag soon">Coming Soon</div>
+<div class="p-icon">&#127891;</div>
+<div class="p-name">Startup Workshop Series</div>
+<div class="p-desc">Free workshops for aspiring and early-stage entrepreneurs. Topics include business planning, legal basics, marketing fundamentals, and funding strategies. Open to everyone in the valley.</div>
+<button class="btn-g" style="font-size:.85rem;padding:.65rem 1.5rem;width:fit-content;border-color:rgba(255,255,255,.15);color:rgba(255,255,255,.5);" onclick="openModal('notify-modal')">Get Notified</button>
 </div>
-<div>
-<div style="border-radius:12px;overflow:hidden;max-width:340px;margin:0 auto;aspect-ratio:9/16;position:relative;" id="cs-video-wrap">
-<iframe id="cs-video" width="100%" height="100%" src="https://www.youtube.com/embed/XMFgMOH9moo?autoplay=1&mute=1&loop=1&playlist=XMFgMOH9moo&controls=0&showinfo=0&rel=0&enablejsapi=1&origin=https://eastidaho.com" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen style="display:block;"></iframe>
-<button onclick="toggleMute()" id="mute-btn" style="position:absolute;bottom:14px;right:14px;width:40px;height:40px;border-radius:50%;border:none;background:rgba(0,0,0,.55);backdrop-filter:blur(4px);color:#fff;font-size:18px;cursor:pointer;display:flex;align-items:center;justify-content:center;transition:background .2s;z-index:2;">&#128263;</button>
+
+<div class="p-card">
+<div class="p-bar"></div>
+<div class="p-tag soon">Coming Soon</div>
+<div class="p-icon">&#127942;</div>
+<div class="p-name">East Idaho Startup Competition</div>
+<div class="p-desc">Pitch your business idea to a panel of local leaders and investors. Winners receive grant funding, free marketing services, and mentorship to launch their business.</div>
+<button class="btn-g" style="font-size:.85rem;padding:.65rem 1.5rem;width:fit-content;border-color:rgba(255,255,255,.15);color:rgba(255,255,255,.5);" onclick="openModal('notify-modal')">Get Notified</button>
 </div>
-<p style="text-align:center;margin-top:12px;font-size:.85rem;color:#7a849a;font-style:italic;">The social media highlight we created for Center Stage Idaho Falls</p>
+
+<div class="p-card">
+<div class="p-bar"></div>
+<div class="p-tag soon">Coming Soon</div>
+<div class="p-icon">&#128176;</div>
+<div class="p-name">Small Business Grants</div>
+<div class="p-desc">We're building a grant program to provide direct funding to East Idaho small businesses. Stay tuned for application details and eligibility requirements.</div>
+<button class="btn-g" style="font-size:.85rem;padding:.65rem 1.5rem;width:fit-content;border-color:rgba(255,255,255,.15);color:rgba(255,255,255,.5);" onclick="openModal('notify-modal')">Get Notified</button>
+</div>
+
+<div class="p-card">
+<div class="p-bar"></div>
+<div class="p-tag new">New</div>
+<div class="p-icon">&#128241;</div>
+<div class="p-name">East Idaho Deals App</div>
+<div class="p-desc">A mobile app putting the best local deals right in your pocket. Browse deals from businesses across the valley, updated weekly. Coming to iOS and Android.</div>
+<button class="btn-g" style="font-size:.85rem;padding:.65rem 1.5rem;width:fit-content;border-color:rgba(255,255,255,.15);color:rgba(255,255,255,.5);" onclick="openModal('notify-modal')">Get Notified</button>
+</div>
+
 </div>
 </div>
 </section>
 
-<!-- STATS -->
-<section style="background:var(--navy2);padding:4rem clamp(1rem,4vw,3rem);position:relative;overflow:hidden;">
-<div style="max-width:1160px;margin:0 auto;">
-<div style="text-align:center;margin-bottom:2rem;">
-<div class="cases-ey">By the Numbers</div>
-<h2 class="cases-title">Growing fast &#8212; and just getting started.</h2>
+<!-- RESULTS -->
+<section class="results" id="results">
+<div class="results-inner">
+<div class="results-header">
+<div class="r-ey">Success Stories</div>
+<h2 class="r-title">Local businesses we've helped grow</h2>
+<p style="color:rgba(255,255,255,.45);font-size:.95rem;margin-top:.75rem;">All results below were achieved within one week of content going live.</p>
 </div>
-<div class="hero-stats" style="max-width:800px;margin:0 auto;">
-<div class="stat-card"><div class="stat-card-val">1,500+</div><div class="stat-card-lbl">Social followers &amp; growing</div></div>
-<div class="stat-card"><div class="stat-card-val">12 Days</div><div class="stat-card-lbl">To grow by 1,100+ followers</div></div>
-<div class="stat-card"><div class="stat-card-val">41K+</div><div class="stat-card-lbl">Views on a single feature</div></div>
-<div class="stat-card"><div class="stat-card-val">Idaho Falls</div><div class="stat-card-lbl">Primary audience location</div></div>
-</div>
-</div>
-</section>
-
-
-<!-- SERVICES -->
-<section class="svc" id="services">
-<div class="svc-inner">
-<div class="ey">Services</div>
-<h2 class="st" style="color:#fff">Make your business look as good as it actually is.</h2>
-<p class="sd" style="color:rgba(255,255,255,.45)">Video, website, or the full bundle &#8212; everything you need to show up professionally and reach the customers already here.</p>
-<div class="svc-grid">
-<div class="sc"><div class="sc-bar"></div><div class="sc-icon"><svg width="22" height="22" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><path d="M2 12h20M12 2a15.3 15.3 0 010 20M12 2a15.3 15.3 0 000 20"/></svg></div><div class="sc-name">Website Design</div><div class="sc-price"><span class="num">$55</span><span class="per">/ mo</span></div><div class="sc-sub">Starting at</div><div class="sc-div"></div><ul class="sc-feat"><li>Custom design &#8212; no templates</li><li>Mobile-friendly &amp; fast loading</li><li>Contact form &amp; business info</li><li>SEO basics built in</li></ul><button class="sc-btn" onclick="openSvcModal('Website Design')">Get Started <svg width="14" height="14" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path d="M5 12h14M12 5l7 7-7 7"/></svg></button></div>
-<div class="sc hot"><div class="sc-bar"></div><div class="hot-badge">Most Popular</div><div class="sc-icon"><svg width="22" height="22" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M15 10l4.553-2.276A1 1 0 0121 8.723v6.554a1 1 0 01-1.447.894L15 14M3 8a2 2 0 012-2h8a2 2 0 012 2v8a2 2 0 01-2 2H5a2 2 0 01-2-2V8z"/></svg></div><div class="sc-name">Video Production</div><div class="sc-price"><span class="num">$100</span></div><div class="sc-sub">Starting at</div><div class="sc-div"></div><ul class="sc-feat"><li>On-location filming</li><li>Professional editing &amp; color grading</li><li>Licensed music &amp; captions</li><li>Optimized for social media</li></ul><button class="sc-btn" onclick="openSvcModal('Video Production')">Get Started <svg width="14" height="14" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path d="M5 12h14M12 5l7 7-7 7"/></svg></button></div>
-<div class="sc"><div class="sc-bar"></div><div class="sc-icon"><svg width="22" height="22" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M20 7H4a2 2 0 00-2 2v6a2 2 0 002 2h16a2 2 0 002-2V9a2 2 0 00-2-2z"/><path d="M16 3l-4 4-4-4M8 21l4-4 4 4"/></svg></div><div class="sc-name">Media Launch Bundle</div><div class="sc-price"><span class="num" style="font-size:2rem;line-height:1.1">Best Value</span></div><div class="sc-sub">Video + Website together</div><div class="sc-div"></div><ul class="sc-feat"><li>Everything in Video + Website</li><li>Built to work together as one</li><li>Bundle discount applied</li><li>Single point of contact</li></ul><button class="sc-btn" onclick="openSvcModal('Media Launch Bundle')">Ask About the Bundle <svg width="14" height="14" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path d="M5 12h14M12 5l7 7-7 7"/></svg></button></div>
-</div>
-
-</div>
-</section>
-
-
-<!-- SPONSORSHIPS -->
-<section style="background:var(--off);padding:6rem clamp(1rem,4vw,3rem);position:relative;overflow:hidden;" id="sponsorships">
-<div style="max-width:1160px;margin:0 auto;">
-<div style="display:grid;grid-template-columns:1fr 1fr;gap:4rem;align-items:center;margin-bottom:4rem;">
-<div>
-<div class="ey">Sponsorships</div>
-<h2 class="st">Put your business in front of East Idaho.</h2>
-</div>
-<div>
-<p class="sd" style="margin-bottom:0;">Reach our growing audience of local followers with sponsored posts and featured deals. Simple pricing, real local reach &#8212; no agency overhead.</p>
-</div>
-</div>
-<div style="display:grid;grid-template-columns:1fr 1fr;gap:1.5rem;">
-<div style="background:#fff;border:1.5px solid var(--border);border-radius:16px;padding:2.25rem 2rem;display:flex;flex-direction:column;position:relative;overflow:hidden;box-shadow:0 2px 16px rgba(15,26,46,.06);transition:border-color .25s,transform .25s,box-shadow .25s;" onmouseover="this.style.borderColor='var(--coral)';this.style.transform='translateY(-5px)'" onmouseout="this.style.borderColor='var(--border)';this.style.transform='none'">
-<div style="position:absolute;top:0;left:0;right:0;height:3px;background:var(--coral);"></div>
-<div style="width:52px;height:52px;border-radius:14px;background:rgba(240,149,108,.1);display:flex;align-items:center;justify-content:center;margin-bottom:1.4rem;">
-<svg width="24" height="24" fill="none" stroke="var(--coral)" stroke-width="2" viewBox="0 0 24 24"><path d="M20.59 13.41l-7.17 7.17a2 2 0 01-2.83 0L2 12V2h10l8.59 8.59a2 2 0 010 2.82z"/><line x1="7" y1="7" x2="7.01" y2="7"/></svg>
-</div>
-<div style="font-family:'DM Serif Display',serif;font-size:3rem;color:var(--navy);line-height:1;margin-bottom:.2rem;">$25 <sub style="font-size:1rem;color:#7a849a;font-family:'Outfit',sans-serif;font-weight:400;vertical-align:baseline;">/ week</sub></div>
-<div style="font-weight:700;font-size:1.15rem;color:var(--navy);margin-bottom:.7rem;">Deals App Boost</div>
-<div style="font-size:.92rem;color:#7a849a;line-height:1.7;flex:1;margin-bottom:1.5rem;">Feature your deal or promotion at the top of the East Idaho Deals app. Drive foot traffic and new customers directly to your business every week.</div>
-<button class="sc-btn" style="background:var(--navy);" onclick="openSvcModal('Deals App Boost')">Boost Your Deal <svg width="13" height="13" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path d="M5 12h14M12 5l7 7-7 7"/></svg></button>
-</div>
-<div style="background:#fff;border:1.5px solid var(--border);border-radius:16px;padding:2.25rem 2rem;display:flex;flex-direction:column;position:relative;overflow:hidden;box-shadow:0 2px 16px rgba(15,26,46,.06);transition:border-color .25s,transform .25s,box-shadow .25s;" onmouseover="this.style.borderColor='var(--coral)';this.style.transform='translateY(-5px)'" onmouseout="this.style.borderColor='var(--border)';this.style.transform='none'">
-<div style="position:absolute;top:0;left:0;right:0;height:3px;background:var(--coral);"></div>
-<div style="width:52px;height:52px;border-radius:14px;background:rgba(240,149,108,.1);display:flex;align-items:center;justify-content:center;margin-bottom:1.4rem;">
-<svg width="24" height="24" fill="none" stroke="var(--coral)" stroke-width="2" viewBox="0 0 24 24"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"/><path d="M16 11.37A4 4 0 1112.63 8 4 4 0 0116 11.37z"/><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/></svg>
-</div>
-<div style="font-family:'DM Serif Display',serif;font-size:3rem;color:var(--navy);line-height:1;margin-bottom:.2rem;">$50 <sub style="font-size:1rem;color:#7a849a;font-family:'Outfit',sans-serif;font-weight:400;vertical-align:baseline;">/ post</sub></div>
-<div style="font-weight:700;font-size:1.15rem;color:var(--navy);margin-bottom:.7rem;">Social Media Sponsorship</div>
-<div style="font-size:.92rem;color:#7a849a;line-height:1.7;flex:1;margin-bottom:1.5rem;">Get your business in front of our engaged local audience with a dedicated sponsored post on our social channels. We create the content &#8212; you just show up.</div>
-<button class="sc-btn" style="background:var(--navy);" onclick="openSvcModal('Social Media Sponsorship')">Inquire About Sponsoring <svg width="13" height="13" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path d="M5 12h14M12 5l7 7-7 7"/></svg></button>
-</div>
+<div class="r-grid">
+<div class="r-card"><div class="r-num">01</div><div class="r-name">"Shipwreck Stay" Local Airbnb</div><div class="r-metrics"><div class="r-m"><svg width="11" height="11" fill="currentColor" viewBox="0 0 20 20"><path d="M10 12a2 2 0 100-4 2 2 0 000 4z"/><path fill-rule="evenodd" d="M.458 10C1.732 5.943 5.522 3 10 3s8.268 2.943 9.542 7c-1.274 4.057-5.064 7-9.542 7S1.732 14.057.458 10zM14 10a4 4 0 11-8 0 4 4 0 018 0z" clip-rule="evenodd"/></svg><strong>41,000+</strong><span>Views</span></div><div class="r-m"><svg width="11" height="11" fill="currentColor" viewBox="0 0 20 20"><path d="M15 8a3 3 0 10-2.977-2.63l-4.94 2.47a3 3 0 100 4.319l4.94 2.47a3 3 0 10.895-1.789l-4.94-2.47a3.027 3.027 0 000-.74l4.94-2.47C13.456 7.68 14.19 8 15 8z"/></svg><strong>1,500+</strong><span>Shares</span></div><div class="r-m"><svg width="11" height="11" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M3.172 5.172a4 4 0 015.656 0L10 6.343l1.172-1.171a4 4 0 115.656 5.656L10 17.657l-6.828-6.829a4 4 0 010-5.656z" clip-rule="evenodd"/></svg><strong>2,200+</strong><span>Likes</span></div></div></div>
+<div class="r-card"><div class="r-num">02</div><div class="r-name">North Hi-Way Caf&#233;</div><div class="r-metrics"><div class="r-m"><svg width="11" height="11" fill="currentColor" viewBox="0 0 20 20"><path d="M10 12a2 2 0 100-4 2 2 0 000 4z"/><path fill-rule="evenodd" d="M.458 10C1.732 5.943 5.522 3 10 3s8.268 2.943 9.542 7c-1.274 4.057-5.064 7-9.542 7S1.732 14.057.458 10zM14 10a4 4 0 11-8 0 4 4 0 018 0z" clip-rule="evenodd"/></svg><strong>25,000+</strong><span>Views</span></div><div class="r-m"><svg width="11" height="11" fill="currentColor" viewBox="0 0 20 20"><path d="M15 8a3 3 0 10-2.977-2.63l-4.94 2.47a3 3 0 100 4.319l4.94 2.47a3 3 0 10.895-1.789l-4.94-2.47a3.027 3.027 0 000-.74l4.94-2.47C13.456 7.68 14.19 8 15 8z"/></svg><strong>154</strong><span>Shares</span></div><div class="r-m"><svg width="11" height="11" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M3.172 5.172a4 4 0 015.656 0L10 6.343l1.172-1.171a4 4 0 115.656 5.656L10 17.657l-6.828-6.829a4 4 0 010-5.656z" clip-rule="evenodd"/></svg><strong>1,200+</strong><span>Likes</span></div></div></div>
+<div class="r-card"><div class="r-num">03</div><div class="r-name">Fort Hall Casino</div><div class="r-metrics"><div class="r-m"><svg width="11" height="11" fill="currentColor" viewBox="0 0 20 20"><path d="M10 12a2 2 0 100-4 2 2 0 000 4z"/><path fill-rule="evenodd" d="M.458 10C1.732 5.943 5.522 3 10 3s8.268 2.943 9.542 7c-1.274 4.057-5.064 7-9.542 7S1.732 14.057.458 10zM14 10a4 4 0 11-8 0 4 4 0 018 0z" clip-rule="evenodd"/></svg><strong>16,000+</strong><span>Views</span></div><div class="r-m"><svg width="11" height="11" fill="currentColor" viewBox="0 0 20 20"><path d="M15 8a3 3 0 10-2.977-2.63l-4.94 2.47a3 3 0 100 4.319l4.94 2.47a3 3 0 10.895-1.789l-4.94-2.47a3.027 3.027 0 000-.74l4.94-2.47C13.456 7.68 14.19 8 15 8z"/></svg><strong>97</strong><span>Shares</span></div><div class="r-m"><svg width="11" height="11" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M3.172 5.172a4 4 0 015.656 0L10 6.343l1.172-1.171a4 4 0 115.656 5.656L10 17.657l-6.828-6.829a4 4 0 010-5.656z" clip-rule="evenodd"/></svg><strong>521</strong><span>Likes</span></div></div></div>
 </div>
 </div>
 </section>
 
-
-<!-- NEWSLETTER CTA -->
-<section class="nl-cta" id="subscribe">
-<div class="nl-cta-inner">
-<h2>Start Your Saturday<br>with East Idaho.</h2>
-<p>Local stories, honest recommendations, weekend plans, and the stuff worth knowing. One email, every Saturday morning. Free forever.</p>
-<form class="nl-form" onsubmit="subscribeToBeehiiv(event,this)">
-<input type="email" placeholder="you@email.com" required>
-<button type="submit">Subscribe</button>
-</form>
-<div class="nl-msg"></div>
+<!-- CTA -->
+<section class="cta">
+<div class="cta-inner">
+<h2>Ready to Build Something?</h2>
+<p>Whether you're filing your first LLC or growing an established business &#8212; we're here to help East Idaho businesses succeed.</p>
+<div class="cta-btns">
+<a href="/register.html" class="btn-w">Register Your LLC Free <svg class="arrow" width="15" height="15" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path d="M5 12h14M12 5l7 7-7 7"/></svg></a>
+<button class="btn-ow" onclick="openModal('contact-modal')">Contact Us</button>
+</div>
+<p class="cta-email">Or email us at <a href="mailto:hello@eastidaho.com">hello@eastidaho.com</a></p>
 </div>
 </section>
-
-
-<!-- SPONSOR MODAL -->
-<div class="modal-overlay" id="sponsor-modal" onclick="if(event.target===this)closeModal(this)">
-<div class="modal">
-<button class="modal-close" onclick="closeModal(document.getElementById('sponsor-modal'))">&times;</button>
-<div id="sp-modal-content"></div>
-</div>
-</div>
-
-
-<!-- APP DOWNLOAD MODAL -->
-<div class="modal-overlay" id="app-modal" onclick="if(event.target===this)closeModal(this)">
-<div class="modal" style="text-align:center;">
-<button class="modal-close" onclick="closeModal(document.getElementById('app-modal'))">&times;</button>
-<div style="font-size:3rem;margin-bottom:12px;">&#128241;</div>
-<div class="modal-eyebrow">Coming Soon</div>
-<div class="modal-title">The East Idaho App</div>
-<p class="modal-text">We're building an app that puts the best local deals right in your pocket. Browse deals from businesses across Idaho Falls, Rexburg, Rigby, and beyond &#8212; updated weekly.</p>
-<div style="background:var(--warm-white);border:1px solid var(--stone);border-radius:10px;padding:20px;margin:20px 0;">
-<div style="font-weight:700;font-size:15px;color:var(--text-primary);margin-bottom:8px;">What to expect:</div>
-<div style="font-size:14px;color:var(--text-body);line-height:1.7;text-align:left;">
-&#127991;&#65039; Local deals and promotions updated weekly<br>
-&#128205; Browse by location or category<br>
-&#128176; Exclusive app-only offers from local businesses<br>
-&#128276; Get notified when new deals drop
-</div>
-</div>
-<p class="modal-text" style="font-size:13px;color:var(--text-faint);">Available soon on the App Store and Google Play.</p>
-<div style="display:flex;gap:12px;justify-content:center;margin-top:16px;opacity:.5;">
-<div style="background:var(--navy);color:#fff;padding:10px 20px;border-radius:8px;font-size:13px;font-weight:700;display:flex;align-items:center;gap:8px;">
-<svg width="18" height="18" viewBox="0 0 24 24" fill="white"><path d="M17.05 20.28c-.98.95-2.05.8-3.08.35-1.09-.46-2.09-.48-3.24 0-1.44.62-2.2.44-3.06-.35C2.79 15.25 3.51 7.59 9.05 7.31c1.35.07 2.29.74 3.08.8 1.18-.24 2.31-.93 3.57-.84 1.51.12 2.65.72 3.4 1.8-3.12 1.87-2.38 5.98.48 7.13-.57 1.5-1.31 2.99-2.54 4.09zM12.03 7.25c-.15-2.23 1.66-4.07 3.74-4.25.29 2.58-2.34 4.5-3.74 4.25z"/></svg>
-App Store
-</div>
-<div style="background:var(--navy);color:#fff;padding:10px 20px;border-radius:8px;font-size:13px;font-weight:700;display:flex;align-items:center;gap:8px;">
-<svg width="18" height="18" viewBox="0 0 24 24" fill="white"><path d="M3.18 23.71L14.32 12.58 3.18.29c-.2-.2-.29-.45-.29-.71 0-.53.43-.96.96-.96.26 0 .51.1.71.29l12.26 12.26c.39.39.39 1.03 0 1.41L4.56 24.84c-.2.2-.45.29-.71.29-.53 0-.96-.43-.96-.96 0-.26.1-.51.29-.71v.25z"/></svg>
-Google Play
-</div>
-</div>
-<div style="margin-top:20px;padding-top:16px;border-top:1px solid var(--stone);">
-<p style="font-size:13px;color:var(--text-muted);margin-bottom:8px;">Want to be notified when the app launches?</p>
-<form style="display:flex;gap:8px;max-width:360px;margin:0 auto;" onsubmit="subscribeToBeehiiv(event,this)">
-<input type="email" placeholder="you@email.com" required style="flex:1;padding:10px 14px;border:1px solid var(--stone);border-radius:6px;background:var(--warm-white);font-family:'Outfit',sans-serif;font-size:14px;outline:none;">
-<button type="submit" style="padding:10px 18px;background:var(--coral);color:#fff;border:none;border-radius:6px;font-family:'Outfit',sans-serif;font-size:14px;font-weight:700;cursor:pointer;white-space:nowrap;">Notify Me</button>
-</form>
-<div class="modal-form-message"></div>
-</div>
-</div>
-</div>
 
 <!-- FOOTER -->
 <footer>
 <div class="footer-logo"><img src="/logo-white.png" alt="East Idaho"></div>
 <div class="footer-links">
 <a href="/">Home</a>
+<a href="/register.html">Register LLC</a>
 <a href="https://www.youtube.com/@eastidahomedia" target="_blank">YouTube</a>
 <a href="https://www.instagram.com/east.idaho" target="_blank">Instagram</a>
 <a href="https://www.tiktok.com/@eastidaho" target="_blank">TikTok</a>
 <a href="https://www.facebook.com/eastidahomedia" target="_blank">Facebook</a>
-<a href="#services">Services</a>
-<a href="#sponsorships">Sponsors</a>
 <a href="#" onclick="openModal('contact-modal');return false;">Contact</a>
 </div>
 <div class="footer-legal">
@@ -466,104 +367,50 @@ Google Play
 </div>
 </footer>
 
-<!-- SUBSCRIBE MODAL -->
-<div class="modal-overlay" id="subscribe-modal" onclick="if(event.target===this)closeModal(this)">
-<div class="modal">
-<button class="modal-close" onclick="closeModal(document.getElementById('subscribe-modal'))">&times;</button>
-<div class="modal-eyebrow">Join the Community</div>
-<div class="modal-title">Get East Idaho in your inbox every Saturday.</div>
-<p class="modal-text">Local stories, honest recommendations, weekend plans, and the stuff worth knowing. One email a week. Free forever.</p>
-<form class="modal-form" onsubmit="subscribeToBeehiiv(event,this)">
-<input type="email" placeholder="you@email.com" required>
-<button type="submit">Subscribe</button>
-</form>
-<div class="modal-form-message"></div>
-</div>
-</div>
-
 <!-- CONTACT MODAL -->
 <div class="modal-overlay" id="contact-modal" onclick="if(event.target===this)closeModal(this)">
 <div class="modal">
 <button class="modal-close" onclick="closeModal(document.getElementById('contact-modal'))">&times;</button>
 <div class="modal-eyebrow">Get in Touch</div>
-<div class="modal-title">We'd love to hear from you.</div>
-<form id="contact-form" onsubmit="submitContactForm(event)">
+<div class="modal-title">How can we help?</div>
+<p class="modal-text">Tell us about your business or idea and we'll get back to you within 24 hours.</p>
+<form id="contact-form" onsubmit="submitContact(event)">
 <div class="contact-field"><label>Name</label><input type="text" name="name" required></div>
 <div class="contact-field"><label>Email</label><input type="email" name="email" required></div>
+<div class="contact-field"><label>I'm interested in</label>
+<select name="interest"><option value="General">General inquiry</option><option value="LLC Registration">LLC Registration</option><option value="Video & Marketing">Video & Marketing</option><option value="Workshops">Workshops & Classes</option><option value="Startup Competition">Startup Competition</option><option value="Grants">Grants & Funding</option><option value="Deals App">Deals App</option></select></div>
 <div class="contact-field"><label>Message</label><textarea name="message" required></textarea></div>
 <button class="contact-submit" type="submit">Send Message &#8594;</button>
 </form>
-<div class="modal-form-message" id="contact-msg"></div>
+<div id="contact-success" style="display:none;text-align:center;padding:20px;color:var(--coral);font-weight:700;font-size:16px;">Thanks! We'll be in touch within 24 hours.</div>
 </div>
 </div>
 
-<!-- SERVICES MODAL -->
-<div class="m-bg" id="svc-modal" onclick="if(event.target===this)closeSvcModal()">
-<div class="modal" style="max-width:520px;">
-<button class="modal-close" onclick="closeSvcModal()">&times;</button>
-<div class="modal-eyebrow">Let's Talk</div>
-<div class="modal-title">Tell us about your business.</div>
-<p class="modal-text">Fill out the form below and we'll get back to you within 24 hours.</p>
-<form id="svc-form" onsubmit="submitSvcForm(event)" style="display:flex;flex-direction:column;gap:12px;">
-<div class="contact-field"><label>Name</label><input type="text" name="name" required></div>
-<div class="contact-field"><label>Business Name</label><input type="text" name="business"></div>
-<div class="contact-field"><label>Email</label><input type="email" name="email" required></div>
-<div class="contact-field"><label>Phone (optional)</label><input type="tel" name="phone"></div>
-<div class="contact-field"><label>Interested In</label><select name="package" id="svc-pkg" style="width:100%;padding:12px 16px;border:1px solid var(--stone);border-radius:6px;background:var(--warm-white);color:var(--text-primary);font-family:'Outfit',sans-serif;font-size:15px;outline:none;"><option value="General Inquiry">General Inquiry</option><option value="Video Production">Video Production</option><option value="Website Design">Website Design</option><option value="Media Launch Bundle">Media Launch Bundle</option><option value="Deals App Boost">Deals App Boost</option><option value="Social Media Sponsorship">Social Media Sponsorship</option></select></div>
-<div class="contact-field"><label>Message (optional)</label><textarea name="message" rows="3"></textarea></div>
-<button class="contact-submit" type="submit">Send Request &#8594;</button>
+<!-- NOTIFY MODAL -->
+<div class="modal-overlay" id="notify-modal" onclick="if(event.target===this)closeModal(this)">
+<div class="modal" style="text-align:center;">
+<button class="modal-close" onclick="closeModal(document.getElementById('notify-modal'))">&times;</button>
+<div style="font-size:2.5rem;margin-bottom:12px;">&#128276;</div>
+<div class="modal-eyebrow">Coming Soon</div>
+<div class="modal-title">We'll let you know when it's ready.</div>
+<p class="modal-text">Drop your email and we'll notify you as soon as this program launches.</p>
+<form style="display:flex;gap:8px;max-width:380px;margin:0 auto;" onsubmit="submitNotify(event,this)">
+<input type="email" placeholder="you@email.com" required style="flex:1;padding:12px 16px;border:1px solid var(--stone);border-radius:6px;background:var(--warm-white);font-family:'Outfit',sans-serif;font-size:15px;outline:none;">
+<button type="submit" style="padding:12px 20px;background:var(--coral);color:#fff;border:none;border-radius:6px;font-family:'Outfit',sans-serif;font-size:15px;font-weight:700;cursor:pointer;white-space:nowrap;">Notify Me</button>
 </form>
-<div id="svc-success" style="display:none;text-align:center;padding:20px;color:var(--coral);font-weight:700;font-size:16px;">Thanks! We'll be in touch within 24 hours.</div>
+<div class="notify-msg" style="display:none;margin-top:12px;font-size:14px;font-weight:600;"></div>
 </div>
 </div>
 
 <script>
-// Video mute toggle
-var csMuted = true;
-function toggleMute() {
-  var iframe = document.getElementById('cs-video');
-  var btn = document.getElementById('mute-btn');
-  if (csMuted) {
-    iframe.contentWindow.postMessage('{"event":"command","func":"unMute","args":""}', '*');
-    btn.innerHTML = '&#128266;';
-    csMuted = false;
-  } else {
-    iframe.contentWindow.postMessage('{"event":"command","func":"mute","args":""}', '*');
-    btn.innerHTML = '&#128263;';
-    csMuted = true;
-  }
-}
-
-// Nav offset for announcement banner
-function adjustNavPosition(){var b=document.getElementById('announcement-banner');var n=document.querySelector('nav');if(b&&n){n.style.top=b.offsetHeight+'px';}}
-window.addEventListener('load',adjustNavPosition);
-window.addEventListener('resize',adjustNavPosition);
-
-// Mobile nav
 function toggleMobileNav(){var d=document.getElementById('mobile-nav');var b=document.getElementById('hamburger-btn');d.classList.toggle('active');b.classList.toggle('active');document.body.style.overflow=d.classList.contains('active')?'hidden':'';}
 function closeMobileNav(){document.getElementById('mobile-nav').classList.remove('active');document.getElementById('hamburger-btn').classList.remove('active');document.body.style.overflow='';}
-
-// Sponsor modal
-function openSponsorModal(name,desc,category,location,url){
-var c=document.getElementById('sp-modal-content');
-c.innerHTML='<div class="modal-eyebrow">'+category+'</div><div class="modal-title">'+name+'</div><p class="modal-text">'+desc+'</p><p class="modal-text" style="font-size:13px;color:var(--text-faint);">'+location+'</p><div style="display:flex;gap:10px;margin-top:20px;flex-wrap:wrap;"><a href="'+url+'" target="_blank" style="display:inline-flex;align-items:center;gap:6px;padding:10px 20px;border-radius:6px;font-size:13px;font-weight:700;text-decoration:none;background:var(--coral);color:#fff;">Visit Website &rarr;</a></div>';
-openModal('sponsor-modal');
-}
-
-// Modals
 function openModal(id){document.getElementById(id).classList.add('active');document.body.style.overflow='hidden';}
 function closeModal(el){el.classList.remove('active');document.body.style.overflow='';}
-function openSvcModal(pkg){document.getElementById('svc-pkg').value=pkg;document.getElementById('svc-modal').classList.add('active');document.body.style.overflow='hidden';}
-function closeSvcModal(){document.getElementById('svc-modal').classList.remove('active');document.body.style.overflow='';}
 
-// Subscribe
-async function subscribeToBeehiiv(event,form){event.preventDefault();var email=form.querySelector('input[type="email"]').value;var button=form.querySelector('button');var messageEl=form.nextElementSibling;var originalText=button.textContent;button.disabled=true;button.textContent='Subscribing...';try{var response=await fetch('/api/subscribe',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({email:email})});if(response.ok){form.style.display='none';messageEl.style.display='block';messageEl.style.color='#4ade80';messageEl.textContent="You're in! Welcome to East Idaho.";}else{button.disabled=false;button.textContent=originalText;messageEl.style.display='block';messageEl.style.color='#fcb498';messageEl.textContent='Something went wrong. Please try again.';}}catch(err){button.disabled=false;button.textContent=originalText;messageEl.style.display='block';messageEl.style.color='#fcb498';messageEl.textContent='Something went wrong. Please try again.';}}
+async function submitContact(e){e.preventDefault();var f=e.target;try{await fetch('/api/contact',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({name:f.name.value,email:f.email.value,subject:'Website Inquiry - '+f.interest.value,message:'Interest: '+f.interest.value+'\n\n'+f.message.value})});f.style.display='none';document.getElementById('contact-success').style.display='block';}catch(err){alert('Something went wrong. Please email hello@eastidaho.com directly.');}}
 
-// Contact form
-async function submitContactForm(e){e.preventDefault();var f=e.target;try{await fetch('/api/contact',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({name:f.name.value,email:f.email.value,subject:'Contact Form',message:f.message.value})});f.style.display='none';var msg=document.getElementById('contact-msg');msg.style.display='block';msg.style.color='#4ade80';msg.textContent="Thanks! We'll be in touch soon.";}catch(err){alert('Something went wrong. Please email hello@eastidaho.com directly.');}}
-
-// Services form
-async function submitSvcForm(e){e.preventDefault();var f=e.target;var msg='Package: '+f.package.value;if(f.business.value)msg+='\nBusiness: '+f.business.value;if(f.phone.value)msg+='\nPhone: '+f.phone.value;if(f.message.value)msg+='\n\n'+f.message.value;try{await fetch('/api/contact',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({name:f.name.value,email:f.email.value,subject:'Services Inquiry - '+f.package.value,message:msg})});f.style.display='none';document.getElementById('svc-success').style.display='block';}catch(err){alert('Something went wrong. Please email hello@eastidaho.com directly.');}}
+async function submitNotify(e,form){e.preventDefault();var email=form.querySelector('input').value;var btn=form.querySelector('button');var msg=form.nextElementSibling;btn.disabled=true;btn.textContent='Sending...';try{await fetch('/api/subscribe',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({email:email})});form.style.display='none';msg.style.display='block';msg.style.color='#34d399';msg.textContent="You're on the list! We'll be in touch.";}catch(err){btn.disabled=false;btn.textContent='Notify Me';msg.style.display='block';msg.style.color='var(--coral)';msg.textContent='Something went wrong. Try again.';}}
 </script>
 </body>
 </html>
